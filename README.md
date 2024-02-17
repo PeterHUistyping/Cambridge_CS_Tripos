@@ -6,6 +6,10 @@
 - Example sheets & Past papers
 - Online resources
   - wiki, similar courses globally
+- Related notes
+  - [Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
+
+
 
 ## Notes
 
@@ -62,3 +66,7 @@ Covering *a list of wider parsers key points.*
 
 - IB Compiler Construction
 - IB Formal Model of language
+
+## Supervisions Reference
+
+[Supervision Reference](./Supervision_Reference.md)
