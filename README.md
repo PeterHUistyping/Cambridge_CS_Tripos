@@ -51,6 +51,14 @@ Covering *around Chomsky hierarchy.*
 
 [5. CFG Parser](./Note/Parsing.pdf)
 
-Covering *table driven parser breakdown* 
+Covering *table driven parsers breakdown*
+
 - IB Compiler Construction
   - LL(k), SLR(1), LR(1)
+
+[6. Parsing Outline](./Note/Parsing.pdf)
+
+Covering *a list of wider parsers key points*
+
+- IB Compiler Construction
+- IB Formal Model of language
