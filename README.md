@@ -1,5 +1,7 @@
 # Computer Science Tripos
-## Source 
+
+## Source
+
 - Lecture Notes
 - Example sheets and Past papers
 - Textbooks
@@ -9,18 +11,23 @@
 ## Notes by time
 
 [1. Relations and Functions](./Note/Relation_Function.pdf)
+
+Covering *the definition, properties and relationship between key concepts.*
+
 - IA Discrete Mathematics
-  
+
 [2. Memory Calculation](./Note/Memory%20Calculation.pdf)
+
+Covering *how to interpret memory addresses in page table, TLB and cache.*
 
 - IA OS
   - page table and TLB
-- IB Computer Architecture 
+- IB Computer Architecture
   - cache
 
 [3. Formal Languages](./Note/Formal%20Languages.pdf)
 
-Formal Languages
+Covering *around Chomsky hierarchy.*
 
 - IA Discrete Math
   - Regular Languages and finite automata
