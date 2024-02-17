@@ -48,3 +48,9 @@ Covering *around Chomsky hierarchy.*
   - Chomsky hierarchy
 - IB Computation Theory
   - TM
+
+[5. CFG Parser](./Note/Parsing.pdf)
+
+Covering *table driven parser breakdown* 
+- IB Compiler Construction
+  - LL(k), SLR(1), LR(1)
