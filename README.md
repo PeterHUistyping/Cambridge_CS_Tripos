@@ -9,7 +9,7 @@
 
 ## Notes
 
-*Listed by written time*.
+*Listed by written time, errors would be updated if found.*
 
 [1. Relations and Functions](./Note/Relation_Function.pdf)
 
@@ -27,11 +27,13 @@ Covering *how to interpret memory addresses in page table, TLB and cache.*
   - cache
 
 [3. Concurrency Control](./Note/Concurrency%20Control.pdf)
+
 Covering *concurrency control for single object and transactions afterwards.*
+
 - IB Computer Architecture
   - Memory consistency and atomicity
 - IB Concurrent System
-  
+
 [4. Formal Languages](./Note/Formal%20Languages.pdf)
 
 Covering *around Chomsky hierarchy.*
