@@ -2,13 +2,14 @@
 
 ## Source
 
-- Lecture Notes
-- Example sheets and Past papers
-- Textbooks
-- Similar courses globally
-- Online resources (mostly wiki)
+- Cambridge Lecture Notes & Textbooks
+- Example sheets & Past papers
+- Online resources
+  - wiki, similar courses globally
 
-## Notes by time
+## Notes
+
+*Listed by written time*.
 
 [1. Relations and Functions](./Note/Relation_Function.pdf)
 
@@ -25,7 +26,13 @@ Covering *how to interpret memory addresses in page table, TLB and cache.*
 - IB Computer Architecture
   - cache
 
-[3. Formal Languages](./Note/Formal%20Languages.pdf)
+[3. Concurrency Control](./Note/Concurrency%20Control.pdf)
+Covering *concurrency control for single object and transactions afterwards.*
+- IB Computer Architecture
+  - Memory consistency and atomicity
+- IB Concurrent System
+  
+[4. Formal Languages](./Note/Formal%20Languages.pdf)
 
 Covering *around Chomsky hierarchy.*
 
