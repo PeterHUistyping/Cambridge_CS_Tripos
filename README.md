@@ -82,14 +82,13 @@ Covering *Continuous Passing Style and Defunctionalization.*
   - Adapting recursive calls to iterative one, following the 4-step introduced by the Lecturer.
   - ✓ Question from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) and more.
     - Invariant for Continuous Passing Style.
-  ```
-  c (eval e)=eval_cps c e
-  ```
+    ```
+    c (eval e)=eval_cps c e
+    ```
     - Defunctionalization
-  ```
-  ID, PAIR1, PAIR2, FUNC
-  ```
-
+    ```
+    ID, PAIR1, PAIR2, FUNC
+    ```
   - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
 
 [8. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
