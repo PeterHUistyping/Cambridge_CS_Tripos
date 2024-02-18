@@ -5,14 +5,15 @@
 - ■ extra notes around the topics
 - ★ supervision work from expert supervisors
   - with detailed solutions for reference
-- ✓ course work from peers 
+- ✓ course work from peers
   - only for reference and with critical thinking
 
 ## General
+
 - General
   - ★ ■ Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
-## IA
 
+## IA
 
 - IA Database
   - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-databases)
@@ -21,6 +22,7 @@
 
 - General
   - ✓✓ Course work reference (2022) [@KyraZzz](https://github.com/KyraZzz/PartIB-coursework)
+  - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/)
 - IB Data Science
   - ■ [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf)
     - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
@@ -44,4 +46,5 @@
     - Source: [@Dimitrios Los](https://dimitrioslos.com/sups/)
 
 ## II
-TBD
+
+TBD.
