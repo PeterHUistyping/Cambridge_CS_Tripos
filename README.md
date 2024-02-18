@@ -67,9 +67,12 @@ Covering *a list of wider parsers key points.*
 - IB Compiler Construction
 - IB Formal Model of language
 
- 
+[7. CPS and Defun](./Note/CPS-Defun-y2017p3q4.pdf)
 
-[7. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
+- IB Compiler Construction
+- [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf)
+
+[8. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
 
 Covering key concepts *in five layers of Computer Network by analogy.*
 
