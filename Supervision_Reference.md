@@ -27,8 +27,10 @@
   - ■ [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf)
     - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
 - IB Semantics
-  - ■ Concise way to write context rule. [Evaluation Contexts @ CS6110-Ad_ProgLang](./Ref/IBSemantics/Evaluation%20Contexts.pdf)
+  - ■ [Evaluation Contexts @ CS6110-Ad_ProgLang](./Ref/IBSemantics/Evaluation%20Contexts.pdf)
+    - Concise way to write context rule.
     - Lectured and examined [y2022p4q9](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q9.pdf)
+    - Write `E[·]`
 - IB Computer Networking
   - ✓✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-computer-networking)
     - Still strongly relevant

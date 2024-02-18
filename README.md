@@ -73,19 +73,23 @@ Covering *a list of wider parsers key points.*
 - ✎ IB Compiler Construction
 - ✎ IB Formal Model of language
 
-[7. CPS and Defun](./Note/CPS-Defun-y2017p3q4.pdf)
+[7. CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)
 
 Covering *Continuous Passing Style and Defunctionalization.*
 
 - IB Compiler Construction
 
-  - Adapting recursive calls to iterative one, following the 4-step introduced by the Lecturer.
+  - Adapting recursive calls to iterative one, following the steps introduced by the Lecturer.
   - ✓ Question from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) and more.
+
     - Invariant for Continuous Passing Style.
+
     ```
     c (eval e)=eval_cps c e
     ```
+
     - Defunctionalization
+
     ```
     ID, PAIR1, PAIR2, FUNC
     ```
