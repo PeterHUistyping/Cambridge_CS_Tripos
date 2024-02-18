@@ -69,3 +69,8 @@ Covering *a list of wider parsers key points.*
 
  
 
+[7. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
+
+Covering key concepts *in five layers of Computer Network by analogy.*
+
+- IB Computer Networking
