@@ -34,7 +34,7 @@ Covering *how to interpret memory addresses in page table, TLB and cache.*
   - page table and TLB
 - ✎ IB Computer Architecture
   - cache
-- ✓ MSI+Cacheline [y2021p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)
+  - ✓ MSI+Cacheline Question [y2021p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)
 
 [3. Concurrency Control](./Note/Concurrency%20Control.pdf)
 
@@ -78,15 +78,25 @@ Covering *a list of wider parsers key points.*
 Covering *Continuous Passing Style and Defunctionalization.*
 
 - IB Compiler Construction
+
   - Adapting recursive calls to iterative one, following the 4-step introduced by the Lecturer.
-  - ✓ Question from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf)
+  - ✓ Question from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) and more.
+    - Invariant for Continuous Passing Style.
+  ```
+  c (eval e)=eval_cps c e
+  ```
+    - Defunctionalization
+  ```
+  ID, PAIR1, PAIR2, FUNC
+  ```
+
   - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
 
 [8. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
 
 Covering key concepts *in five layers of Computer Network by analogy.*
 
-- ✎ IB Computer Networking
+- IB Computer Networking
 
 ## See more
 
