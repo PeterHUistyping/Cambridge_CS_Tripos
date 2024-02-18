@@ -69,6 +69,8 @@ Covering *a list of wider parsers key points.*
 
 [7. CPS and Defun](./Note/CPS-Defun-y2017p3q4.pdf)
 
+Covering *Continuous Passing Style and Defunctionalization*
+
 - IB Compiler Construction
 - [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf)
 
