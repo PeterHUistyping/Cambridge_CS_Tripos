@@ -2,7 +2,7 @@
 
 *Great supervision materials available online for supplement,* including
 
-- ■ extra notes around the topics
+- ■ related / extra notes around the topics
 - ★ supervision work from expert supervisors
   - with detailed solutions for reference
 - ✓ course work from peers
@@ -26,10 +26,14 @@
 - IB Data Science
   - ■ [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf)
     - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
+- IB Semantics
+  - ■ Concise way to write context rule. [Evaluation Contexts @ CS6110-Ad_ProgLang](./Ref/IBSemantics/Evaluation%20Contexts.pdf)
+    - Lectured and examined [y2022p4q9](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q9.pdf)
 - IB Computer Networking
   - ✓✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-computer-networking)
     - Still strongly relevant
 - IB Compiler Construction
+  - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
   - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-compiler-construction/)
 - IB Prolog
   - ★ Extra: [Prolog 99 Problems](./Ref/IBProlog/P-99_Ninety-Nine%20Prolog%20Problems.pdf)
