@@ -26,7 +26,17 @@ Covering *the definition, properties and relationship between key concepts.*
 
 - ✎ IA Discrete Mathematics
 
-[2. Memory Calculation](./Note/Memory%20Calculation.pdf)
+[2-1. Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf)
+
+- IA OS
+- IB C and C++
+  - `static`,  `auto`, `extern`
+- IB Compiler Construction
+- IB Concurrent System
+  - Threads
+
+
+[2-2. Memory Calculation](./Note/Memory%20Calculation.pdf)
 
 Covering *how to interpret memory addresses in page table, TLB and cache.*
 
