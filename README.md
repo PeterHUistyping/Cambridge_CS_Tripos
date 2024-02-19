@@ -18,7 +18,7 @@
 
 ## Notes
 
-*Listed by written time, errors would be updated if found.*
+*Grouped by related lectures, errors would be updated if found.*
 
 [1. Relations and Functions](./Note/Relation_Function.pdf)
 
@@ -32,9 +32,11 @@ Covering *the definition, properties and relationship between key concepts.*
 - IB C and C++
   - `static`,  `auto`, `extern`
 - IB Compiler Construction
+  - Compilers Principles, Techniques and Tools (2013)
+    - Ch 7 Runtime Environments
+  - ✓ Stack Question [2014p3q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q4.pdf)
 - IB Concurrent System
   - Threads
-
 
 [2-2. Memory Calculation](./Note/Memory%20Calculation.pdf)
 
