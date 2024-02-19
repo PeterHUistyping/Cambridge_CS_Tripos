@@ -28,9 +28,14 @@ Covering *the definition, properties and relationship between key concepts.*
 
 [2-1. Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf)
 
+
+Covering around *Application Binary Interface*.
 - IA OS
+- IA Java (OOP)
 - IB C and C++
   - `static`,  `auto`, `extern`
+- IB Computer Architecture
+  - RISC-V Calling Convention
 - IB Compiler Construction
   - Compilers Principles, Techniques and Tools (2013)
     - Ch 7 Runtime Environments
