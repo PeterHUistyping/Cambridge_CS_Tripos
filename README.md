@@ -20,7 +20,7 @@
 
 *Grouped by related lectures, errors would be updated if found.*
 
-[For Tripos related courses $\geq 1$, the note is *cross-disciplinary* by nature.]
+[Note with Tripos related courses > 1 is *cross-disciplinary* by nature.]
 
 | ID  | Notes                                                              | Coverage                                                              | Tripos                                                                                                                                                                                              |
 | --- | ------------------------------------------------------------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
