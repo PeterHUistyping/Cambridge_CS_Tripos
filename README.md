@@ -14,7 +14,7 @@
 
 - ✎ Lecture Note summary
 - ✓ Past Paper Questions
-- ■ Related / extra notes around the topics
+- ■ Extra notes around the topics
 
 ## Notes
 
@@ -27,7 +27,8 @@
 | 1   | [Relations and Functions](./Note/Relation_Function.pdf)               | definition, properties and<br />relationship of key concepts.         | ✎ IA Discrete Math                                                                                                                                                                                 |
 | 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | <br />Memory and ABI in<br />ProgLag - Compiler - OS - Arch           | ✎IA Java - IB C/C++<br />IA OS - IB Arch (RISC)<br />IB Compiler Construction<br />✓ Stack Q [2014p3q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q4.pdf)<br />IB Concurrent System |
 | 2-2 | [Memory Calculation](./Note/Memory%20Calculation.pdf)                 | Interpret memory addresses<br />in Page tab, TLB and cache            | ✎ IA OS<br />IB Computer Architecture<br />✓ MSI+Cacheline Q [2021p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)                                                           |
-| 3   | [Concurrency Control](./Note/Concurrency%20Control.pdf)               | concurrent control for single obj<br /> and transactions afterwards. | ✎ IB Architecture (Mem ACID)<br />IB Concurrent System                                                                                                                                             |
+| 3-1 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | Arch design tradeoff                                                  | ■ IB Arch & II Ad Arch<br />IB Compiler Construction                                                                                                                                               |
+| 3-2 | [Concurrency Control](./Note/Concurrency%20Control.pdf)               | concurrent control for single obj<br /> and transactions afterwards. | ✎ IB Architecture (Mem ACID)<br />IB Concurrent System                                                                                                                                             |
 | 4   | [Formal Languages](./Note/Formal%20Languages.pdf)                     | Chomsky hierarchy<br />Reg ⇔ DFA<br />CFG ⇔ PDA<br />CSG/RE ⇔ TM  | ✎ IA Discrete Math (Reg, DFA)<br />IB Compiler Construction (CFG)<br />IB Computation Theory (TM)<br />IB Formal Model of Language                                                                 |
 | 5   | [CFG Parser](./Note/Parsing.pdf)                                      | table driven parsers breakdown<br />LL(k), SLR(1), LR(1)              | ✎ IB Compiler Construction                                                                                                                                                                         |
 | 6   | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)            | a list of parsers key points.                                         | ✎ IB Compiler Construction<br />IB Formal Model of language                                                                                                                                        |
