@@ -20,103 +20,36 @@
 
 *Grouped by related lectures, errors would be updated if found.*
 
-[1. Relations and Functions](./Note/Relation_Function.pdf)
+| ID  | Notes                                                              | Coverage                                                                 | Tripo                                                                                                                                                                                                     |
+| --- | ------------------------------------------------------------------ | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Relations and Functions](./Note/Relation_Function.pdf)               | definition, properties and<br />relationship of key concepts.            | ✎ IA Discrete Math                                                                                                                                                                                       |
+| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI                                                           | ✎IA Java - IB C/C++<br />IA OS - IB Arch (RISC)<br />IB Compiler Construction<br />✓ Stack Question [2014p3q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q4.pdf)<br />IB Concurrent System |
+| 2-2 | [Memory Calculation](./Note/Memory%20Calculation.pdf)                 | Interpret memory addresses<br />in page table, TLB and cache.            | ✎ IA OS<br />IB Computer Architecture<br />✓ MSI+Cacheline Q [y2021p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)                                                                |
+| 3   | [Concurrency Control](./Note/Concurrency%20Control.pdf)               | concurrency control for single object<br /> and transactions afterwards. | ✎ IB Architecture (Mem ACID)<br />IB Concurrent System                                                                                                                                                   |
+| 4   | [Formal Languages](./Note/Formal%20Languages.pdf)                     | Chomsky hierarchy.                                                       | ✎ IA Discrete Math (Reg, DFA)<br />IB Compiler Construction (CFG)<br />IB Formal Model of Language<br />IB Computation Theory (TM)                                                                       |
+| 5   | [CFG Parser](./Note/Parsing.pdf)                                      | table driven parsers breakdown.<br />LL(k), SLR(1), LR(1)                | ✎ IB Compiler Construction                                                                                                                                                                               |
+| 6   | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)            | a list of wider parsers key points.                                      | ✎ IB Compiler Construction<br />IB Formal Model of language                                                                                                                                              |
+| 7   | [CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)             | Continuous Passing Style and<br />Defunctionalization.                   | IB Compiler Construction<br />✓ Q from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf)                                                                                     |
+| 8   | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)               | concepts in five layers of OSI                                           | IB Computer Networking                                                                                                                                                                                    |
 
-Covering *the definition, properties and relationship between key concepts.*
+### Extra Notes
 
-- ✎ IA Discrete Mathematics
+7: CPS and Defunctionalization
 
-[2-1. Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf)
+- Adapting recursive calls to iterative one, following the steps introduced by the Lecturer.
 
-Covering around *Application Binary Interface*.
+  - Invariant for Continuous Passing Style.
 
-- IA OS
-- IA Java (OOP)
-- IB C and C++
-  - `static`,  `auto`, `extern`
-- IB Computer Architecture
-  - RISC-V Calling Convention
-- IB Compiler Construction
-  - Compilers Principles, Techniques and Tools (2013)
-    - Ch 7 Runtime Environments
-  - ✓ Stack Question [2014p3q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q4.pdf)
-- IB Concurrent System
-  - Threads
+  ```
+  c (eval e)=eval_cps c e
+  ```
 
-[2-2. Memory Calculation](./Note/Memory%20Calculation.pdf)
-
-Covering *how to interpret memory addresses in page table, TLB and cache.*
-
-- ✎ IA OS
-  - page table and TLB
-- ✎ IB Computer Architecture
-  - cache
-  - ✓ MSI+Cacheline Question [y2021p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)
-
-[3. Concurrency Control](./Note/Concurrency%20Control.pdf)
-
-Covering *concurrency control for single object and transactions afterwards.*
-
-- ✎ IB Computer Architecture
-  - Memory consistency and atomicity
-- ✎ IB Concurrent System
-
-[4. Formal Languages](./Note/Formal%20Languages.pdf)
-
-Covering *around Chomsky hierarchy.*
-
-- ✎ IA Discrete Math
-  - Regular Languages and finite automata
-  - Pumping Lemma for Regular Languages
-- ✎ IB Compiler Construction
-  - CFG, PDA
-- ✎ IB Formal Model of Language
-  - Pumping Lemma for Language of CFG
-  - Chomsky hierarchy
-- ✎ IB Computation Theory
-  - TM
-
-[5. CFG Parser](./Note/Parsing.pdf)
-
-Covering *table driven parsers breakdown.*
-
-- ✎ IB Compiler Construction
-  - LL(k), SLR(1), LR(1)
-
-[6. Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)
-
-Covering *a list of wider parsers key points.*
-
-- ✎ IB Compiler Construction
-- ✎ IB Formal Model of language
-
-[7. CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)
-
-Covering *Continuous Passing Style and Defunctionalization.*
-
-- IB Compiler Construction
-
-  - Adapting recursive calls to iterative one, following the steps introduced by the Lecturer.
-  - ✓ Question from [y2017p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) and more.
-
-    - Invariant for Continuous Passing Style.
-
-    ```
-    c (eval e)=eval_cps c e
-    ```
-
-    - Defunctionalization
-
-    ```
-    ID, PAIR1, PAIR2, FUNC
-    ```
   - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
+  - Defunctionalization
 
-[8. Network by Analogy](./Note/Network%20by%20Analogy.pdf)
-
-Covering key concepts *in five layers of Computer Network by analogy.*
-
-- IB Computer Networking
+  ```
+  ID, PAIR1, PAIR2, FUNC
+  ```
 
 ## See more
 
