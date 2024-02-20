@@ -7,7 +7,7 @@
 - Online resources
   - wiki, similar courses globally
 - Related notes
-  - [Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
+  - [A(S)Level-Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
   - [Supervision Reference](./Supervision_Reference.md)
 
 ## Category
@@ -28,8 +28,8 @@ Covering *the definition, properties and relationship between key concepts.*
 
 [2-1. Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf)
 
-
 Covering around *Application Binary Interface*.
+
 - IA OS
 - IA Java (OOP)
 - IB C and C++
