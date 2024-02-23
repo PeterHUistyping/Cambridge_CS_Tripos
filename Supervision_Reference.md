@@ -34,7 +34,7 @@
   - ✓✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-computer-networking)
     - Still strongly relevant
 - Compiler Construction
-  - ■ [(S)LR @ Stanford](./Ref/IBCompiler/LR%20and%20SLR%20Parsing.pdf)
+  - ■ [(S)LR @ Stanford CS143](./Ref/IBCompiler/LR%20and%20SLR%20Parsing.pdf)
   - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
   - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/cst1b-compiler-construction/)
 - Prolog
