@@ -20,6 +20,11 @@
 
 *Grouped by related lectures, errors would be updated if found.*
 
+- 1 Math
+- 2 Low-level (OS, Arch)
+- 3 Theories
+- 4 Languages
+
 [Note with Tripos related courses > 1 is *cross-disciplinary* by nature.]
 
 | ID  | Notes                                                              | Coverage                                                              | Tripos                                                                                                                                    |
