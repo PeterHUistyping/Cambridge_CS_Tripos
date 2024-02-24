@@ -20,7 +20,7 @@
 ## IB
 
 - General
-  - ✓✓ Course work reference (2022) [@KyraZzz](https://github.com/KyraZzz/PartIB-coursework)
+  - ~~✓✓ Course work reference (2022) [@KyraZzz](https://github.com/KyraZzz/PartIB-coursework)~~
   - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/)
 - Data Science
   - ■ [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf)
