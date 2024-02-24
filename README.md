@@ -8,7 +8,7 @@
   - wiki, similar courses globally
 - Related notes
   - [A(S)Level-Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
-  - [Supervision Reference](./Supervision_Reference.md)
+  - [Supervision Reference](./Supervision_Reference.html)
 
 ## Category
 
