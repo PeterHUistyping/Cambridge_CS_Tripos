@@ -6,9 +6,10 @@
 - Example sheets & Past papers
 - Online resources
   - wiki, similar courses globally
-- Related notes
+- Related
   - [A(S)Level-Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
   - [Supervision Reference](./Supervision_Reference.html)
+  - [Past Exam Papers @Cambridge](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
 
 ## Category
 
@@ -59,5 +60,4 @@
 ## See more
 
 - Related notes
-  - [Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
   - [Supervision Reference](./Supervision_Reference.md)
