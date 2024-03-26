@@ -10,6 +10,7 @@
   - [A(S)Level-Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
   - [Supervision Reference](./Supervision_Reference.html)
   - [Past Exam Papers @Cambridge](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
+  - [ExamTips](./Note/Tips.pdf)
 
 ## Category
 
@@ -41,6 +42,7 @@
 | 4-2 | [CFG Parser (Updated)](./Note/Parsing.pdf)                                      | table driven parsers breakdown<br />LL(k), SLR(1), LR(1)              | ✎ IB Compiler Construction<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
 | 4-3 | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)                       | a list of parsers key points.                                         | ✎ IB Compiler, Formal language<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
 | 4-4 | [CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)                        | Continuous Passing Style<br />Defunctionalization                     | ✓ Q[y17p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) <br />IB Compiler Construction                                                                               |
+
 
 ### Extra Notes
 
