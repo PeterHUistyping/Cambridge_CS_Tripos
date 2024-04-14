@@ -1,26 +1,23 @@
 # Computer Science Tripos
 
-## Source
+## Resource
 
-- Cambridge Lecture Notes & Textbooks
-- Example sheets & Past papers
-- Past Paper (Cambridge)
+- Cambridge Lecture Notes  & Example sheets  / Textbooks
+- [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
   - [Past Paper by Topics](./Past_Paper.html)
-  - [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
 - Online resources
   - wiki, similar courses globally
 - Related
-  - [Notes from A(S)Level to Paper1-9  @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
+  - [Notes for A(S)Level to CST ](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
+    - Source: @ashwinahuja
   - [Supervision Reference](./Supervision_Reference.html)
   - [ExamTips](./Note/Tips.pdf)
-
 
 ## Category
 
 - ✎ Lecture Note summary
 - ✓ Past Paper Questions
 - ■ Extra notes around the topics
-
 
 ## Notes
 
@@ -47,7 +44,6 @@
 | 4-3 | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)                       | a list of parsers key points.                                         | ✎ IB Compiler, Formal language<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
 | 4-4 | [CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)                        | Continuous Passing Style<br />Defunctionalization                     | ✓ Q[y17p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) <br />IB Compiler Construction                                                                               |
 
-
 ### Extra Notes
 
 7: CPS and Defunctionalization
@@ -68,5 +64,6 @@
   ```
 
 ## Related
+
 - [Past Paper by Topics](./Past_Paper.html)
 - [Supervision Reference](./Supervision_Reference.html)
