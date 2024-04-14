@@ -3,14 +3,15 @@
 *Great supervision materials available online for supplement,* including
 
 - ■ related / extra notes around the topics
-- ★ supervision work from expert supervisors
+- ★ supervision work assigned by supervisors
   - with detailed solutions for reference
-- ✓ course work from peers
+- ✓ course work done by peers
   - only for reference and with critical thinking
 
 ## General
-
+- [Past Paper by Topics](./Past_Paper.html)
 - ★ ■ Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
+
 
 ## IA
 
@@ -20,8 +21,8 @@
 ## IB
 
 - General
-  - ~~✓✓ Course work reference (2022) [@KyraZzz](https://github.com/KyraZzz/PartIB-coursework)~~
   - ✓ Course work reference (2015) [@Daniel Chatfield](https://github.com/danielchatfield/)
+  - ~~✓✓ Course work reference (2022) [@KyraZzz](https://github.com/KyraZzz/PartIB-coursework)~~
 - Data Science
   - ■ [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf)
     - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
@@ -43,14 +44,11 @@
 - Computation Theory
   - ★ Sheet with solutions [1](./Ref/IBCompTheory/exer_sols_1.pdf) [2](./Ref/IBCompTheory/exer_sols_2.pdf) [3](./Ref/IBCompTheory/exer_sols_3.pdf)
     - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
-  - ★ [Past Paper by topics](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf)
-    - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
+  <!-- - ★ [Past Paper by topics](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf)
+    - Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/) -->
   - ■ [Supplementary notes on decidability](./Ref/IBCompTheory/Notes-Decidability.pdf)
     - by Andrej Ivašković (ai294), 23rd August 2019
-- Complexity Theory
-  - ★ [Past Paper by topics](./Ref/IBComplexityTheory/Past%20Paper%20by%20Topics.pdf)
-    - Source: [@Dimitrios Los](https://dimitrioslos.com/sups/)
-
+  
 ## II
 
 TBD.

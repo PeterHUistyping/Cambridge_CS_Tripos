@@ -4,19 +4,23 @@
 
 - Cambridge Lecture Notes & Textbooks
 - Example sheets & Past papers
+- Past Paper (Cambridge)
+  - [Past Paper by Topics](./Past_Paper.html)
+  - [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
 - Online resources
   - wiki, similar courses globally
 - Related
-  - [A(S)Level-Paper1-9 Notes @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
+  - [Notes from A(S)Level to Paper1-9  @ashwinahuja](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
   - [Supervision Reference](./Supervision_Reference.html)
-  - [Past Exam Papers @Cambridge](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
   - [ExamTips](./Note/Tips.pdf)
+
 
 ## Category
 
 - ✎ Lecture Note summary
 - ✓ Past Paper Questions
 - ■ Extra notes around the topics
+
 
 ## Notes
 
@@ -63,7 +67,6 @@
   ID, PAIR1, PAIR2, FUNC
   ```
 
-## See more
-
-- Related notes
-  - [Supervision Reference](./Supervision_Reference.md)
+## Related
+- [Past Paper by Topics](./Past_Paper.html)
+- [Supervision Reference](./Supervision_Reference.html)
