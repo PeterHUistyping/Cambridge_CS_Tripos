@@ -9,7 +9,7 @@
   - wiki, similar courses globally
 - Related
   - [Notes for A(S)Level to CST ](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
-    - Source: @ashwinahuja
+    - Credit: @ashwinahuja
   - [Supervision Reference](./Supervision_Reference.html)
   - [ExamTips](./Note/Tips.pdf)
 
