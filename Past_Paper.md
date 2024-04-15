@@ -4,7 +4,7 @@ Past Paper by Topics
 
 ## IB
 
-- [Security](./Ref/PastPaper/Security.pdf)
+- ★ [Security](./Ref/PastPaper/Security.pdf)
   - Credit: [@Gyorgy Denes](https://gdenes.com/)
 - [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf) 
 - ★ [Computation Theory](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf)
