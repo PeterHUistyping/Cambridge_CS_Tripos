@@ -32,9 +32,8 @@ Paper 6
 - [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf)
 
 Paper 7
-
-- [AI](https://www.cl.cam.ac.uk/teaching/2324/ArtInt/materials.html)
-  - ★ Credit: Lecturer
+- [AI](./Ref/PastPaper/AI.pdf)
+  - Adapted from the Lecturer's [materials](https://www.cl.cam.ac.uk/teaching/2324/ArtInt/materials.html)
 - [Economics, Law and Ethics](./Ref/PastPaper/ELE.pdf)
 - Formal models of Language
 - [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf)
