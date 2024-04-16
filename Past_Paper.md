@@ -10,14 +10,14 @@ Paper 4
 - [Concepts in ProgLang](./Ref/PastPaper/ConceptsPL.pdf)
   - ★ Credit: Lecturer, 2021
 - [Prolog](./Ref/PastPaper/Prolog.pdf)
-- C and C++
+- [C and C++](./Ref/PastPaper/c_cpp.pdf)
 - [Security](./Ref/PastPaper/Security.pdf)
   - ★ Credit: [@Gyorgy Denes](https://gdenes.com/)
 
 Paper 5
 
 - [Computer Networking](./Ref/PastPaper/Networking.pdf)
-- Concurrent and Distributed System
+- [Concurrent](./Ref/PastPaper/Concurrent.pdf) and [Distributed](./Ref/PastPaper/Distributed.pdf) System
 - [Computer Architecture](./Ref/PastPaper/Arch.pdf)
   - Adapted from the Lecturer's Exercise Sheet
   
