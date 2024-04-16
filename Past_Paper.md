@@ -9,7 +9,7 @@ Paper 4
 - [Compiler Construction](./Ref/IBCompiler/Compiler.pdf)
 - [Concepts in ProgLang](./Ref/PastPaper/ConceptsPL.pdf)
   - ★ Credit: Lecturer, 2021
-- Prolog
+- [Prolog](./Ref/PastPaper/Prolog.pdf)
 - C and C++
 - [Security](./Ref/PastPaper/Security.pdf)
   - ★ Credit: [@Gyorgy Denes](https://gdenes.com/)
