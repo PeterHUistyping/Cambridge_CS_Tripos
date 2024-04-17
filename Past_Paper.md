@@ -19,7 +19,7 @@ Paper 5
 - [Computer Networking](./Ref/PastPaper/Networking.pdf)
 - [Concurrent](./Ref/PastPaper/Concurrent.pdf) and [Distributed](./Ref/PastPaper/Distributed.pdf) System
 - [Computer Architecture](./Ref/PastPaper/Arch.pdf)
-  - Adapted from the Lecturer's Exercise Sheet
+  - Adapted from the Lecturer's [Exercise Sheet](https://www.cl.cam.ac.uk/teaching/2324/IntComArch/materials.html)
   
 Paper 6
 
