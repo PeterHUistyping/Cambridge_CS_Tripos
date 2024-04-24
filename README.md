@@ -3,8 +3,7 @@
 ## Resource
 
 - Cambridge Lecture Notes  & Example sheets  / Textbooks
-- [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
-  - [Past Paper by Topics](./Past_Paper.html)
+- [Past Paper by Topics](./Past_Paper.html), [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
 - Online resources
   - wiki, similar courses globally
 - Related
