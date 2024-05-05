@@ -9,7 +9,7 @@ Paper 4
 - [Compiler Construction](./Ref/IBCompiler/Compiler.pdf)
 - [Concepts in ProgLang](./Ref/PastPaper/ConceptsPL.pdf)
   - ★ Credit: Lecturer, 2021
-- [Prolog](./Ref/PastPaper/Prolog.pdf)
+- [Prolog](./Ref/IBProlog/Prolog.pdf)
 - [C and C++](./Ref/PastPaper/c_cpp.pdf)
 - [Security](./Ref/PastPaper/Security.pdf)
   - ★ Credit: [@Gyorgy Denes](https://gdenes.com/)
@@ -27,7 +27,7 @@ Paper 6
   - ★ Credit: [@Dimitrios Los](https://dimitrioslos.com/sups/)
 - [Computation Theory](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf)
   - ★ Credit: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
-- Data Science
+- [Data Science](./Ref/IBDataSci/DataSci.pdf)
 - [Logic and Proof](./Ref/PastPaper/LogicProof.pdf)
 - [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf)
 
