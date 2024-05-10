@@ -18,7 +18,7 @@ Paper 5
 - [Concurrent](./Ref/PastPaper/Concurrent.pdf) and [Distributed](./Ref/PastPaper/Distributed.pdf) System
 - [Computer Architecture](./Ref/PastPaper/Arch.pdf)
   - Adapted from the Lecturer's [Exercise Sheet](https://www.cl.cam.ac.uk/teaching/2324/IntComArch/materials.html)
-  
+
 Paper 6
 
 - [Complexity Theory](./Ref/IBComplexityTheory/Past%20Paper%20by%20Topics.pdf)
@@ -30,9 +30,10 @@ Paper 6
 - [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf)
 
 Paper 7
+
 - [AI](./Ref/PastPaper/AI.pdf)
   - Adapted from the Lecturer's [materials](https://www.cl.cam.ac.uk/teaching/2324/ArtInt/materials.html)
 - [Economics, Law and Ethics](./Ref/PastPaper/ELE.pdf)
-- Formal models of Language
+- [Formal models of Language](./Ref/PastPaper/FormalLang.pdf)
 - [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf)
 - [Further HCI](./Ref/PastPaper/FHCI.pdf)
