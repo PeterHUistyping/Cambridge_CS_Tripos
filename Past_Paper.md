@@ -1,6 +1,4 @@
-# Past Paper
-
-Past Paper by Topics
+[Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
 ## IB
 
