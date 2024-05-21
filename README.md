@@ -41,26 +41,7 @@
 | 4-1 | [Formal Languages <br />and Automata](./Note/Formal%20Languages.pdf)             | Chomsky hierarchy<br />Reg ⇔ DFA<br />CFG ⇔ PDA<br />CSG/RE ⇔ TM | ✎ IA Discrete Math (Reg, DFA)<br />IB Compiler Construction (CFG)<br />IB Computation Theory (TM)<br />IB Formal Model of Language                                                          |
 | 4-2 | [CFG Parser (Updated)](./Note/Parsing.pdf)                                      | table driven parsers<br />LL(k), SLR(1), LR(1)                       | ✎ IB Compiler Construction<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
 | 4-3 | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)                       | a list of parsers key points.                                        | ✎ IB Compiler, Formal language<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
-| 4-4 | [CPS and Defun (Updated)](./Note/CPS-Defun-y2017p3q4.pdf)                        | Continuous Passing Style<br />Defunctionalization                    | ✓ Q[y17p23q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf) <br />IB Compiler Construction                                                                               |
-
-### Extra Notes
-
-7: CPS and Defunctionalization
-
-- Adapting recursive calls to iterative one, following the steps introduced by the Lecturer.
-
-  - Invariant for Continuous Passing Style.
-
-  ```
-  c (eval e)=eval_cps c e
-  ```
-
-  - ■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
-  - Defunctionalization
-
-  ```
-  ID, PAIR1, PAIR2, FUNC
-  ```
+| 4-4 | [Translation](./Note/Translation.pdf)                         | Continuous Passing Style<br />Defunctionalization to VM              | ✓ IB Compiler Construction<br />■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)                                                                                                        |
 
 ## Related
 
