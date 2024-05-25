@@ -1,36 +1,14 @@
 [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
-## IB
+### IB
 
-Paper 4
+| Paper 4                                             | Paper 5                                                                                          | Paper 6                                                                      | Paper 7                                        |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------- |
+| [Compiler Construction](./Ref/IBCompiler/Compiler.pdf) | [Computer Networking](./Ref/PastPaper/Networking.pdf)                                               | [Complexity Theory ★](./Ref/IBComplexityTheory/Past%20Paper%20by%20Topics.pdf) | [Artificial Intelligence](./Ref/PastPaper/AI.pdf) |
+| [Concepts in ProgLang](./Ref/PastPaper/ConceptsPL.pdf) | [Concurrent](./Ref/PastPaper/Concurrent.pdf) & [Distributed](./Ref/PastPaper/Distributed.pdf) System | [Computation Theory ★](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf) | [Economics, Law and Ethics](./Ref/PastPaper/ELE.pdf)         |
+| [Prolog](./Ref/IBProlog/Prolog.pdf)                    | [Computer Architecture](./Ref/PastPaper/Arch.pdf)                                                  | [Data Science](./Ref/IBDataSci/DataSci.pdf)                                | [Formal models of Language](./Ref/PastPaper/FormalLang.pdf)  |
+| [C and C++](./Ref/PastPaper/c_cpp.pdf)                 |                                                     | [Logic and Proof](./Ref/PastPaper/LogicProof.pdf)                          | [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf) |                                            |
+| [CyberSecurity ★](./Ref/PastPaper/Security.pdf)       |                          | [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf)                   | [Further HCI](./Ref/PastPaper/FHCI.pdf)                      |
 
-- [Compiler Construction](./Ref/IBCompiler/Compiler.pdf)
-- [Concepts in ProgLang](./Ref/PastPaper/ConceptsPL.pdf)
-- [Prolog](./Ref/IBProlog/Prolog.pdf)
-- [C and C++](./Ref/PastPaper/c_cpp.pdf)
-- [Security](./Ref/PastPaper/Security.pdf)
-  - ★ Credit: [@Gyorgy Denes](https://gdenes.com/)
 
-Paper 5
-
-- [Computer Networking](./Ref/PastPaper/Networking.pdf)
-- [Concurrent](./Ref/PastPaper/Concurrent.pdf) and [Distributed](./Ref/PastPaper/Distributed.pdf) System
-- [Computer Architecture](./Ref/PastPaper/Arch.pdf)
-
-Paper 6
-
-- [Complexity Theory](./Ref/IBComplexityTheory/Past%20Paper%20by%20Topics.pdf)
-  - ★ Credit: [@Dimitrios Los](https://dimitrioslos.com/sups/)
-- [Computation Theory](./Ref/IBCompTheory/Past%20Paper%20by%20Topics.pdf)
-  - ★ Credit: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
-- [Data Science](./Ref/IBDataSci/DataSci.pdf)
-- [Logic and Proof](./Ref/PastPaper/LogicProof.pdf)
-- [Semantics of ProgLang](./Ref/IBSemantics/Semantics.pdf)
-
-Paper 7
-
-- [AI](./Ref/PastPaper/AI.pdf)
-- [Economics, Law and Ethics](./Ref/PastPaper/ELE.pdf)
-- [Formal models of Language](./Ref/PastPaper/FormalLang.pdf)
-- [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf)
-- [Further HCI](./Ref/PastPaper/FHCI.pdf)
+- ★ Credit:  [@Gyorgy Denes](https://gdenes.com/), [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
