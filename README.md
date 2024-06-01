@@ -26,17 +26,17 @@
 
 | ID  | Notes                                                                         | Coverage                                               | Tripos                                                            |
 | --- | ----------------------------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------- |
-| 1   | [Relations and Functions](./Note/Relation_Function.pdf)                          | definition, properties and<br />relationship           | ✎ IA Discrete Math                                               |
+| 1   | [Relations and Functions](./Note/Relation_Function.pdf)                          | def, properties and<br />relationship                  | ✎ IA Discrete Math                                               |
 | 1-2 | [Standard Random Variables](./Note/Standard%20Random%20Variables.pdf)            | Discrete/Continuous RV<br />Joint/marginal probability | ✎ IA Intro to Probaility/NST Math<br />IB Data Science, etc      |
 | 1-3 | [Machine Learning](https://peterhuistyping.github.io/Machine_Learning_Guidance/) | Prob, Data Science, ML<br />Practical, Troubleshooting | IA Intro to Prob, MLRD<br />IB Data Science, AI<br />II MLBI, etc |
 
 ### Low-level (OS, Arch)
 
-| ID  | Notes                                                              | Coverage                                        | Tripos                                                                                                                                   |
-| --- | ------------------------------------------------------------------ | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI in<br />ProgLag-Compiler-OS-Arch | ✎IA Java - IB C/C++<br />IA OS - IB Arch (RISC)<br />✓ IB Compiler Construction<br />IB Concurrent System                              |
-| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache                       | ✎ IA OS<br />IB Computer Architecture<br />✓ MSI+Cacheline Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf) |
-| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff                                 | ■ IB Arch & II Ad Arch<br />IB Compiler Construction                                                                                    |
+| ID  | Notes                                                              | Coverage                  | Tripos                                                                                                                                   |
+| --- | ------------------------------------------------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI           | ✎IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC)<br />✓ IB Compiler Construction<br />IB Concurrent System                   |
+| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | ✎ IA OS<br />IB Computer Architecture<br />✓ MSI+Cacheline Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf) |
+| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff           | ■ IB Arch & II Ad Arch<br />IB Compiler Construction                                                                                    |
 
 ### Theories
 
@@ -50,12 +50,12 @@
 
 ### Languages
 
-| ID  | Notes                                                             | Coverage                                                             | Tripos                                                                                                                                                                                       |
-| --- | ----------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 4-1 | [Formal Languages <br />and Automata](./Note/Formal%20Languages.pdf) | Chomsky hierarchy<br />Reg ⇔ DFA<br />CFG ⇔ PDA<br />CSG/RE ⇔ TM | ✎ IA Discrete Math (Reg, DFA)<br />IB Compiler Construction (CFG)<br />IB Computation Theory (TM)<br />IB Formal Model of Language                                                          |
-| 4-2 | [CFG Parser ](./Note/Parsing.pdf)                                   | table driven parsers<br />LL(k), SLR(1), LR(1)                       | ✎ IB Compiler Construction<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
-| 4-3 | [Parsing Algorithms Outline](./Note/Parsing%20outline.pdf)           | a list of parsers key points.                                        | ✎ IB Compiler, Formal language<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
-| 4-4 | [Translation](./Note/Translation.pdf)                                | Continuous Passing Style<br />Defunctionalization to VM              | ✓ IB Compiler Construction<br />■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)                                                                                                        |
+| ID  | Notes                                                             | Coverage                                                                 | Tripos                                                                                                                                                                                       |
+| --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 4-1 | [Formal Languages <br />and Automata](./Note/Formal%20Languages.pdf) | Chomsky hierarchy<br />RegLang ⇔ DFA<br />CFG ⇔ PDA<br />CSG/RE ⇔ TM | ✎ IA Discrete Math (Reg, DFA)<br />IB Compiler Construction (CFG)<br />IB Computation Theory (TM)<br />IB Formal Model of Language                                                          |
+| 4-2 | [CFG Parser ](./Note/Parsing.pdf)                                   | table driven parsers<br />LL(k), SLR(1), LR(1)                           | ✎ IB Compiler Construction<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
+| 4-3 | [Parsing Algorithms](./Note/Parsing%20outline.pdf)                   | outline and key points                                                   | ✎ IB Compiler, Formal language<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
+| 4-4 | [Translation](./Note/Translation.pdf)                                | Continuous Passing Style<br />Defunctionalization to VM                  | ✓ IB Compiler Construction<br />■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)                                                                                                        |
 
 ## Related
 
