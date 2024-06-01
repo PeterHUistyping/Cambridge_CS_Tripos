@@ -2,29 +2,26 @@
 
 ## Resource
 
-- Cambridge Lecture Notes  & Example sheets  / Textbooks
+- Cambridge Lecture Notes & Example sheets  / Textbooks
 - [Past Paper by Topics](./Past_Paper.html)
-- Online resources
-  - wiki, similar courses globally
+- Online resources (Wiki, Open Course Ware)
 - Related
-  - [Notes for A(S)Level to CST ](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes), credit: @ashwinahuja
+  - [ALevel-CST_Tripos Notes](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes), credit: @ashwinahuja
   - [ExamTips](./Note/Tips.pdf)
-
-  <!-- - [Supervision Reference](./Supervision_Reference.html) -->
+  
+<!--  [Supervision Reference](./Supervision_Reference.html) -->
 
 ## Category
 
-- ✎ Lecture Note summary
-- ✓ Past Paper Questions
-- ■ Extra notes around the topics
+- ✎ Lecture Note summary, ✓ Past Paper Questions,  ■ Extra notes around the topics
 
 ## Notes [Updated]
 
-- Note with related Tripos courses > 1 is by nature *cross-disciplinary*.
+- Related Tripos courses > 1 is by nature *cross-disciplinary*
 
 ### Math / AI
 
-| ID  | Notes                                                                         | Coverage                                               | Tripos                                                            |
+| id  | name                                                                          | coverage                                               | Tripos                                                            |
 | --- | ----------------------------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------- |
 | 1   | [Relations and Functions](./Note/Relation_Function.pdf)                          | def, properties and<br />relationship                  | IA Discrete Math ✎                                              |
 | 1-2 | [Standard Random Variables](./Note/Standard%20Random%20Variables.pdf)            | Discrete/Continuous RV<br />Joint/marginal probability | IA Intro to Probaility/NST Math<br />IB Data Science, etc ✎     |
@@ -37,7 +34,7 @@
 
 ### Low-level (OS, Arch)
 
-| ID  | Notes                                                              | Coverage                  | Tripos                                                                                                                                        |
+| id  | name                                                               | coverage                  | Tripos                                                                                                                                        |
 | --- | ------------------------------------------------------------------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI            | IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC) ✎<br />IB Compiler Construction ✓<br />IB Concurrent System                     |
 | 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | IA OS ✎<br />IB Computer Architecture<br /> MSI+Cacheline ✓ Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)  |
@@ -45,7 +42,7 @@
 
 ### Theories
 
-| ID  | Notes                                                                    | Coverage                                       | Tripos                                                    |
+| id  | name                                                                     | coverage                                       | Tripos                                                    |
 | --- | ------------------------------------------------------------------------ | ---------------------------------------------- | --------------------------------------------------------- |
 | 3-1 | [Concurrency Control](./Note/Concurrency%20Control.pdf)                     | for single object<br /> and transactions       | IB Architecture (Mem ACID)<br />IB Concurrent System  ✎ |
 | 3-2 | [Clocks Broadcast Replication](./Note/Clocks%20Broadcast%20Replication.pdf) | causality, summary                            | IB Distributed, Network ✎✓                             |
@@ -61,7 +58,7 @@
 
 Languages and Automata, Compiler, Algorithm and Complexity
 
-| ID  | Notes                                                             | Coverage                                                                 | Tripos                                                                                                                                                                                        |
+| id  | name                                                              | coverage                                                                 | Tripos                                                                                                                                                                                        |
 | --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 4-1 | [Formal Languages <br />and Automata](./Note/Formal%20Languages.pdf) | Chomsky hierarchy<br />RegLang ⇔ DFA<br />CFG ⇔ PDA<br />CSG/RE ⇔ TM | IA Discrete Math (Reg, DFA) ✎<br />IB Compiler Construction (CFG)<br />IB Computation Theory (TM)<br />IB Formal Model of Language                                                          |
 | 4-2 | [Parsing Algorithms](./Note/Parsing%20outline.pdf)                   | outline and key points                                                   | IB Compiler, Formal language ✎<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
