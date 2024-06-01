@@ -40,15 +40,16 @@
 
 ### Theories
 
-| ID  | Notes                                                                    | Coverage                                       | Tripos                                                        |
-| --- | ------------------------------------------------------------------------ | ---------------------------------------------- | ------------------------------------------------------------- |
-| 3-1 | [Concurrency Control](./Note/Concurrency%20Control.pdf)                     | for single object<br /> and transactions       | IB Architecture (Mem ACID)<br />IB Concurrent System  ✎     |
-| 3-2 | [Clocks Broadcast Replication](./Note/Clocks%20Broadcast%20Replication.pdf) | causality, summary                            | IB Distributed, Network ✎✓                                 |
-| 3-3 | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)                     | five-layer OSI                                | IB Computer Networking                                        |
-| 3-4 | [Lists of Algorithms](./Note/Lists%20of%20Algorithms.pdf)                   | Algo, I/O, Complexity (NP)                    | IA Algorithm; IB Complexity<br />II Randomized Algo, etc ✎ |
-| 3-5 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎                 |
+| ID  | Notes                                                                    | Coverage                                       | Tripos                                                    |
+| --- | ------------------------------------------------------------------------ | ---------------------------------------------- | --------------------------------------------------------- |
+| 3-1 | [Concurrency Control](./Note/Concurrency%20Control.pdf)                     | for single object<br /> and transactions       | IB Architecture (Mem ACID)<br />IB Concurrent System  ✎ |
+| 3-2 | [Clocks Broadcast Replication](./Note/Clocks%20Broadcast%20Replication.pdf) | causality, summary                            | IB Distributed, Network ✎✓                             |
+| 3-3 | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)                     | five-layer OSI                                | IB Computer Networking                                    |
+| 3-4 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎             |
 
-### Languages
+#### Computation
+
+Languages and Automata, Compiler, Algorithm and Complexity
 
 | ID  | Notes                                                             | Coverage                                                                 | Tripos                                                                                                                                                                                        |
 | --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,6 +57,7 @@
 | 4-2 | [Parsing Algorithms](./Note/Parsing%20outline.pdf)                   | outline and key points                                                   | IB Compiler, Formal language ✎<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
 | 4-3 | [CFG Parser ](./Note/Parsing.pdf)                                   | table driven parsers<br />LL(k), SLR(1), LR(1)                           | IB Compiler Construction ✎<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
 | 4-4 | [Translation](./Note/Translation.pdf)                                | Continuous Passing Style<br />Defunctionalization to VM                  | ✓ IB Compiler Construction<br />■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)                                                                                                         |
+| 4-5 | [Algos & Complexity](./Note/Lists%20of%20Algorithms.pdf)         | P, NP, SPACE, etc                                                        | IA Algorithm; IB Complexity<br />II Randomized Algo, etc ✎                                                                                                                                 |
 
 ## Related
 
