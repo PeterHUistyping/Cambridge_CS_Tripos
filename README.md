@@ -7,10 +7,10 @@
 - Online resources
   - wiki, similar courses globally
 - Related
-  - [Notes for A(S)Level to CST ](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes)
-    - Credit: @ashwinahuja
-  - [Supervision Reference](./Supervision_Reference.html)
+  - [Notes for A(S)Level to CST ](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes), credit: @ashwinahuja
   - [ExamTips](./Note/Tips.pdf)
+
+  <!-- - [Supervision Reference](./Supervision_Reference.html) -->
 
 ## Category
 
@@ -30,6 +30,11 @@
 | 1-2 | [Standard Random Variables](./Note/Standard%20Random%20Variables.pdf)            | Discrete/Continuous RV<br />Joint/marginal probability | IA Intro to Probaility/NST Math<br />IB Data Science, etc ✎     |
 | 1-3 | [Machine Learning](https://peterhuistyping.github.io/Machine_Learning_Guidance/) | Prob, Data Science, ML<br />Practical, Troubleshooting | IA Intro to Prob, MLRD<br />IB Data Science, AI<br />II MLBI, etc |
 
+*Reference:*
+
+- Data Science
+  - [Confidence Interval](./Ref/IBDataSci/Confidence%20intervals.pdf). Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
+
 ### Low-level (OS, Arch)
 
 | ID  | Notes                                                              | Coverage                  | Tripos                                                                                                                                        |
@@ -47,6 +52,11 @@
 | 3-3 | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)                     | five-layer OSI                                | IB Computer Networking                                    |
 | 3-4 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎             |
 
+*Reference:*
+
+- Computer Networking
+  - [Course work reference (2015)](https://github.com/danielchatfield/cst1b-computer-networking), credit: [@Daniel Chatfield](https://github.com/danielchatfield/)
+
 #### Computation
 
 Languages and Automata, Compiler, Algorithm and Complexity
@@ -57,9 +67,29 @@ Languages and Automata, Compiler, Algorithm and Complexity
 | 4-2 | [Parsing Algorithms](./Note/Parsing%20outline.pdf)                   | outline and key points                                                   | IB Compiler, Formal language ✎<br />   ✓ Q[y20p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf)                                                                         |
 | 4-3 | [CFG Parser ](./Note/Parsing.pdf)                                   | table driven parsers<br />LL(k), SLR(1), LR(1)                           | IB Compiler Construction ✎<br />✓ Q [y15p3q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf), [21p4q4](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf), etc |
 | 4-4 | [Translation](./Note/Translation.pdf)                                | Continuous Passing Style<br />Defunctionalization to VM                  | ✓ IB Compiler Construction<br />■ [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)                                                                                                         |
-| 4-5 | [Algos & Complexity](./Note/Lists%20of%20Algorithms.pdf)         | P, NP, SPACE, etc                                                        | IA Algorithm; IB Complexity<br />II Randomized Algo, etc ✎                                                                                                                                 |
+| 4-5 | [Algos &amp; Complexity](./Note/Lists%20of%20Algorithms.pdf)         | P, NP, SPACE, etc                                                        | IA Algorithm; IB Complexity<br />II Randomized Algo, etc ✎                                                                                                                                 |
+
+*Reference:*
+
+- Compiler Construction
+  - [(S)LR @ Stanford CS143](./Ref/IBCompiler/LR%20and%20SLR%20Parsing.pdf); [CPS @ CS6110-Ad_ProgLang](./Ref/IBCompiler/CPS.pdf)
+- Computation Theory
+  - Supervision Sheet with solutions [1](./Ref/IBCompTheory/exer_sols_1.pdf) [2](./Ref/IBCompTheory/exer_sols_2.pdf) [3](./Ref/IBCompTheory/exer_sols_3.pdf). Source: [@Dimitrios Los](https://dimitrioslos.com/supervisions/)
+  - [Supplementary notes on decidability](./Ref/IBCompTheory/Notes-Decidability.pdf)
+    - by Andrej Ivašković (ai294), 23rd August 2019
+
+#### ProgLang
+
+- Prolog
+  - Extra: [Prolog 99 Problems](./Ref/IBProlog/P-99_Ninety-Nine%20Prolog%20Problems.pdf)
+  - Solutions: [First 12 Problems](https://github.com/danielchatfield/prolog-99-problems), credit: [@Daniel Chatfield](https://github.com/danielchatfield/)
+- Semantics
+  - [Evaluation Contexts @ CS6110-Ad_ProgLang](./Ref/IBSemantics/Evaluation%20Contexts.pdf)
+    - `E[·]` Concise way to write context rule.
+    - Lectured and examined [y2022p4q9](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q9.pdf)
 
 ## Related
 
 - [Past Paper by Topics](./Past_Paper.html)
-- [Supervision Reference](./Supervision_Reference.html)
+- [Supervision materials](https://dimitrioslos.com/supervisions/), credit: [@Dimitrios Los](https://dimitrioslos.com/academic.html)
+- [Course work reference (2015)](https://github.com/danielchatfield/), credit: [@Daniel Chatfield](https://github.com/danielchatfield/)
