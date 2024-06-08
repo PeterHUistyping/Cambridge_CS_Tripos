@@ -1,8 +1,8 @@
 [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
-### IA | Paper 1-3
+#### IA | Paper 1-3
 
-### IB | 2024
+#### IB | 2024
 
 | Paper 4                                                | Paper 5                                                                                         | Paper 6                                                   | Paper 7                                                     |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- |
@@ -12,7 +12,7 @@
 | [C and C++](./Ref/PastPaper/IB/c_cpp.pdf)                 |                                                                                                 | [Logic and Proof](./Ref/PastPaper/IB/LogicProof.pdf)         | [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf)   |
 | [CyberSecurity](./Ref/PastPaper/IB/CyberSec.pdf)          |                                                                                                 | [Semantics ProgLang](./Ref/IBSemantics/Semantics.pdf)        | [Further HCI](./Ref/PastPaper/IB/FHCI.pdf)                     |
 
-### II | Paper 8-9
+#### II | Paper 8-9
 
 | - |                               |                         |                          |
 | - | ----------------------------- | ----------------------- | ------------------------ |
