@@ -1,5 +1,7 @@
 [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
+### IA | Paper 1-3
+
 ### IB | 2024
 
 | Paper 4                                                | Paper 5                                                                                         | Paper 6                                                   | Paper 7                                                     |
@@ -10,14 +12,12 @@
 | [C and C++](./Ref/PastPaper/IB/c_cpp.pdf)                 |                                                                                                 | [Logic and Proof](./Ref/PastPaper/IB/LogicProof.pdf)         | [Further Graphics](./Ref/IBFGraphics/Further%20Graphics.pdf)   |
 | [CyberSecurity](./Ref/PastPaper/IB/CyberSec.pdf)          |                                                                                                 | [Semantics ProgLang](./Ref/IBSemantics/Semantics.pdf)        | [Further HCI](./Ref/PastPaper/IB/FHCI.pdf)                     |
 
-### II | 2025
+### II | Paper 8-9
 
-| M                                  | L                                          | E                              |
-| ---------------------------------- | ------------------------------------------ | ------------------------------ |
-| Bioinformatics                     | Ad Computer Architecture                   | Hoare Logic &<br />Model Check |
-| Denotational <br />Semantics       | Cryptography                               |                                |
-| Information Theory                 | Machine Learning &<br />Bayesian Inference |                                |
-| Principles of <br />Communications | Optimising Compilers                       |                                |
-| Types                              | Quantum Computing                          |                                |
-| Business Studies                   | Randomised Algorithms                      |                                |
-| HCI                                | E-Commerce                                 |                                |
+| - |                               |                         |                          |
+| - | ----------------------------- | ----------------------- | ------------------------ |
+| M | Information Theory            | Denotational Semantics | Bioinformatics           |
+|   | Principles of Communications | Types                   | Business Studies         |
+| L | Optimising Compiler           | Quantum Computing       | Randomised Algorithms    |
+|   | Ad Computer Architecture      | Cryptography            | ML & Bayesian Inference |
+| E | Hoare Logic & Model Check    |                         | E-Commerce               |
