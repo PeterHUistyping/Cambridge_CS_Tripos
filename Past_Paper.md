@@ -17,7 +17,7 @@
 | - |                                                                     |                                                   |                                                         |
 | - | ------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
 | M | [Information Theory](./Ref/PastPaper/II/informationTheory.html)        | [Bioinformatics](./Ref/PastPaper/II/bioInfo.html)    | [Business Studies](./Ref/PastPaper/II/business.html)       |
-|   | [Principles of Communications](./Ref/PastPaper/II/PrinciplesCom.html) | ~~Denotational Semantics~~                      | ~~Types~~                                              |
+|   | [Principles of Communications](./Ref/PastPaper/II/principlesCom.html) | ~~Denotational Semantics~~                      | ~~Types~~                                              |
 | L | [Optimising Compiler](./Ref/PastPaper/II/optCompiler.html)             | [Quantum Computing](./Ref/PastPaper/II/quantum.html) | [Ad Computer Architecture](./Ref/PastPaper/II/adArch.html) |
 |   | ~~Randomised Algorithms~~                                          | ~~Cryptography~~                                 | ~~ML & Bayesian Inference~~                           |
 | E | [Hoare Logic, Model Checking](./Ref/PastPaper/II/HLMC.html)            |                                                   | [E-Commerce](./Ref/PastPaper/II/eCommerce.html)                                             |
