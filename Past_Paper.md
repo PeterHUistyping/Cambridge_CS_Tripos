@@ -18,6 +18,6 @@
 | - | ----------------------------- | ----------------------- | ------------------------ |
 | M | Information Theory            | Denotational Semantics | Bioinformatics           |
 |   | Principles of Communications | Types                   | Business Studies         |
-| L | Optimising Compiler           | Quantum Computing       | Randomised Algorithms    |
+| L | Optimising Compiler           | [Quantum Computing](./Ref/PastPaper/II/quantum.html)       | Randomised Algorithms    |
 |   | Ad Computer Architecture      | Cryptography            | ML & Bayesian Inference |
 | E | Hoare Logic & Model Check    |                         | E-Commerce               |
