@@ -14,10 +14,10 @@
 
 #### II | Paper 8-9
 
-| - |                               |                         |                          |
-| - | ----------------------------- | ----------------------- | ------------------------ |
-| M | Information Theory            | Denotational Semantics | Bioinformatics           |
-|   | Principles of Communications | Types                   | Business Studies         |
-| L | Optimising Compiler           | [Quantum Computing](./Ref/PastPaper/II/quantum.html)       | Randomised Algorithms    |
-|   | Ad Computer Architecture      | Cryptography            | ML & Bayesian Inference |
-| E | Hoare Logic & Model Check    |                         | E-Commerce               |
+| - |                                                                     |                                                   |                                                         |
+| - | ------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
+| M | [Information Theory](./Ref/PastPaper/II/informationTheory.html)        | [Bioinformatics](./Ref/PastPaper/II/bioInfo.html)    | [Business Studies](./Ref/PastPaper/II/business.html)       |
+|   | [Principles of Communications](./Ref/PastPaper/II/PrinciplesCom.html) | ~~Denotational Semantics~~                      | ~~Types~~                                              |
+| L | [Optimising Compiler](./Ref/PastPaper/II/optCompiler.html)             | [Quantum Computing](./Ref/PastPaper/II/quantum.html) | [Ad Computer Architecture](./Ref/PastPaper/II/adArch.html) |
+|   | ~~Randomised Algorithms~~                                          | ~~Cryptography~~                                 | ~~ML & Bayesian Inference~~                           |
+| E | [Hoare Logic, Model Checking](./Ref/PastPaper/II/HLMC.html)            |                                                   | [E-Commerce](./Ref/PastPaper/II/eCommerce.html)                                             |
