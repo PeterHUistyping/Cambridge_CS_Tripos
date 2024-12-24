@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Unreachable code elimination</title>
+            <title>Control-flow</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -139,27 +139,72 @@
         </head>
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-OptimisingCompilers.html">Optimising Compilers</a> Past Paper</p>
-<h2 id="unreachable-code-elimination">Unreachable code elimination</h2>
-<h2 id="live-range-analysis">Live range analysis</h2>
-<h2 id="available-expression-analysis">Available expression analysis</h2>
-<h2 id="data-flow-and-clash-graph">Data-flow and clash graph</h2>
+<h2 id="control-flow">Control-flow</h2>
+<h3 id="unreachable-code-elimination">Unreachable code elimination</h3>
+<p>Reachability, control-flow property: will the control reach here?</p>
+<p>Call graph</p>
+<h2 id="data-flow-framework">Data-flow framework</h2>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (a, c-d)</a>
+<ul>
+<li>constant propagation</li>
+</ul>
+</li>
+</ul>
+<h3 id="live-variable-analysis-lva">Live variable analysis (LVA)</h3>
+<p>Liveness, data-flow property: will the value be used <strong>later</strong>?</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (a-b)</a></li>
+</ul>
+<p>Dead code elimination</p>
+<p>Uninitialised variable</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (c)</a></li>
+</ul>
+<p>Clash / interference graph</p>
+<h3 id="available-expression-analysis-avail">Available expression analysis (AVAIL)</h3>
+<p>Availability, data-flow property: will the value be assigned <strong>before</strong>?</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (c)</a></li>
+</ul>
+<p><em>Redundancy elimination</em></p>
+<p>Common sub-expression elimination</p>
+<p>Copy propagation</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (d.e.)</a></li>
+</ul>
+<p>Code motion optimisation</p>
 <h2 id="register-allocation">Register allocation</h2>
-<p>Also see <em>Register allocation vs Instruction scheduling</em>.</p>
-<h2 id="redundancy-elimination">Redundancy elimination</h2>
-<h2 id="static-single-assignment-ssa-and-strength-reduction">Static Single Assignment (SSA) and Strength reduction</h2>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (d-e)</a></li>
+</ul>
+<h3 id="static-single-assignment-ssa-and-strength-reduction">Static single assignment (SSA) and Strength reduction</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12</a>
 <ul>
 <li>static single assignment, dominance</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (c)</a>
+<ul>
+<li>SSA form, register allocation and instruction scheduling</li>
 </ul>
-<h2 id="abstract-interpretation">Abstract interpretation</h2>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (e)</a></li>
+</ul>
+<h2 id="higher-level-opt">Higher-level opt</h2>
+<h3 id="abstract-interpretation">Abstract interpretation</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q11.pdf">y2018p9q11</a></li>
+</ul>
 <p>Strictness analysis</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q12.pdf">y2021p8q12</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q9.pdf">y2016p9q9</a></li>
 </ul>
-<h2 id="constraint-based-analysis-0cfa">Constraint-based analysis (0CFA)</h2>
+<h3 id="constraint-based-analysis-0cfa">Constraint-based analysis (0CFA)</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q9.pdf">y2022p8q9</a>
 <ul>
@@ -167,7 +212,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="inference-based-analysis">Inference-based analysis</h2>
+<h3 id="inference-based-analysis">Inference-based analysis</h3>
 <p>Effect system</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q12.pdf">y2020p8q12</a>
@@ -176,19 +221,23 @@
 </ul>
 </li>
 </ul>
-<h2 id="alias-and-points-to-analysis">Alias and points-to analysis</h2>
+<h3 id="alias-and-points-to-analysis">Alias and points-to analysis</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q11.pdf">y2019p8q11</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (b)</a></li>
 </ul>
 <h2 id="instruction-scheduling">Instruction scheduling</h2>
-<p>Also see <em>Register allocation vs Instruction scheduling</em>.</p>
-<h2 id="register-allocation-vs-instruction-scheduling">Register allocation vs Instruction scheduling</h2>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q12.pdf">y2017p7q12</a></li>
+</ul>
+<h3 id="register-allocation-vs-instruction-scheduling">Register allocation vs instruction scheduling</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q9.pdf">y2022p9q9</a>
 <ul>
 <li>Register allocation, instruction scheduling, optimisation</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (b,c)</a></li>
 </ul>
 <h2 id="decompilation">Decompilation</h2>
 <ul>
@@ -197,6 +246,15 @@
 <li>static single assignment, dominance</li>
 </ul>
 </li>
+</ul>
+<h2 id="general-opt">General opt</h2>
+<p>Phase ordering</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (a)</a></li>
+</ul>
+<p>General optimisations</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q12.pdf">y2020p9q12</a></li>
 </ul>
 
             
