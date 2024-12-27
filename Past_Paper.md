@@ -1,12 +1,15 @@
 [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
-The math mode for the below web version is rendered by [KaTeX](https://katex.org/).
+The math mode for the below web version is rendered by [KaTeX](https://katex.org/). <br/>
+For mobile users, suggest viewing it *horizontally*.
 
 #### IA | 2223
 
-Paper 1-3
+[Paper 1-3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/)
 
 #### IB | 2324
+
+web ; pdf version
 
 | Paper 4                                                                                         | Paper 5                                                                                           | Paper 6                                                                                                  | Paper 7                                                                                                 |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -18,9 +21,9 @@ Paper 1-3
 
 #### II | 2425
 
-Suggestions: save as PDF via web browser or view it *horizontally* in mobile.
+web ; for pdf version : suggest saving as PDF via web browser.
 
-|   |                                                                     | Paper 8-9                                         |                                                         |
+|   |                                                                     | Paper 8-9 (selected)                                         |                                                         |
 | - | ------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
 | M | [Information Theory](./Ref/PastPaper/II/informationTheory.html)        | [Bioinformatics](./Ref/PastPaper/II/bioInfo.html)    | [Business Studies](./Ref/PastPaper/II/business.html)       |
 |   | [Principles of Communications](./Ref/PastPaper/II/principlesCom.html) | ~~*Denotational Semantics*~~                  | ~~*Types*~~                                          |
