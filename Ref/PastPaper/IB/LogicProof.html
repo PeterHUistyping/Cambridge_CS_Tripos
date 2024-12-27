@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Proof System</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-LogicandProof.html">Logic and Proof</a> Past Paper</p>
+<h2 id="proof-system">Proof System</h2>
+<p>Give a valid proof/model or a falsifying interpretation, a unsatisfiable proof/model or a satisfying interpretation</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p6q6.pdf">y2012p6q6 (a)</a>
+<ul>
+<li>Comparison using three methods</li>
+<li>the quantifier steps leave free variables, which must be fresh;</li>
+<li>otherwise, the same variables in both branches with different instantiation is wrong.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p6q9.pdf">y2007p6q9</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p4q5.pdf">y2008p4q5 (a)</a>
+<ul>
+<li>satisfiable, valid or neither</li>
+</ul>
+</li>
+</ul>
+<h3 id="herbrand-universe">Herbrand universe</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q9.pdf">y2006p6q9 (b)</a>
+<ul>
+<li>factoring, unification</li>
+</ul>
+</li>
+</ul>
+<h3 id="unification">Unification</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p6q6.pdf">y2011p6q6 (a)</a>
+<ul>
+<li>9 cases, occur check</li>
+</ul>
+</li>
+</ul>
+<h3 id="decision-procedures-smt">Decision Procedures, SMT</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p6q6.pdf">y2016p6q6 (a,b)</a>
+<ul>
+<li>Fourier-Motzkin Variable Elimination
+<ul>
+<li>Eliminate variables in succession by combining the lower / upper bound.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="modal-logic">Modal Logic</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p6q7.pdf">y2009p6q7</a>
+<ul>
+<li>modal frame</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p6q7.pdf">y2023p6q7 (b)</a>
+<ul>
+<li>SAT, satisfy simultaneously at a particular world or proof not.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p5q9.pdf">y2006p5q9 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p6q6.pdf">y2015p6q6 (b.iii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p6q6.pdf">y2011p6q6 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p6q10.pdf">y2021p6q10 (d)</a>
+<ul>
+<li>S4 vs S5, accessibility relations <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi mathvariant="normal">□</mi><mo>⋄</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">B: A → \square \diamond A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.675em;"></span><span class="mord amsrm">□</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋄</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<h5 id="falsifying-interpretation">Falsifying interpretation</h5>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p6q10.pdf">y2020p6q10 (c.i)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p6q10.pdf">y2019p6q10 (b.iii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p6q6.pdf">y2012p6q6 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p6q7.pdf">y2009p6q7 (c.iii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p5q9.pdf">y2007p5q9 (c)</a>
+<ul>
+<li>S4</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-sequent-calculus">1. Sequent Calculus</h3>
+<p>Apply <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∀</mi><mo separator="true">,</mo><mi mathvariant="normal">□</mi><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\forall, \square r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">∀</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord amsrm">□</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∃</mi><mo separator="true">,</mo><mo>⋄</mo><mi>l</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\exists, \diamond l)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">∃</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">⋄</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mclose">)</span></span></span></span> first</p>
+<ul>
+<li>
+<p>check <em>not</em> free variables in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Gamma,\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">Γ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span></span></span></span></p>
+</li>
+<li>
+<p>no substitution needed to avoid introducing free variables</p>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p6q6.pdf">y2010p6q6 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p6q6.pdf">y2017p6q6 (b,c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p6q10.pdf">y2021p6q10 (a,b)</a></p>
+<ul>
+<li>Mysterious propositional connective</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p6q10.pdf">y2020p6q10 (c.ii,iii)</a></p>
+</li>
+</ul>
+<h4 id="free-variable-tableau">[Free-variable] Tableau</h4>
+<p>Negate; then convert to NNF + Skolem</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p6q9.pdf">y2022p6q9 (c)</a>
+<ul>
+<li>Valid Proof or Falsify</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>Sequent Calculus / Tableau</strong></em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p6q6.pdf">y2010p6q6 (a)</a>
+<ul>
+<li>Typo in question (see sols)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p6q6.pdf">y2015p6q6 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p6q10.pdf">y2019p6q10 (b i,ii)</a>
+<ul>
+<li>Free-variable Tableau</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-clause-methods">2. Clause methods</h3>
+<p>For set of formulas,</p>
+<p>With <strong>negation</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi></mrow><annotation encoding="application/x-tex">\neg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">¬</span></span></span></span>,</p>
+<ul>
+<li>the empty clause means that the formula is <strong>valid theorem</strong>.
+<ul>
+<li>Proof by contradiction</li>
+</ul>
+</li>
+<li>otherwise, falsifying interpretations. (DPLL)</li>
+</ul>
+<p><em>Without</em> negation,</p>
+<ul>
+<li>the empty clause means that the formula is <em>unsatisfiable</em>.</li>
+<li>otherwise, satisfying interpretations. (DPLL)</li>
+</ul>
+<p>then convert to clause form CNF, Skolem for first-order <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mo separator="true">,</mo><mi mathvariant="normal">∃</mi></mrow><annotation encoding="application/x-tex">\forall, \exists</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">∀</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∃</span></span></span></span>.</p>
+<h4 id="21-resolution">2.1 Resolution</h4>
+<ul>
+<li>complete for first-order logic</li>
+<li>Unification (simply) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>→</mo><mi>a</mi><mo separator="true">,</mo><mo stretchy="false">[</mo><mi>a</mi><mi mathvariant="normal">/</mi><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">x_1 \rightarrow a , [a/x_1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">[</span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></li>
+<li>Generate new clauses (saturation)</li>
+</ul>
+<h5 id="set-of-formulas">Set of Formulas</h5>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p6q8.pdf">y2023p6q8</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p6q10.pdf">y2019p6q10 (a)</a>
+<ul>
+<li><em>negate</em> + Skolem</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2005p5q9.pdf">y2005p5q9 (a)</a></li>
+</ul>
+<h5 id="set-of-clauses">Set of clauses</h5>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p6q10.pdf">y2022p6q10 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2005p5q9.pdf">y2005p5q9 (b,c)</a></li>
+</ul>
+<h4 id="22-dpll">2.2 DPLL</h4>
+<ul>
+<li>
+<p>only works in propositional logic</p>
+</li>
+<li>
+<p>decision procedure</p>
+</li>
+<li>
+<p>instantiate variables in clauses</p>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p6q10.pdf">y2018p6q10 (a)</a></p>
+<ul>
+<li>def</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p6q10.pdf">y2020p6q10 (a,b)</a></p>
+<ul>
+<li>time complexity</li>
+</ul>
+</li>
+</ul>
+<h5 id="set-of-clauses-1">Set of clauses</h5>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p6q6.pdf">y2010p6q6 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p6q10.pdf">y2018p6q10 (b)</a>
+<ul>
+<li>case split when no unit clause or pure literal</li>
+</ul>
+</li>
+</ul>
+<h5 id="set-of-formulas-1">Set of Formulas</h5>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p6q10.pdf">y2021p6q10 (c)</a>
+<ul>
+<li>satisfying interpretations</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p3q6.pdf">y2008p3q6</a>
+<ul>
+<li>consistent</li>
+</ul>
+</li>
+</ul>
+<h4 id="23-general-clause-methods">2.3 General clause methods</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p6q5.pdf">y2016p6q5</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p6q9.pdf">y2020p6q9 (c)</a></li>
+</ul>
+<h4 id="24-others">2.4 Others</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p6q9.pdf">y2022p6q9 (b)</a>
+<ul>
+<li>adding a clause</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p6q9.pdf">y2019p6q9 (a)</a>
+<ul>
+<li>SAT solver, Error Analysis</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p6q9.pdf">y2020p6q9 (a,b)</a>
+<ul>
+<li>Error analysis</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p6q10.pdf">y2022p6q10 (a)</a>
+<ul>
+<li>DPLL vs Resolution</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-bdd">3. BDD</h3>
+<p>represents the truth table of a propositional formula by binary decisions, but is a directed graph, sharing identical subtrees.</p>
+<h5 id="procedure-for-converting-a-formula-to-a-bdd">Procedure for converting a formula to a BDD</h5>
+<p>Case split recursively on node + boolean simplification over connectives on two sub-BDDs.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p6q6.pdf">y2012p6q6 (c)</a>
+<ul>
+<li>conjunction over two sub-BDDs</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p6q5.pdf">y2014p6q5 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p6q10.pdf">y2018p6q10 (c)</a>
+<ul>
+<li>disjunction over two sub-BDDs</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p6q6.pdf">y2016p6q6 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p6q9.pdf">y2019p6q9 (b)</a>
+<ul>
+<li>implication over two sub-BDDs</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p6q6.pdf">y2017p6q6 (a)</a>
+<ul>
+<li>identify logically equivalent</li>
+</ul>
+</li>
+</ul>
+<h3 id="comparison">Comparison</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p6q5.pdf">y2014p6q5 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p6q9.pdf">y2022p6q9 (a)</a>
+<ul>
+<li>DPLL vs BDD</li>
+<li>BDD: implication, xor</li>
+</ul>
+</li>
+</ul>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>0&period; Network and Architecture</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-ComputerNetworking.html">Computer Networking</a> Past Paper</p>
+<h3 id="0-network-and-architecture">0. Network and Architecture</h3>
+<h4 id="switching">Switching</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q6.pdf">y2019p5q6 (a)</a>
+<ul>
+<li>multiplexing in five layers</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q6.pdf">y2016p5q6 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q5.pdf">y2018p5q5 (a)</a>
+<ul>
+<li>Packet switching and Circuit switching</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q5.pdf">y2019p5q5 (a)</a>
+<ul>
+<li>marshalling taking up transmission time vs propagation delay</li>
+<li>TDM</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q4.pdf">y2017p5q4 (b)</a>
+<ul>
+<li>queueing, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∝</mo></mrow><annotation encoding="application/x-tex">\propto</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mrel">∝</span></span></span></span> contention, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>2</mn><mi>T</mi><mo>×</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">B=2T×C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span></li>
+<li>processing, unusual packets, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\approx0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4831em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></li>
+<li>transmission, the capacity of the link, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo stretchy="false">(</mo><mi>p</mi><mi>k</mi><mi>g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">size(pkg)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ze</span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span></span></span></span>/Exception</li>
+<li>propagation, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∝</mo></mrow><annotation encoding="application/x-tex">\propto</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mrel">∝</span></span></span></span> distance, WAN</li>
+</ul>
+</li>
+</ul>
+<h4 id="architecture">Architecture</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q4.pdf">y2017p5q4 (a)</a>
+<ul>
+<li>hop-by-hop vs end-to-end, encryption</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-physical-layer">1. Physical Layer</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q5.pdf">y2014p5q5 (b)</a>
+<ul>
+<li>Queueing</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p5q4.pdf">y2013p5q4 (a)</a>
+<ul>
+<li>Coding</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q5.pdf">y2019p5q5 (b,c)</a>
+<ul>
+<li>Coding, multilevel encoding</li>
+<li>Error Correction, redundancy and FEC</li>
+<li>CDMA, chipping / gold code</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-data-link-layer">2. Data Link Layer</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p5q4.pdf">y2013p5q4 (b)</a>
+<ul>
+<li>CSMA/CD, CSMA/CA</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q6.pdf">y2021p5q6 (b)</a>
+<ul>
+<li>CDMA, CSMA/CA, VLAN</li>
+</ul>
+</li>
+</ul>
+<h4 id="switches">Switches</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q4.pdf">y2021p5q4</a>
+<ul>
+<li>Topology, Forwarding table, Troubleshooting</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q4.pdf">y2020p5q4</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p5q3.pdf">y2023p5q3 (a)(i,ii)</a>
+<ul>
+<li>Spanning Tree</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-network-layer">3. Network Layer</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q5.pdf">y2020p5q5</a>
+<ul>
+<li>fault finding</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q6.pdf">y2020p5q6</a>
+<ul>
+<li>DHCP, ARP</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q5.pdf">y2021p5q5</a>
+<ul>
+<li>ICMP, topology, ping, trace-route, whole-system debugging</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q5.pdf">y2018p5q5 (c)</a>
+<ul>
+<li>subnet</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q6.pdf">y2021p5q6 (a)</a>
+<ul>
+<li>subnet and IPv6</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q5.pdf">y2016p5q5 (a)</a>
+<ul>
+<li>IPv6 address</li>
+<li>IPv4 vs IPv6, DHCP vs SLAAC</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p5q3.pdf">y2023p5q3 (b)</a>
+<ul>
+<li>IP Troubleshooting</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q5.pdf">y2017p5q5 (b ii,iii)</a>
+<ul>
+<li>Fault finding, Classless Inter-Domain Routing, trace-route</li>
+</ul>
+</li>
+</ul>
+<h4 id="routers">Routers</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q6.pdf">y2018p5q6 （a,b)</a>
+<ul>
+<li>a switch vs router</li>
+<li>distance-vector</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q5.pdf">y2017p5q5 (a)</a>
+<ul>
+<li>Router Control vs Data Panel (line-card)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p5q1.pdf">y2022p5q1</a>
+<ul>
+<li>shortest path in a satellite network</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p5q3.pdf">y2023p5q3 (a)(iii,iv)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q5.pdf">y2018p5q5 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q4.pdf">y2014p5q4</a>
+<ul>
+<li>Link-state vs Distance Vector protocol</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-transport-layer">4. Transport Layer</h3>
+<h4 id="reliable-data-transfer">Reliable Data Transfer</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p5q5.pdf">y2011p5q5</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q6.pdf">y2014p5q6</a>
+<ul>
+<li>FSM</li>
+</ul>
+</li>
+</ul>
+<h4 id="udpquic-tcp">UDP(QUIC), TCP</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p5q3.pdf">y2022p5q3 (a,b)</a>,  <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p5q7.pdf">y2009p5q7 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q6.pdf">y2017p5q6</a>
+<ul>
+<li>Flow-control and Congestion-control</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q4.pdf">y2019p5q4</a>
+<ul>
+<li>TCP, ARQ; QUIC</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p5q2.pdf">y2022p5q2</a>
+<ul>
+<li>TCP; QUIC</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q6.pdf">y2016p5q6 (b)</a>
+<ul>
+<li>TCP retransmission timeout</li>
+<li>Exponential Average (EWMA filter), Jacobson/Karels Algorithm</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q6.pdf">y2018p5q6 （c-e)</a>
+<ul>
+<li>TCP, Karn-Partridge algorithm</li>
+<li>Max-min fairness, limitations(cheat)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q5.pdf">y2017p5q5 (b i)</a>
+<ul>
+<li>Fault finding, TCP</li>
+</ul>
+</li>
+</ul>
+<h4 id="network-buffers">Network buffers</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p5q4.pdf">y2013p5q4 (c)</a>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>2</mn><mi>T</mi><mo>×</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">B = 2T × C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>, assumptions</li>
+<li>Reference: <a href="http://yuba.stanford.edu/~nbehesht/mythesis-Dec2009/Chapter2-BuerSizingRules.pdf">Buffer Size Rule, Stanford</a>, <a href="https://grubdragon.github.io/CS-224-Lectures/lec/lec11.html">Note on Buffer size BDP</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="5-application-layer">5. Application Layer</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q5.pdf">y2014p5q5 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q6.pdf">y2019p5q6 (b,c)</a>
+<ul>
+<li>DNS</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q4.pdf">y2016p5q4 (a)</a>
+<ul>
+<li>HTTP, Connections, latency, RTT, bandwidth,</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p5q5.pdf">y2013p5q5</a>
+<ul>
+<li>Cache, CDN</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p5q3.pdf">y2022p5q3 (c,d)</a>
+<ul>
+<li>Cache</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q4.pdf">y2016p5q4 (b)</a>
+<ul>
+<li>conditional GET</li>
+</ul>
+</li>
+</ul>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

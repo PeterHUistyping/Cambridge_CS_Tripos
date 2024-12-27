@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Lecture 1 Intro</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-IntroductiontoComputerArchitecture.html">Introduction to Computer Architecture</a> Past Paper</p>
+<ul>
+<li>Adapted from the Lecturer's <a href="https://www.cl.cam.ac.uk/teaching/2324/IntComArch/materials.html">Exercise Sheet</a> selections.</li>
+</ul>
+<h3 id="lecture-1-intro">Lecture 1 Intro</h3>
+<p>Moore’s law and Dennard scaling</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p5q2.pdf">y2010p5q2 (a,b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q1.pdf">y2021p5q1 (a,b)</a>
+<ul>
+<li>Explores technology scaling and critical paths.</li>
+</ul>
+</li>
+</ul>
+<h3 id="lecture-2-digital-system-design">Lecture 2 Digital system design</h3>
+<p>Part 1A Digital Electronics, ECAD practicals, read/write SystemVerilog</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p5q6.pdf">y2023p5q6</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p5q6.pdf">y2022p5q6</a>
+<ul>
+<li>FPGA (LE,LUT), counter</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q1.pdf">y2020p5q1</a>
+<ul>
+<li>Moore’s law, wire scaling, timing analysis</li>
+<li>synthesisable (fixed)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q1.pdf">y2019p5q1</a>
+<ul>
+<li>Conditional operators, Three-state logic values 0, 1, z; x</li>
+<li>blocking (sequential) vs. non-blocking (parallel), continuous assignment</li>
+<li>async, two-DFF synchroniser</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q1.pdf">y2018p5q1</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p5q1.pdf">y2010p5q1</a>
+<ul>
+<li>ordering, assignment, underflow, wildcard</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q1.pdf">y2017p5q1</a>
+<ul>
+<li>circuits diagram (NOR, adders, condition), state transitions.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q1.pdf">y2016p5q1 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p5q1.pdf">y2015p5q1</a>
+<ul>
+<li>understand high-level operation of SystemVerilog code, low-level state machine</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p5q1.pdf">y2011p5q1</a></li>
+</ul>
+<h3 id="lecture-3-eight-great-ideas-i">Lecture 3 Eight great ideas i</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q2.pdf">y2020p5q2 (a-b)</a>
+<ul>
+<li>making the common case fast, see more at Lecture 11</li>
+</ul>
+</li>
+</ul>
+<p>Moore’s law</p>
+<ul>
+<li>See Lecture 1</li>
+</ul>
+<h3 id="lecture-4-risc-v-isa">Lecture 4 RISC-V ISA</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q1.pdf">y2021p5q1 (c,d)</a>
+<ul>
+<li>Explores calling conventions and RISC-V assembler.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q2.pdf">y2014p5q2 (a)</a>
+<ul>
+<li>subroutine call, hw and sw. preserved registers</li>
+</ul>
+</li>
+</ul>
+<h3 id="lecture-5-five-step-executable">Lecture 5 Five-step Executable</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q2.pdf">y2018p5q2</a>
+<ul>
+<li>RISC-V machine code format some and implications on pipelines.</li>
+</ul>
+</li>
+</ul>
+<h3 id="lecture-6-pipeline">Lecture 6 Pipeline</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q2.pdf">y2021p5q2(a,b)</a>
+<ul>
+<li>hazards, mitigations and their limitation</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q2.pdf">y2017p5q2</a>
+<ul>
+<li>Explores fallacies and pitfalls.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q2.pdf">y2016p5q2</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p6q2.pdf">y2007p6q2</a>,</li>
+</ul>
+<h3 id="lecture-8-memory-hierarchies-cache">Lecture 8 Memory hierarchies (Cache)</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q2.pdf">y2020p5q2 (c-g)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q2.pdf">y2019p5q2</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p5q3.pdf">y2009p5q3</a>
+<ul>
+<li>Write policies.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf">y2021p5q3</a>
+<ul>
+<li>with MSI</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q3.pdf">y2014p5q3</a></li>
+</ul>
+<h3 id="lecture-9-os-hardware-support">Lecture 9 OS (hardware support)</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p5q2.pdf">y2015p5q2</a>
+<ul>
+<li>Memory hierarchy and memory protection</li>
+<li>skip part (d), no longer covered</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p5q3.pdf">y2011p5q3</a>
+<ul>
+<li>Caches and TLBs</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q2.pdf">y2021p5q2(c)</a>
+<ul>
+<li>VM, hardware support</li>
+</ul>
+</li>
+</ul>
+<p>Interrupts/Exceptions</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q2.pdf">y2019p5q2 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p5q2.pdf">y2014p5q2 (b)</a>
+<ul>
+<li>vs subroutine call</li>
+</ul>
+</li>
+</ul>
+<h3 id="lecture-10-alternative-isa">Lecture 10 Alternative ISA</h3>
+<p>From Cambridge’s EDSAC through to today’s CISC machines.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p6q2.pdf">y2008p6q2</a>
+<ul>
+<li>RISC, CISC and stack machines.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p6q2.pdf">y2006p6q2</a>
+<ul>
+<li>register vs. stack machines; caches.</li>
+</ul>
+</li>
+</ul>
+<h3 id="lecture-11-soc-dram">Lecture 11 SoC, DRAM</h3>
+<p>Flynn’s taxonomy; Amdahl’s and Gustafson’s laws</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q3.pdf">y2016p5q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q3.pdf">y2020p5q3 (a,b)</a></li>
+</ul>
+<p>DRAM</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q3.pdf">y2018p5q3 (a)</a></li>
+</ul>
+<h3 id="lecture-12-msi">Lecture 12 MSI</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p5q3.pdf">y2015p5q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p5q3.pdf">y2017p5q3</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p5q3.pdf">y2018p5q3 (b)</a></li>
+</ul>
+<h3 id="lecture-13-memory-consistency-model-hardware-support">Lecture 13 Memory consistency model (hardware support)</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p5q3.pdf">y2015p5q3 (b)</a></li>
+</ul>
+<h3 id="lecture-14-gpu">Lecture 14 GPU</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p5q3.pdf">y2016p5q3 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q3.pdf">y2019p5q3 (d,f,e)</a></li>
+</ul>
+<h3 id="lecture-15-cuda-opencl">Lecture 15 CUDA, OpenCL</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p5q3.pdf">y2019p5q3 (a,b,c)</a></li>
+</ul>
+<h3 id="lecture-16-future">Lecture 16 Future</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p5q3.pdf">y2020p5q3 (c,d,e)</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>

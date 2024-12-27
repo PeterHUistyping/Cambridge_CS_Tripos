@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Access Control</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-Cybersecurity.html">Cyber Security</a> Past Paper</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-Security.html">Security (-2022)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-SecurityII.html">SecurityII (-2018)</a></li>
+<li><a href="https://peterhuistyping.github.io/Cambridge_CS_Tripos/Ref/PastPaper/Security.pdf">Reference</a>
+<ul>
+<li>Credit:  <a href="https://gdenes.com/">@Gyorgy Denes</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="access-control">Access Control</h3>
+<p>For a directory D, the access control bits considered about <strong>the list of filenames</strong>. (different from a file F)</p>
+<pre><code>r for reading the names of the files contained
+
+w to change the list of filenames in the directory
+  	create, delete, rename or move a file in it
+
+The “sticky bit”  (10-th access control bit in *Berkeley Unix*)
+  	For D with access w, then a F inside can be removed/renamed only by the *owner* of F [or D].
+
+x to access the contents or attributes of a file in it (directory traversal/search)
+  	dereference the inode of a known filename in it
+</code></pre>
+<p>set-user/group-ID</p>
+<p>[Without] Process started by user U will have the same value U stored as the effective, real, and saved user ID and cannot change any of them.</p>
+<p>[With] When a program file F with owner O is started by user U, the real user ID will be set to U, both the effective and the saved user ID of the process will be set to O.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q7.pdf">y2019p4q7 (a)</a>
+<ul>
+<li>chmod</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p4q8.pdf">y2012p4q8 (e)</a>
+<ul>
+<li>dir, sticky bit</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q6.pdf">y2021p4q6 (a)</a>
+<ul>
+<li>file and dir</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q7.pdf">y2020p4q7 (b)</a>
+<ul>
+<li>setuid</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q6.pdf">y2018p4q6</a>
+<ul>
+<li>access-control matrix</li>
+</ul>
+</li>
+</ul>
+<h3 id="buffer-overflow">Buffer overflow</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q6.pdf">y2022p4q6</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q6.pdf">y2020p4q6 (a,c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q7.pdf">y2018p4q7 (c)</a>
+<ul>
+<li>countermeasures</li>
+</ul>
+</li>
+</ul>
+<h3 id="sql-injection">SQL injection</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q7.pdf">y2021p4q7 (a)</a></li>
+</ul>
+<h3 id="malfunction">Malfunction</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q7.pdf">y2023p4q7</a></li>
+</ul>
+<h3 id="csrf-xss">CSRF, XSS</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q7.pdf">y2022p4q7</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q6.pdf">y2019p4q6</a></li>
+</ul>
+<h3 id="password">Password</h3>
+<p>Confidentiality, Integrity, Availability</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q7.pdf">y2021p4q7 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p4q8.pdf">y2012p4q8 (a)</a>
+<ul>
+<li>salt</li>
+</ul>
+</li>
+</ul>
+<h3 id="physical-security">Physical Security</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q8.pdf">y2023p4q8</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>

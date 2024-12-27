@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Frontend</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-CompilerConstruction.html">Compiler Construction</a> Past Paper</p>
+<h2 id="frontend">Frontend</h2>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q4.pdf">y2016p3q4 (a)</a></li>
+</ul>
+<h4 id="grammar">Grammar</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p1.pdf">y2024q4p1 (a,b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2004p4q1.pdf">y2004p4q1 (a-e)</a>
+<ul>
+<li>Operator associativity / precedence (textbook)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (b)</a>
+<ul>
+<li>ambiguity</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2002p4q2.pdf">y2002p4q2 (a)</a>
+<ul>
+<li>CFG</li>
+</ul>
+</li>
+</ul>
+<h3 id="lexical-regex-fsa--syntax-analysisparsing-cfg-pda">Lexical (regex, FSA) &amp; Syntax analysis/Parsing (CFG, PDA)</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2002p4q2.pdf">y2002p4q2 (b,c)</a>
+<ul>
+<li>LEX / YACCtools</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q1.pdf">y2023p4q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p4q4.pdf">y2007p4q4 (a)</a>
+<ul>
+<li>lexing</li>
+</ul>
+</li>
+</ul>
+<h4 id="recursive-descent">Recursive Descent</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2004p4q1.pdf">y2004p4q1 (f)</a></li>
+</ul>
+<h4 id="llk">LL(k)</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q1.pdf">y2022p4q1</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p1.pdf">y2024q4p1 (c,d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q1.pdf">y2023p4q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf">y2020p4q4 (d)</a>
+<ul>
+<li>left recursion not LL(1)</li>
+</ul>
+</li>
+</ul>
+<h4 id="lrk-slrk">LR(k), SLR(k)</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p1.pdf">y2024q4p1 (c,d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q3.pdf">y2015p3q3</a>
+<ul>
+<li>LR(0) items, shift / reduce</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q4.pdf">y2020p4q4</a>
+<ul>
+<li>DFA</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q4.pdf">y2021p4q4</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q1.pdf">y2023p4q1 (c)</a>
+<ul>
+<li>SLR(1) ACTION and GOTO</li>
+</ul>
+</li>
+</ul>
+<h3 id="type-checking">Type Checking</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q3.pdf">y2019p4q3 (a)</a>
+<ul>
+<li>for user-defined data type</li>
+</ul>
+</li>
+</ul>
+<h3 id="simplification">Simplification</h3>
+<p>remove type information, remove locations</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q3.pdf">y2021p4q3 (b)</a>
+<ul>
+<li>remove syntactic sugar</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q3.pdf">y2020p4q3 (b)</a>
+<ul>
+<li>let binding</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q3.pdf">y2019p4q3 (d)</a>
+<ul>
+<li>remove nested patterns</li>
+</ul>
+</li>
+</ul>
+<h2 id="backend">Backend</h2>
+<h3 id="translation">Translation</h3>
+<p>CPS, defunctionalise, etc</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q4.pdf">y2017p23q4</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p4q2.pdf">y2022p4q2</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q2.pdf">y2023p4q2</a>
+<ul>
+<li>memory, stack ↓ and heap↑</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q3.pdf">y2016p3q3</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q5.pdf">y2014p3q5</a>
+<ul>
+<li>tail recursion</li>
+</ul>
+</li>
+</ul>
+<h3 id="jargon">JARGON</h3>
+<h4 id="closure">closure</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (c)</a>
+<ul>
+<li>in functional programming</li>
+</ul>
+</li>
+</ul>
+<h4 id="vm">VM</h4>
+<p>stack-oriented intermediate code</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p4q3.pdf">y2020p4q3</a>
+<ul>
+<li>closure</li>
+</ul>
+</li>
+</ul>
+<pre><code>(fun x -&gt; e') e'' 
+(i) evaluates e'' and pushes the result on the stack
+(ii) creates a closure (c,k) for (fun x -&gt; e') in the heap 
+and pushes a pointer to it on the stack.
+&gt; c = the address of the first instruction in e' 
+&gt; k = the number of free variables of e' (excluding x) 
+[pop off k values from the stack and placed in the closure.]
+(iii) apply the top of the stack to the argument below.
+return
+</code></pre>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q3.pdf">y2019p4q3 (b,e)</a></li>
+</ul>
+<pre><code>LOOKUP STACK_LOCATION -2  # fetch the argument v from the stack
+CALL sum                  # sum(v)
+PUSH 3                  
+ADD                       # sum(v) + 3
+RETURN
+</code></pre>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q4.pdf">y2016p3q4 (b)</a>
+<ul>
+<li>heap representation for pairs, machine instructions</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2005p5q6.pdf">y2005p5q6</a>
+<ul>
+<li>a parse tree of an expression
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>→</mo><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\rightarrow_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5169em;vertical-align:-0.15em;"></span><span class="mrel"><span class="mrel">→</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> stack-oriented intermediate code</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>→</mo><mrow><mi>i</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\rightarrow_{ii}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5169em;vertical-align:-0.15em;"></span><span class="mrel"><span class="mrel">→</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ii</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> machine code (register-oriented arch, e.g., RISCV)</li>
+<li>remove push–pop pairs</li>
+</ul>
+</li>
+<li>efficiency</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2000p3q3.pdf">y2000p3q3</a>
+<ul>
+<li>allocation and recovery of heap records, union type</li>
+<li>arrays with non-manifest bounds, labels and GOTO commands</li>
+</ul>
+</li>
+</ul>
+<h2 id="mixed-topics">Mixed topics</h2>
+<h3 id="garbage-collection">Garbage Collection</h3>
+<ul>
+<li>Reference Counting</li>
+<li>Tracing Collection
+<ul>
+<li>Mark and Sweep</li>
+<li>Copy Collection</li>
+<li>Generational Collection</li>
+</ul>
+</li>
+</ul>
+<p>Past Papers</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p2.pdf">y2024q4p2(c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p5q6.pdf">y2006p5q6 (b)</a>
+<ul>
+<li>Tracing Collection def</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (d)</a>
+<ul>
+<li>Reference Counting</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q3.pdf">y2017p23q3 (a-c)</a>
+<ul>
+<li>Garbage, reference count overflow</li>
+</ul>
+</li>
+</ul>
+<h3 id="opt">Opt</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p4q1.pdf">y2023p4q1 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p4q3.pdf">y2021p4q3 (a)</a>
+<ul>
+<li><code>(map f l1) @ (map f l2) = map f (l1 @ l2)</code></li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p23q3.pdf">y2017p23q3 (d)</a>
+<ul>
+<li><code>(map f) o (map g) = map (f o g)</code></li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (g)</a>
+<ul>
+<li><code>0 × e</code></li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q4.pdf">y2016p3q4 (c)</a>
+<ul>
+<li>pair</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q4.pdf">y2013p3q4</a>
+<ul>
+<li>tail recursive to iteration</li>
+</ul>
+</li>
+</ul>
+<h3 id="exception">Exception</h3>
+<p>stack-oriented code</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p4q4.pdf">y2019p4q4</a>
+<ul>
+<li>front-end, type safety, Optimise</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q4.pdf">y2011p3q4 (c)</a>
+<ul>
+<li>raise and handle</li>
+</ul>
+</li>
+</ul>
+<h3 id="linking">Linking</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p2.pdf">y2024q4p2(b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2001p6q6.pdf">y2001p6q6</a></li>
+</ul>
+<pre><code>.data                  &lt;-     .symtbl     -&gt;        .strtab
+D0: 00 00 00 01                 S0: D0 N0            N0:  a
+                                                     N1:  \0
+                                      ^
+                                      |
+.text                  &lt;-     .rela.text
+T8: LOAD R1, 0(R2) # a          R0: T8 S0
+</code></pre>
+<h3 id="run-time-memory">Run-time Memory</h3>
+<h4 id="stack">Stack</h4>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q4.pdf">y2014p3q4</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q4.pdf">y2018p4q4</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p4q3.pdf">y2018p4q3 (f)</a>
+<ul>
+<li>static link</li>
+</ul>
+</li>
+</ul>
+<h3 id="bootstrapping">Bootstrapping</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024q4p2.pdf">y2024q4p2(a)</a></li>
+</ul>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

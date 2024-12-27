@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Basics</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-Prolog.html">Prolog</a> Past Paper</p>
+<h3 id="basics">Basics</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q8.pdf">y2011p3q8 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q8.pdf">y2012p3q8 (a,b)</a>
+<ul>
+<li>unification, variable bindings, arithmetic</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q7.pdf">y2009p3q7(a)</a>
+<ul>
+<li><code>fail:- x=y</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="generate-iterative-deepening-and-test">Generate (Iterative deepening) and Test</h3>
+<p>Lists</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p7q10.pdf">y2021p7q10</a>
+<ul>
+<li>Cipher text</li>
+<li>Base case, Recursive case, Declarative explanation.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p7q10.pdf">y2020p7q10</a>
+<ul>
+<li>generate and test</li>
+<li>Symmetric relation</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p7q10.pdf">y2019p7q10</a>
+<ul>
+<li>map, data structure</li>
+<li>LCO</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p4q8.pdf">y2008p4q8</a>
+<ul>
+<li><code>take/3</code>, <code>perm/2</code></li>
+<li>correct ordering of query results</li>
+<li>the order of parameters changed</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p4q3.pdf">y2007p4q3</a>
+<ul>
+<li>replace (sublists of) characters in lists</li>
+<li>backtracking and unification</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y1996p5q7.pdf">y1996p5q7</a>
+<ul>
+<li>ordered integer BST</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y1997p12q8.pdf">y1997p12q8</a>
+<ul>
+<li>next-highest member</li>
+</ul>
+</li>
+</ul>
+<h3 id="cut-">Cut, !</h3>
+<p>It commits any parts of the rule that have done so far, removing all the choice points which come before the cut in the rule body and that caused you to try that instance of the rule in the first place.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q7.pdf">y2016p3q7</a>
+<ul>
+<li>cut, choice-points</li>
+<li>Last Call Optimisation</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q8.pdf">y2014p3q8(f)</a>
+<ul>
+<li>fix for LCO (green cut)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q7.pdf">y2009p3q7(b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q7.pdf">y2010p3q7 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q8.pdf">y2011p3q8 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q8.pdf">y2012p3q8 (b)</a>
+<ul>
+<li>rule matching, variable bindings</li>
+<li>query and backtracking results</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2001p5q7.pdf">y2001p5q7</a>
+<ul>
+<li>cut, max, bug finding (red cut)</li>
+</ul>
+</li>
+</ul>
+<h3 id="symbolic-evaluation">Symbolic Evaluation</h3>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p4q4.pdf">y2024p4q4</a></li>
+</ul>
+<h3 id="difference-lists">Difference Lists</h3>
+<p>They maintain a variable at the tail of each list, achieving more efficient <em>append in O(1) rather than O(n).</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q8.pdf">y2014p3q8</a>
+<ul>
+<li>bfs/2</li>
+<li>(c) append(T-[L,R|A], [L,R|A]-A, T-A), (d) empty difference lists</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q8.pdf">y2011p3q8 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q8.pdf">y2012p3q8 (c-e)</a>
+<ul>
+<li>binary tree</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y1996p6q7.pdf">y1996p6q7</a></li>
+</ul>
+<pre><code>y1996p6q7
+  [l0, l1, l2]   ~rotate~  [l1, l2, l0]
+= [l0|l1, l2] 
+
+% rotate outputs a list L, which put the first element of the input list at the end.
+rotate ([H|T0], L0) : -  append(T0,[H],L0).
+% To transform into difference list version, now 
+% T is a list T0 and an extra T1 at the tail
+   T = [ ... , T1] = T0 + T1
+% L is a list L0 and an extra L1 at the tail
+   L = [ ... , L1] = L0 + L1
+
+rotate2([H|T]-T1, L-L1) :- append(T-T1, [H|A]-A, L-L1).
+				  A-B,      B-C, A-C  
+&gt; L=T, T1=[H|A], A=L1.
+
+rotate2([H|T]-[H|A], T-A).
+
+Why?
+T = [ ..., T1] = T0 + T1 = T0 + [H|A], thus
+T-A = T0 + [H|A] - A.
+</code></pre>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y1997p6q7.pdf">y1997p6q7</a>
+<ul>
+<li>binary tree</li>
+</ul>
+</li>
+</ul>
+<pre><code>y1997p6q7
+
+enum(0, [0|A]-A, B-B).
+enum(1, A-A, [1|B]-B).
+% A is the original list A0 + A1
+enum(n(L,R), A-A1, B-B1) :- enum(L, AL-AL1, BL-BL1), enum(R, AR-AR1 , BR-BR1).
+
+enum(n(L,R), AL-A1, BL-B1) :- enum(L, AL-AR, BL-BR), enum(R, AR-A1 , BR-B1).
+</code></pre>
+
+            
+            
+        </body>
+        </html>

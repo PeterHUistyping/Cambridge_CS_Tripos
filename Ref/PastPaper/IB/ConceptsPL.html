@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>I&period; Introduction and motivation</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-ConceptsinProgrammingLanguages.html">Concepts in Programming Languages</a> Past Paper</p>
+<ul>
+<li>Adapted from <a href="https://www.cl.cam.ac.uk/teaching/2223/ConceptsPL/RG.pdf">Revision Guide (revised 2017)</a></li>
+</ul>
+<h3 id="i-introduction-and-motivation">I. Introduction and motivation</h3>
+<ul>
+<li>design, methods, paradigms; Foundations; Standardisation.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q7.pdf">y2006p6q7 (a)</a>
+<ul>
+<li>motivating application domains, abstract machines, theoretical understanding</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (a)</a>
+<ul>
+<li>Execution models (abstract machines)</li>
+<li>Storage allocation and deallocation</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q5.pdf">y2015p3q5 (a, b)</a>
+<ul>
+<li>Programming-language concepts, innovations, influences</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p6q7.pdf">y2007p6q7 (b,c)</a>
+<ul>
+<li>Parameter passing, value, reference, value/result, name</li>
+<li>Aliasing</li>
+</ul>
+</li>
+</ul>
+<h3 id="ii-fortran-sequential-procedural-language">II. FORTRAN: Sequential procedural language</h3>
+<ul>
+<li>FORTRAN 77; Data types; Control structures; Syntax; Storage; Aliasing; Parameters.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (a)</a>
+<ul>
+<li>FORTRAN vs Pascal</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (a)</a>
+<ul>
+<li>LISP vs FORTRAN</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q7.pdf">y2006p6q7 (b)</a>
+<ul>
+<li>Types, advantages and disadvantage</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p5q7.pdf">y2007p5q7 (a)</a>
+<ul>
+<li>Execution model (or abstract machine)</li>
+<li>Compilation</li>
+</ul>
+</li>
+</ul>
+<h3 id="iii-lisp-declarative-functions-recursion-and-lists">III. LISP: Declarative, Functions, recursion, and lists</h3>
+<ul>
+<li>Programming-Language phrases; S-expressions; quote;  Abstract machine; Recursion;  Programs as data; Reflection</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (a)</a>
+<ul>
+<li>LISP vs FORTRAN</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (a.ii)</a>
+<ul>
+<li>LISP vs Smalltalk</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p7q1.pdf">y2022p7q1 (a, b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q7.pdf">y2006p6q7 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p6q7.pdf">y2008p6q7 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q6.pdf">y2014p3q6 (a)</a>
+<ul>
+<li>Static (renaming principle, closure) and Dynamic scope</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p6q7.pdf">y2007p6q7 (a)</a>
+<ul>
+<li>Execution model (or abstract machine)</li>
+<li>Compilation</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p5q7.pdf">y2007p5q7 (b)</a>
+<ul>
+<li>Garbage collection</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p7q1.pdf">y2018p7q1 (b)</a>
+<ul>
+<li>eval</li>
+</ul>
+</li>
+</ul>
+<h3 id="iv-algol-pascal-block-structured-procedural-languages">IV. Algol, Pascal: Block-structured procedural languages</h3>
+<ul>
+<li>Block structure; Algol 60; Recursion;  Stack; Type system; Algol 68; BNF syntax; Heap; Garbage collection; Quasi-strong typing;</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (a.i)</a>
+<ul>
+<li>Algol and SIMULA</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (a.i)</a>
+<ul>
+<li>Algol and Pascal</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (a)</a>
+<ul>
+<li>FORTRAN vs Pascal</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q7.pdf">y2006p6q7 (b)</a>
+<ul>
+<li>Types, advantages and disadvantage</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p5q7.pdf">y2008p5q7 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (b)</a>
+<ul>
+<li>Parameter-passing: pass-by-reference, pass-by-value/result</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (c)</a>
+<ul>
+<li>call-by-value vs call-by-reference</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p5q7.pdf">y2007p5q7 (c)</a>
+<ul>
+<li>Algol 60 primitive static type system, Parameter-passing</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p7q1.pdf">y2019p7q1 (a, b)</a>
+<ul>
+<li>Algol 60, Parameter-passing</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q5.pdf">y2015p3q5 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p6q7.pdf">y2008p6q7 (b)</a>
+<ul>
+<li>Pascal variant records vs ML vs subclass</li>
+</ul>
+</li>
+</ul>
+<h3 id="v-simula-smalltalk-object-oriented-languages">V. SIMULA, Smalltalk: Object-oriented languages</h3>
+<ul>
+<li>Subtyping vs. inheritance; SIMULA; Classes, objects and activation records; Subclasses and inheritance; Smalltalk; Dynabook; Syntax; Abstraction; Messages; Methods; Instance variables; Interfaces as types; Subtyping.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (a.ii)</a>
+<ul>
+<li>SIMULA vs Smalltalk</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (a.i)</a>
+<ul>
+<li>Algol and SIMULA, LISP and Smalltalk</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p5q7.pdf">y2008p5q7 (c)</a>
+<ul>
+<li>Objects in SML (see SML module)</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p6q7.pdf">y2006p6q7 (d)</a>
+<ul>
+<li>Dynamic lookup; Abstraction; Subtyping; Inheritance</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p6q7.pdf">y2007p6q7 (d)</a>
+<ul>
+<li>SIMULA, Type checking and subtyping</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (f)</a>
+<ul>
+<li>Abstraction, <code>private</code> weakened by pointer / reflection</li>
+</ul>
+</li>
+</ul>
+<h3 id="vi-types">VI. Types</h3>
+<ul>
+<li>Type checking in SML; Type equality; Type declarations; let-polymorphism;</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p7q1.pdf">y2020p7q1 (a,b)</a>
+<ul>
+<li>Type soundness</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (b)</a>
+<ul>
+<li>weakness of type system in any languages</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q5.pdf">y2015p3q5 (d,e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p5q7.pdf">y2008p5q7 (b)</a>
+<ul>
+<li>static vs dynamic scoping, early LISP</li>
+<li>static vs dynamic type checking</li>
+<li>type-safe and counterexample</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p7q1.pdf">y2020p7q1 (b.i, c)</a>
+<ul>
+<li>Type checking, static vs dynamic, Java</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (c)</a>
+<ul>
+<li>Type checking vs Type inference</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (b)</a>,  <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (c)</a>
+<ul>
+<li>Type inference in SML, constraint</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (e)</a>
+<ul>
+<li>Type safety and counterexample</li>
+<li>Polymorphism in ML</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p7q1.pdf">y2022p7q1 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p7q1.pdf">y2018p7q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q6.pdf">y2014p3q6 (c)</a>
+<ul>
+<li>Polymorphic Exception</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p7q1.pdf">y2021p7q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q5.pdf">y2016p3q5 (d, e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p7q1.pdf">y2019p7q1 (c)</a>
+<ul>
+<li>Java covariant arrays, invariant Generics</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p3q5.pdf">y2015p3q5 (e, f)</a>
+<ul>
+<li>downcast</li>
+</ul>
+</li>
+</ul>
+<h3 id="vii-scripting-languages--javascript">VII. Scripting Languages – JavaScript</h3>
+<ul>
+<li>Browser integration</li>
+<li>e.g.,
+<ul>
+<li>“Scripting languages and dynamically typed languages are identical; discuss”</li>
+<li>“Discuss the notion of ‘class’ in relation to JavaScript”</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p7q1.pdf">y2022p7q1 (d)</a>
+<ul>
+<li>JavaScript; Prototypal inheritance;</li>
+</ul>
+</li>
+</ul>
+<h3 id="viii-data-abstraction-and-modularity--sml-modules">VIII. Data abstraction and modularity – SML Modules</h3>
+<ul>
+<li>Signature inclusion;  Subtyping; Information hiding;</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p7q1.pdf">y2018p7q1 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p5q7.pdf">y2007p5q7 (d)</a>
+<ul>
+<li>SML module system, Signatures; Structures; ADT of stacks</li>
+<li>Functional / Imperative</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (d)</a>
+<ul>
+<li>SML Signature matching</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (d)</a>
+<ul>
+<li>SML Signature, Functors</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q6.pdf">y2014p3q6 (d)</a>
+<ul>
+<li>concrete signatures <code>sig type t = int</code> and opaque signature <code>sig type t</code></li>
+<li>constraint <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>:</mo><mo separator="true">,</mo><mo>:</mo><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">: , :&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:&gt;</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="ix-concurrency-parallelism">IX. Concurrency, parallelism</h3>
+<ul>
+<li>Theoretical models ; Programming-language support for parallelism and distribution. Internal and external iteration.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p3q6.pdf">y2014p3q6 (b)</a>
+<ul>
+<li>Threads, shared memory, message passing; Distributed memory, multi-core, cloud computing</li>
+</ul>
+</li>
+</ul>
+<h3 id="x-functional-style-meets-oop">X. Functional-style meets OOP</h3>
+<ul>
+<li>Scala and Java 8; Procedural programming; Declarative programming; Mutable state; Blocks; Functions; Classes and objects; abstract classes; traits;  Pattern matching;
+<ul>
+<li>[No longer explicitly lectured:] Type parameter bounds; View bounds; Implicit parameters; Implicit conversions; Mixin-class composition.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p3q6.pdf">y2012p3q6 (d)</a>
+<ul>
+<li>Generic types and methods; Variance annotations</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p3q6.pdf">y2011p3q6 (d)</a>
+<ul>
+<li>Scala, parameter-passing</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p3q6.pdf">y2013p3q6 (e)</a>
+<ul>
+<li>Scala innovations</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p6q7.pdf">y2008p6q7 (c)</a>
+<ul>
+<li>Scala, function types ; Functions as objects</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p3q2.pdf">y2009p3q2 (d)</a>
+<ul>
+<li>Scala, variance</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p3q5.pdf">y2010p3q5 (e)</a>
+<ul>
+<li>Scala, Case classes</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p7q1.pdf">y2022p7q1 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p7q1.pdf">y2018p7q1 (c)</a>
+<ul>
+<li>Value type, Java</li>
+</ul>
+</li>
+</ul>
+<h3 id="xi-miscellaneous-concepts">XI. Miscellaneous concepts</h3>
+<ul>
+<li>GADTs, Reified continuations, Dependent typing.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p7q1.pdf">y2021p7q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p7q1.pdf">y2020p7q1 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p3q5.pdf">y2016p3q5 (a, b, c)</a>
+<ul>
+<li>Monads, <code>unit/return, &gt;&gt;= / bind</code></li>
+</ul>
+</li>
+</ul>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
