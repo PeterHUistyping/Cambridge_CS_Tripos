@@ -140,6 +140,7 @@
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-AdvancedComputerArchitecture.html">Advanced Computer Architecture</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-ComparativeArchitectures.html">Comparative Architectures</a> Past Paper</p>
 <h2 id="trends">Trends</h2>
+<p>Early computers exploit <em>bit</em>-level parallelism.</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (a)</a></li>
 </ul>
@@ -162,6 +163,7 @@
 </li>
 </ul>
 <h2 id="superscalar-pipeline">Superscalar pipeline</h2>
+<p>Exploits <em>instruction</em>-level parallelism.</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (a)</a>
 <ul>
@@ -185,42 +187,77 @@
 </ul>
 <p>Power consumption</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a></li>
-</ul>
-<h2 id="software-ilp-vliw">Software ILP (VLIW)</h2>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3</a>
-<ul>
-<li>variable-length bundles of independent instructions</li>
+<li>in-order vs out-of-order</li>
 </ul>
 </li>
 </ul>
+<h2 id="software-ilp-vliw">Software ILP (VLIW)</h2>
+<p>Exploits <em>instruction</em>-level parallelism.</p>
 <p>Memory reference speculation</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (d)</a></li>
 </ul>
+<p>Variable-length bundles of independent instructions</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (b)</a></li>
+</ul>
 <h2 id="multi-threaded-processors">Multi-threaded processors</h2>
+<p>Exploits <em>thread</em>-level parallelism.</p>
+<p>Coarse-grained MT</p>
+<p>Fine-grained MT</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (a)</a>
 <ul>
+<li>VLIW vs fine-grained multi-threaded</li>
 <li>round-robin thread schedule, functional units</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (b.c)</a></li>
+</ul>
+<p>SMT</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (b,c)</a>
+<ul>
+<li>threads characteristics</li>
+<li>SMT vs Multi-core</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (d)</a>
+<ul>
+<li>(store) multi-copy atomic</li>
+</ul>
+</li>
 </ul>
 <h2 id="memory-hierarchy">Memory hierarchy</h2>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (b)</a></li>
 </ul>
-<h2 id="vector-processors--simd">Vector processors / SIMD</h2>
+<p>cache</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (b)</a>
+<ul>
+<li>non-inclusive</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (c)</a>
+<ul>
+<li>merging or coalescing write-buffer</li>
+</ul>
+</li>
+</ul>
+<h2 id="vector-processors--simd">Vector processors / SIMD</h2>
+<p>Exploits <em>data</em>-level parallelism.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (a.iv)</a>
+<ul>
+<li>VLIW vs SIMD</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a)</a></li>
 </ul>
 <h2 id="multi-core-processors">Multi-core processors</h2>
-<p>Cache</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (b)</a></li>
-</ul>
+<p>Exploits <em>chip</em> multiprocessing.</p>
 <p>Cache coherence: snoopy protocol</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (a)</a>
@@ -246,7 +283,7 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (a-d)</a>
 <ul>
-<li>(store) multi-copy atomic</li>
+<li>SMT, (store) multi-copy atomic</li>
 </ul>
 </li>
 </ul>
@@ -259,6 +296,7 @@
 </li>
 </ul>
 <h2 id="specialised-processors">Specialised processors</h2>
+<p>Exploits <em>accelerator</em>-level parallelism.</p>
 <p>Domain-Specific Accelerators (DSA)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (e)</a></li>
