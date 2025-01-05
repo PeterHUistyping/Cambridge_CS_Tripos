@@ -182,7 +182,7 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (c)</a></li>
 </ul>
 <h2 id="lecture-3-phylogenetic-trees">Lecture 3: Phylogenetic trees</h2>
-<p>UPGMA</p>
+<p>Unweighted Pair Group Method with Arithmetic Mean (UPGMA)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (c)</a></li>
 </ul>
@@ -223,16 +223,48 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (d)</a></li>
 </ul>
+<p>Louvain, Leiden algorithm</p>
 <h2 id="lecture-5-genome-sequencing">Lecture 5: Genome sequencing</h2>
+<p>Given a set of overlapping short reads, the aim is to reconstruct the original genome.</p>
+<p>Hamiltonian graph -- Hamiltonian path (every node, NP-complete)</p>
+<ul>
+<li>Bellman–Held–Karp algorithm
+<ul>
+<li>boolean <code>dp[j][S_i]</code>, denoting a valid subset <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ending at node <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>.</li>
+<li>for all neighbors <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>, extend <code>dp[j][S_i]</code> by <code>dp[k][S_i \ {j}]</code> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>−</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">k-j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><msup><mn>2</mn><mi>n</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2 2^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, NP-complete.</li>
+</ul>
+</li>
+</ul>
+<p>De Bruijn graph -- Eulerian path (every edge, easier)</p>
+<ul>
+<li>Balanced node: in-degree = out-degree</li>
+<li>Semi-balanced node: in-degree = out-degree <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">±</span><span class="mord">1</span></span></span></span> (differs at most 1)</li>
+<li>Connected Graph: each node is reachable from some other node</li>
+<li>Strongly connected Graph: each node is reachable from every other node</li>
+<li>Eulerian Graph (a Eulerian cycle)
+<ul>
+<li>algorithm: Hierholzer's algorithm (ant) with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>E</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|E|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span>.</li>
+</ul>
+</li>
+<li>Euler's theorem
+<ul>
+<li>a connected graph is Eulerian if and only if every vertex has even degree.</li>
+<li>a graph is Eulerian if and only if it is a balanced connected graph. (semi-)</li>
+</ul>
+</li>
+</ul>
+<p>Bubbles explosion and solutions</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q2.pdf">y2020p9q2 (d)</a></li>
 </ul>
 <h2 id="lecture-6-genome-assembly">Lecture 6: Genome assembly</h2>
+<p>Since De Bruijn graph construction takes a lot of memory and time, we use existing <em>reference</em> structures to help the sequencing.</p>
 <p>Suffix trees</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (d)</a></li>
 </ul>
-<p>BWT</p>
+<p>Burrows-Wheeler Transform (BWT)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (c)</a></li>
 </ul>
