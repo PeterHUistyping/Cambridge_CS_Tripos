@@ -1,7 +1,7 @@
 [Past Papers](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/) by Topics
 
 The math mode for the below web version is rendered by [KaTeX](https://katex.org/). <br/>
-For mobile users, suggest viewing it *horizontally*.
+For mobile users, I recommend viewing in landscape mode, i.e. *horizontally*.
 
 #### IA | 2223
 
@@ -9,7 +9,7 @@ For mobile users, suggest viewing it *horizontally*.
 
 #### IB | 2324
 
-web ; pdf version
+web & pdf version
 
 | Paper 4                                                                                         | Paper 5                                                                                           | Paper 6                                                                                                  | Paper 7                                                                                                 |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -21,7 +21,7 @@ web ; pdf version
 
 #### II | 2425
 
-web ; for pdf version : suggest saving as PDF via web browser.
+web version only; suggest saving it as a PDF via your browser.
 
 |   |                                                                     | Paper 8-9 (selected)                                         |                                                         |
 | - | ------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
@@ -29,4 +29,4 @@ web ; for pdf version : suggest saving as PDF via web browser.
 |   | [Principles of Communications](./Ref/PastPaper/II/principlesCom.html) | ~~*Denotational Semantics*~~                  | ~~*Types*~~                                          |
 | L | [Optimising Compiler](./Ref/PastPaper/II/optCompiler.html)             | [Quantum Computing](./Ref/PastPaper/II/quantum.html) | [Ad Computer Architecture](./Ref/PastPaper/II/adArch.html) |
 |   | ~~*Randomised Algorithms*~~                                      | ~~*Cryptography*~~                             | ~~*ML & Bayesian Inference*~~                       |
-| E | [Hoare Logic, Model Checking](./Ref/PastPaper/II/HLMC.html)            |                                                   | [E-Commerce](./Ref/PastPaper/II/eCommerce.html)            |
+| E | [~~Hoare Logic, Model Checking~~](./Ref/PastPaper/II/HLMC.html)      |                                                   | [E-Commerce](./Ref/PastPaper/II/eCommerce.html)            |
