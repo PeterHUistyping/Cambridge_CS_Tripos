@@ -139,8 +139,16 @@
         </head>
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-PrinciplesofCommunications.html">Principles of Communications</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-DigitalCommunicationII.html">Digital Communication II</a> Past Paper</p>
-<p>Textbook: An Engineering Approach to Computer Networking: ATM Networks, the Internet, and the Telephone Network, by S. Keshav, 1997, Addison-Wesley.</p>
-<p>Useful chapters:  Ch 5 layering, Ch6 System Design, Ch 9 Scheduling, Ch 11 Routing, Ch 13 Flow control, Ch 14 Traffic management.</p>
+<p>Readings,</p>
+<ul>
+<li>Textbook: An Engineering Approach to Computer Networking: ATM Networks, the Internet, and the Telephone Network, by S. Keshav, 1997, Addison-Wesley.
+<ul>
+<li>Useful chapters:  Ch 5 layering, Ch6 System Design, Ch 9 Scheduling, Ch 11 Routing, Ch 13 Flow control, Ch 14 Traffic management [One-to-one mapping with Lecture slides].</li>
+</ul>
+</li>
+<li><a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p43.pdf">Fibbing paper</a>, <a href="https://www.statslab.cam.ac.uk/~frank/rate.pdf">Optimization paper</a>.</li>
+<li><a href="https://www.cl.cam.ac.uk/research/srg/netos/qjump/learn.html">Data center</a>, <a href="https://www.cl.cam.ac.uk/research/srg/netos/qjump/pubs/2015-nsdi-qjump.pdf">QJump paper</a>.</li>
+</ul>
 <h2 id="routing">Routing</h2>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q10.pdf">y2023p9q10</a>
@@ -302,8 +310,13 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q10.pdf">y2012p8q10</a></li>
 </ul>
 <h2 id="data-centers">Data centers</h2>
+<p>QJump, a switch priority queueing, combined with end systems traffic regulation, by exploiting its regular topology &amp; traffic matrix (src-dst) &amp; source behaviour.</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q13.pdf">y2020p9q13 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q13.pdf">y2020p9q13 (b)</a>
+<ul>
+<li>assumptions, high priority traffic delay bounding without bulk traffic starvation.</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q11.pdf">y2017p9q11 (a)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q10.pdf">y2016p9q10</a></li>
 </ul>
@@ -318,10 +331,35 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q10.pdf">y2014p9q10 (a)</a></li>
 </ul>
 <h2 id="traffic-management">Traffic management</h2>
+<p>QoS + Connectivity.</p>
+<p>Traffic classes and synchrony</p>
+<ul>
+<li>Guaranteed Service / Inelastic (delay sensitive and unusable for low bandwidth, i.e. utility is 0)
+<ul>
+<li>Synchronous / real-time, e.g. gaming, video conferencing.</li>
+<li>open-loop flow control with admission control (RTP over UDP).</li>
+</ul>
+</li>
+<li>Best Effort / Elastic (benefit from throughput, but not delay-sensitive)
+<ul>
+<li>Asynchronous / non-real-time, e.g. file transfer, email, web browsing.</li>
+<li>closed-loop flow control with congestion control (TCP), with rate adaptive to network conditions.</li>
+</ul>
+</li>
+</ul>
+<p>Utility function, Traffic model (measure or math), time scale, renegotiation, admission control, peak load pricing, capacity planning and macroscopic QoS.</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q11.pdf">y2012p7q11 (a.iii)</a>
 <ul>
 <li>signalling</li>
+</ul>
+</li>
+</ul>
+<p>Related: multicast  (RSVP : Resource reSerVation Protocol)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q13.pdf">y2021p9q13 (a)</a>
+<ul>
+<li>multicast transport protocol</li>
 </ul>
 </li>
 </ul>
