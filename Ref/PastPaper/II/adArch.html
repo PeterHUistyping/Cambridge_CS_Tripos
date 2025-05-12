@@ -18,7 +18,8 @@
 }
 
 </style>
-            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
 <style>
@@ -139,8 +140,9 @@
         </head>
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-AdvancedComputerArchitecture.html">Advanced Computer Architecture</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-ComparativeArchitectures.html">Comparative Architectures</a> Past Paper</p>
+<p>Textbook: Hennessy, J. and Patterson, D. (2012). Computer architecture: a quantitative approach. Elsevier (3rd/4th/5th ed.)</p>
 <h2 id="trends">Trends</h2>
-<p>Early computers exploit <em>bit</em>-level parallelism.</p>
+<p>Early computers exploit <em>Bit</em>-Level Parallelism.</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (a)</a></li>
 </ul>
@@ -151,6 +153,7 @@
 </ul>
 <p>Branch Target Buffer (BTB)</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (a,b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (b,c)</a></li>
 </ul>
 <p>Multiple / Diversified pipelines</p>
@@ -163,38 +166,58 @@
 </li>
 </ul>
 <h2 id="superscalar-pipeline">Superscalar pipeline</h2>
-<p>Exploits <em>instruction</em>-level parallelism.</p>
+<p>Exploits <em>Instruction</em>-Level Parallelism.</p>
+<p>Instruction Fetch, DEcode, [Rename], [Dispatch: static/dynamic scheduling], [Issue], EXecute, Memory, Write Back. <br/>
+In-order dispatch: stall for data hazards; In-order issue: stall for structural hazards.</p>
+<p>In-order vs out-of-order dispatch &amp; execution</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c,d)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (a)</a>
 <ul>
-<li>block diagram</li>
+<li>pipeline diagrams</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a>
+<ul>
+<li>power consumption</li>
 </ul>
 </li>
 </ul>
-<p><strong>Out-of-order execution</strong></p>
-<p>False dependencies and renaming registers</p>
+<p>Rename: arch (or logical) register <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>physical</strong> of the last destination targeted.</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (a)</a></li>
+<li>to remove false (or name) dependencies (anti-:WaR, output:WaW).
+<ul>
+<li>Register Map Table (RMT), Free <strong>Physical Register</strong> List (FPRL);</li>
+<li>VLIW: Rotating Register File (RRF).</li>
 </ul>
-<p>Speculative execution</p>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (b)</a></li>
+</ul>
+<p>Hardware-based speculation</p>
+<p>Load bypassing</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (c)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (a.b)</a>
 <ul>
-<li>load, memory-carried dependencies</li>
+<li>memory-carried dependencies</li>
 </ul>
 </li>
 </ul>
-<p>Power consumption</p>
+<p>Store queue / buffer</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (b)</a></li>
+</ul>
+<p>ReOrder Buffer (ROB) [precise exceptions]</p>
 <ul>
-<li>in-order vs out-of-order</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (c)</a>
+<ul>
+<li>ROB vs Unified <strong>Physical</strong> RF</li>
 </ul>
 </li>
 </ul>
 <h2 id="software-ilp-vliw">Software ILP (VLIW)</h2>
-<p>Exploits <em>instruction</em>-level parallelism.</p>
+<p>Exploits <em>Instruction</em>-Level Parallelism via <em>static scheduling</em> (<strong>out-of-order</strong>).</p>
 <p>Memory reference speculation</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (d)</a></li>
@@ -204,10 +227,14 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (b)</a></li>
 </ul>
 <h2 id="multi-threaded-processors">Multi-threaded processors</h2>
-<p>Exploits <em>thread</em>-level parallelism.</p>
+<p>Exploits <em>Thread</em>-Level Parallelism.</p>
 <p>Coarse-grained MT</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (a)</a></li>
+</ul>
 <p>Fine-grained MT</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (a)</a>
 <ul>
 <li>VLIW vs fine-grained multi-threaded</li>
@@ -217,6 +244,7 @@
 </ul>
 <p>SMT</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (c)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (b,c)</a>
 <ul>
 <li>threads characteristics</li>
@@ -247,7 +275,7 @@
 </li>
 </ul>
 <h2 id="vector-processors--simd">Vector processors / SIMD</h2>
-<p>Exploits <em>data</em>-level parallelism.</p>
+<p>Exploits <em>Data</em>-Level Parallelism.</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (a.iv)</a>
 <ul>
@@ -257,7 +285,7 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a)</a></li>
 </ul>
 <h2 id="multi-core-processors">Multi-core processors</h2>
-<p>Exploits <em>chip</em> multiprocessing.</p>
+<p>Exploits <em>Chip</em> Multiprocessing.</p>
 <p>Cache coherence: snoopy protocol</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (a)</a>
@@ -296,9 +324,10 @@
 </li>
 </ul>
 <h2 id="specialised-processors">Specialised processors</h2>
-<p>Exploits <em>accelerator</em>-level parallelism.</p>
+<p>Exploits <em>Accelerator</em>-Level Parallelism.</p>
 <p>Domain-Specific Accelerators (DSA)</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q1.pdf">y2023p9q1</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (e)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (c)</a>
 <ul>
@@ -307,7 +336,7 @@
 </li>
 </ul>
 
-            
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             
         </body>
         </html>
