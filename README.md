@@ -11,7 +11,7 @@
 
 ## [Updated] Notes
 
-- Category: ✎ summary; ✓ past paper; ■ extra notes 
+- Category: ✎ summary; ✓ past paper; ■ extra notes
 - Note that related Tripos courses > 1 is *cross-disciplinary* by nature.
 
 ### Math / AI
@@ -30,11 +30,11 @@
 
 ### Low-level (OS, Arch)
 
-| id  | name                                                               | coverage                  | Tripos                                                                                                                                      |
-| --- | ------------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI            | IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC) ✎<br />IB Compiler Construction ✓<br />IB Concurrent System                   |
-| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | IA OS ✎<br />IB Computer Architecture<br />MSI+Cacheline ✓ Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf)  |
-| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff           | IB Arch & II Ad Arch ■<br />IB Compiler Construction                                                                                      |
+| id  | name                                                               | coverage                  | Tripos                                                                                                                                                 |
+| --- | ------------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI            | IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC) ✎<br />IB Compiler Construction ✓<br />IB Concurrent System                              |
+| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | IA OS ✎<br />IB&II Computer Architecture<br />MSI+Cacheline ✓ Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf) <br />i |
+| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff           | IB Arch & II Ad Arch ■<br />IB Compiler Construction                                                                                                 |
 
 ### Theories
 
