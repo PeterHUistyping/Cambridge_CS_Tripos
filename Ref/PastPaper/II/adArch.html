@@ -142,26 +142,182 @@
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-AdvancedComputerArchitecture.html">Advanced Computer Architecture</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-ComparativeArchitectures.html">Comparative Architectures</a> Past Paper</p>
 <p>Textbook: Hennessy, J. and Patterson, D. (2012). Computer architecture: a quantitative approach. Elsevier (3rd/4th/5th ed.)</p>
 <h2 id="trends">Trends</h2>
+<p>Design goals and constraints</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p8q3.pdf">y2016p8q3 (a)</a>  target markets
+<ul>
+<li>cost, size, time-to-market goals, power consumption, performance and</li>
+<li>the types of programs (parallelism forms, dataset and program characteristics, e.g. cache).</li>
+<li>predictable execution times, fault tolerance, security, compatibility requirements.</li>
+<li>more: fabrication and packaging technology (mask costs), i.e. transistors size and speed, power consumption limits, interconnect speed , number of metal layers, I/Os speed and number (e.g. limits of off-chip/DRAM bandwidth) ; PCB design considerations, the size and cost of the overall product etc.</li>
+</ul>
+</li>
+</ul>
 <p>Early computers exploit <em>Bit</em>-Level Parallelism.</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (a)</a>
+<ul>
+<li>major historial turing points, see more stages at the following sections</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q3.pdf">y2007p8q3 (a-e)</a>
+<ul>
+<li>multi-processing important as memory falls behind</li>
+<li>OS and compiler support for parallelism, limitation</li>
+</ul>
+</li>
+</ul>
+<p>Limitations of Moore's law</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (d)</a>
+<ul>
+<li>power wall, Amdahl's law (sequential dominates),  parallel programming challenges (TLP, correctness), thread scheduling.</li>
+<li>Off-chip memory bandwidth, package pins, shared-memory communication models (bus vs. directory).</li>
+<li>On-chip interconnects (e.g. mesh, ring, crossbar) and their limitations.</li>
+<li>Process variations, temperature variations, aging and reliability.</li>
+</ul>
+</li>
+</ul>
+<p>Die stacking</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (c)</a></li>
+</ul>
+<h2 id="fundamentals-of-computer-design">Fundamentals of Computer Design</h2>
+<p>Common case first</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (a)</a></li>
+</ul>
+<p>Energy, power vs. parallelism, performance</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (d)</a>
+<ul>
+<li>parallelism</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q5.pdf">y2012p7q5</a>
+<ul>
+<li>specialization, superscalar vs. multi-core, vector</li>
+</ul>
+</li>
+</ul>
+<p>Instruction Set Architecture (ISA)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (a)</a>
+<ul>
+<li>pipelined processor</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (c)</a>
+<ul>
+<li>both 16-bit and 32-bit ISA</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p7q1.pdf">y2006p7q1 (a, c)</a>
+<ul>
+<li>RISC vs. CISC; number of registers.</li>
+</ul>
+</li>
+</ul>
+<p>Predicated operations</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (d)</a>
+<ul>
+<li>relation with out-of-order execution</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (a, d)</a>
+<ul>
+<li>complicates out-of-order execution</li>
+</ul>
+</li>
+<li>See more in VLIW section.</li>
 </ul>
 <h2 id="scalar-pipeline">Scalar pipeline</h2>
-<p>Two-level branch predictor</p>
+<p>Multiple / Diversified pipelines</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (b)</a></li>
+</ul>
+<p>Deep pipeline depth</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (a.i)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (a)</a>
+<ul>
+<li>clock frequency</li>
+</ul>
+</li>
+</ul>
+<p>Branch prediction</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (a)</a>
+<ul>
+<li>benefits</li>
+</ul>
+</li>
+</ul>
+<p>Static branch prediction</p>
+<p>Dynamic branch prediction</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (b)</a>
+<ul>
+<li>saturating counter</li>
+</ul>
+</li>
+</ul>
+<p>Two-level branch predictor: local/global history</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (c-d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (f)</a>
+<ul>
+<li>failure cases</li>
+</ul>
+</li>
+</ul>
+<p>Tournament predictor</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.i)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (e)</a></li>
 </ul>
 <p>Branch Target Buffer (BTB)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (a,b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (b,c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (h)</a>
+<ul>
+<li>procedure return address stack (PRAS), indirect jump.</li>
 </ul>
-<p>Multiple / Diversified pipelines</p>
+</li>
+</ul>
+<p>Compiler support for branch prediction</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (g)</a></li>
+</ul>
+<p>Predictor for deeply pipelined processors</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (b)</a>
+<ul>
+<li>limitations and size</li>
+</ul>
+</li>
+</ul>
+<p>Complex prediction without pipeline bubbles</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.ii)</a></li>
+</ul>
 <p>Improvements</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (a)</a>
 <ul>
-<li>I/D caches</li>
+<li>micro-architectural techniques or elements
+<ul>
+<li>I/D-caches</li>
+<li>branch prediction</li>
+<li>multiple / diversified pipelines</li>
+<li>skid buffer for stalling and replaying</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,7 +327,17 @@
 In-order dispatch: stall for data hazards; In-order issue: stall for structural hazards.</p>
 <p>In-order vs out-of-order dispatch &amp; execution</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c,d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (c)</a>
+<ul>
+<li>static vs. dynamic scheduling</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (a.ii)</a>
+<ul>
+<li>micro-architectural components</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (a)</a>
 <ul>
 <li>pipeline diagrams</li>
@@ -180,6 +346,20 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a>
 <ul>
 <li>power consumption</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p8q3.pdf">y2016p8q3 (b.ii)</a>
+<ul>
+<li>cases where more superscalar techniques wouldn't help</li>
+</ul>
+</li>
+</ul>
+<p>Instruction fetch</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (b)</a>
+<ul>
+<li>instruction cache and misalignment (spanning multiple cache lines), branch prediction.</li>
+<li>multiple basic blocks (path prediction and branch address cache, trace cache)</li>
 </ul>
 </li>
 </ul>
@@ -193,41 +373,132 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (a)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q7.pdf">y2009p7q7 (a-d)</a></li>
 </ul>
-<p>Hardware-based speculation</p>
-<p>Load bypassing</p>
+<p>Clustered architecture</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (c)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (a.b)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (c)</a>
 <ul>
-<li>memory-carried dependencies</li>
+<li>data forwarding network, partitioned issue windows;</li>
+<li>issue: inter-cluster communication.</li>
+<li>for VLIW, the same applies.</li>
 </ul>
 </li>
 </ul>
-<p>Store queue / buffer</p>
+<p>Hardware-based speculation</p>
+<p>Memory-carried dependencies and in-reversible store</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q7.pdf">y2009p7q7 (e)</a></li>
+</ul>
+<p>Load bypassing</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (c)</a>
+<ul>
+<li>Load/Store Queue (LQ/SQ).</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (a,b)</a>
+<ul>
+<li>Load Wait Table: PC -&gt; one bit, avoiding repeated false speculated loads.</li>
+<li>whether load will hit or miss in L1 D-cache.</li>
+</ul>
+</li>
+</ul>
+<p>Store Queue, store-to-load forwarding</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (b)</a></li>
 </ul>
 <p>ReOrder Buffer (ROB) [precise exceptions]</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (c)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (d)</a>
 <ul>
-<li>ROB vs Unified <strong>Physical</strong> RF</li>
+<li>ROB vs Unified <strong>Physical</strong> RF (with architectural RMT).</li>
+</ul>
+</li>
+</ul>
+<p>General</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p8q3.pdf">y2016p8q3 (b)</a>
+<ul>
+<li>give an assembly language program benefiting from superscalar techniques.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q5.pdf">y2013p7q5 (b)</a>
+<ul>
+<li>switching between two configurations.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (d)</a>
+<ul>
+<li>bottleneck: fabrication of wires, interconnect.</li>
 </ul>
 </li>
 </ul>
 <h2 id="software-ilp-vliw">Software ILP (VLIW)</h2>
-<p>Exploits <em>Instruction</em>-Level Parallelism via <em>static scheduling</em> (<strong>out-of-order</strong>).</p>
+<p>Exploits <em>Instruction</em>-Level Parallelism via <em>static scheduling</em>.</p>
+<p>vs. superscalar</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (b)</a>
+<ul>
+<li>implementations.</li>
+</ul>
+</li>
+</ul>
+<p>Clustered architecture: see superscalar pipeline.</p>
+<p>Local scheduling</p>
+<p>Loop unrolling</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (d)</a></li>
+</ul>
+<p>Software pipelining with Rotating Register File (RRF)</p>
+<p>Global scheduling</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (a)</a>
+<ul>
+<li>trace vs superblock scheduling</li>
+</ul>
+</li>
+</ul>
+<p>Conditional / Predicated operations</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.iii)</a>
+<ul>
+<li>vs. branch prediction and limitations</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (d)</a></li>
+</ul>
 <p>Memory reference speculation</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (d)</a>
+<ul>
+<li>compiler + advanced load address table (ALAT).</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (d)</a></li>
 </ul>
 <p>Variable-length bundles of independent instructions</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (c)</a></li>
+</ul>
+<p>Binary compatibility</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p7q1.pdf">y2006p7q1 (b)</a></li>
 </ul>
 <h2 id="multi-threaded-processors">Multi-threaded processors</h2>
 <p>Exploits <em>Thread</em>-Level Parallelism.</p>
+<p>vs. multi-core</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (a)</a>
+<ul>
+<li>modern architecture: multi-core &gt; single multi-threaded</li>
+</ul>
+</li>
+</ul>
 <p>Coarse-grained MT</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (a)</a></li>
@@ -257,20 +528,109 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 </ul>
 </li>
 </ul>
-<h2 id="memory-hierarchy">Memory hierarchy</h2>
+<p>General</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q3.pdf">y2007p8q3 (c)</a></li>
 </ul>
-<p>cache</p>
+<h2 id="memory-hierarchy">Memory hierarchy</h2>
+<p>Direct-mapped vs. set/fully associative cache</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (b)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (a)</a>
 <ul>
-<li>non-inclusive</li>
+<li>hit rate</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (a)</a>
+<ul>
+<li>reduce conflict misses for direct-mapped cache</li>
+</ul>
+</li>
+</ul>
+<p>Block replacement policy</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (b)</a>
+<ul>
+<li>LRU</li>
+</ul>
+</li>
+</ul>
+<p>Hit time calculation</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p7q5.pdf">y2008p7q5 (c)</a></li>
+</ul>
+<p>Virtual addressing and caching</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (b)</a>
+<ul>
+<li>VIPT</li>
+</ul>
+</li>
+</ul>
+<p>Cache: optimizing performance</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (b)</a>
+<ul>
+<li>list all the techniques</li>
+</ul>
+</li>
+<li>trade-off between memory vs. computation.</li>
+<li>memory layout and access order for better locality
+<ul>
+<li>loop interchange, loop fusion, array merging, array padding, cache blocking and alignment of data structures.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (a)</a>
+<ul>
+<li>multi-banked cache</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (c)</a>
 <ul>
-<li>merging or coalescing write-buffer</li>
+<li>merging or coalescing write-buffer violates TSO?</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (c)</a>
+<ul>
+<li>load/store buffer</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
+<ul>
+<li>(stride) prefetching hardware</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (b)</a>
+<ul>
+<li>non-blocking cache (out-of-order)</li>
+</ul>
+</li>
+<li>avoid false sharing in multiprocessor systems
+<ul>
+<li>private variables in the same cache line accessed by different threads/cores</li>
+</ul>
+</li>
+</ul>
+<p>Multi-level cache hierarchy</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p7q5.pdf">y2008p7q5 (a)</a>
+<ul>
+<li>why multi-level ?  hit time vs. number of hits</li>
+<li>L1, L2 examples</li>
+</ul>
+</li>
+</ul>
+<p>Inclusive vs. exclusive caches vs. NINE</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p7q5.pdf">y2008p7q5 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p8q3.pdf">y2017p8q3 (c.i)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (b)</a>
+<ul>
+<li>private vs. shared L2 caches</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p8q3.pdf">y2017p8q3 (c.ii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (b)</a>
+<ul>
+<li>non-inclusive</li>
 </ul>
 </li>
 </ul>
@@ -282,38 +642,144 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li>VLIW vs SIMD</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a)</a></li>
+</ul>
+<p>Potential advantages</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.i-ii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q5.pdf">y2012p7q5 (c)</a>
+<ul>
+<li>energy efficiency</li>
+</ul>
+</li>
+</ul>
+<p>Vector chaining and tailgating</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (b)</a></li>
+</ul>
+<p>Precise exceptions</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.iii)</a></li>
+</ul>
+<p>ISA: vector length</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.iv)</a></li>
 </ul>
 <h2 id="multi-core-processors">Multi-core processors</h2>
 <p>Exploits <em>Chip</em> Multiprocessing.</p>
+<p>vs. superscalar</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q5.pdf">y2012p7q5 (b)</a>
+<ul>
+<li>less power but equal performance</li>
+</ul>
+</li>
+</ul>
+<p>vs. multi-threaded processors</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (a)</a>
+<ul>
+<li>modern architecture: multi-core &gt; single multi-threaded</li>
+</ul>
+</li>
+</ul>
+<p>Multi-banked caches</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (a, b)</a></li>
+</ul>
+<p>Cache partitioning</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (d)</a></li>
+</ul>
+<p>Cache coherence: invalidate vs. update</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (b)</a></li>
+</ul>
 <p>Cache coherence: snoopy protocol</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p8q3.pdf">y2017p8q3 (a,b)</a>
+<ul>
+<li>bus's feature here, GPU</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (c)</a>
+<ul>
+<li>MESI</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
+<ul>
+<li>MESI, test-and-set without locking down the bus for multiple cycles</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (d)</a>
+<ul>
+<li>inclusion policy benefit for snoopy protocol</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (a)</a>
 <ul>
 <li>Ring interconnect</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q4.pdf">y2019p9q4 (e)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (e)</a>
 <ul>
-<li>MESI</li>
+<li>multiple processors with more buses.</li>
 </ul>
 </li>
 </ul>
 <p>Cache coherence: directory protocol</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (c,d)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (d)</a>
 <ul>
-<li>hierarchy of on-chip caches</li>
+<li>information stored in the directory for each cache line
+<ul>
+<li>a list of sharers</li>
+<li>exclusive individual processor</li>
 </ul>
 </li>
 </ul>
-<p>Memory consistency: SC vs TSO, store atomicity</p>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (c)</a>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (a-d)</a>
+<li>inclusive directory for non-inclusive caches</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (d)</a>
+<ul>
+<li>hierarchy of on-chip caches, clustered cache</li>
+</ul>
+</li>
+</ul>
+<p>Cache coherence: general</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p8q1.pdf">y2015p8q1</a></li>
+</ul>
+<p>Memory consistency: Sequential Consistency vs. Total Store Order</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (c)</a>
+<ul>
+<li>SC rarely used.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (a-c)</a>
+<ul>
+<li>SC vs. TSO</li>
+<li>coalescing write buffer violates TSO?</li>
+</ul>
+</li>
+</ul>
+<p>Memory consistency: Store atomicity</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (d)</a>
 <ul>
 <li>SMT, (store) multi-copy atomic</li>
 </ul>
 </li>
+</ul>
+<p>False sharing: cache line/block granularity</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (a)</a></li>
 </ul>
 <p>On-chip interconnection network</p>
 <ul>
@@ -322,16 +788,64 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li>virtual channels</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (a, c)</a>
+<ul>
+<li>mesh network, H-tree</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (c, d)</a>
+<ul>
+<li>large scale networks: challenges and constraints</li>
+</ul>
+</li>
+</ul>
+<p>General design</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q4.pdf">y2019p9q4 (b)</a>
+<ul>
+<li>draw a diagram with the above considerations</li>
+</ul>
+</li>
 </ul>
 <h2 id="specialised-processors">Specialised processors</h2>
 <p>Exploits <em>Accelerator</em>-Level Parallelism.</p>
+<p>Heterogeneous/asymmetric vs homogeneous/symmetric</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q5.pdf">y2013p7q5 (a)</a></li>
+</ul>
+<p>GPU</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p8q3.pdf">y2017p8q3 (b)</a>
+<ul>
+<li>GPU, cache coherence</li>
+</ul>
+</li>
+</ul>
 <p>Domain-Specific Accelerators (DSA)</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q1.pdf">y2023p9q1</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q1.pdf">y2023p9q1</a>
+<ul>
+<li>off-chip memory accesses; design hardware with assumptions</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (e)</a>
+<ul>
+<li>own cache vs DMA into main memory</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q5.pdf">y2012p7q5 (a)</a>
+<ul>
+<li>power vs. performance</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (c)</a>
 <ul>
-<li>Multicore; DSA(s)</li>
+<li>multicore vs. a DSA / two DSAs.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q1.pdf">y2006p8q1</a>
+<ul>
+<li>general design choices</li>
 </ul>
 </li>
 </ul>
