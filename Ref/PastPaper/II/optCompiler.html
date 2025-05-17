@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Control-flow</title>
+            <title>Basic concepts</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -140,10 +140,33 @@
         </head>
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-OptimisingCompilers.html">Optimising Compilers</a> Past Paper</p>
+<h2 id="basic-concepts">Basic concepts</h2>
+<p>basic block</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (a)</a></li>
+</ul>
+<p>flow graph (node is 3-address code)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (b)</a></li>
+</ul>
 <h2 id="control-flow">Control-flow</h2>
 <h3 id="unreachable-code-elimination">Unreachable code elimination</h3>
 <p>Reachability, control-flow property: will the control reach here?</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q13.pdf">y2011p7q13 (b)</a>
+<ul>
+<li>vs. dead code elimination</li>
+</ul>
+</li>
+</ul>
 <p>Call graph</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (b)</a></li>
+</ul>
+<p>if simplification</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q9.pdf">y2023p8q9 (e)</a></li>
+</ul>
 <h2 id="data-flow-analysis-framework">Data-flow analysis framework</h2>
 <p>Data-flow equations: relationship between values of that property immediately before <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">in()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span> and after <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">out()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span> each node  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> in a flow graph.</p>
 <ul>
@@ -161,19 +184,24 @@
      |  pos = out(n)
   Nodes s
 </code></pre>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><mo stretchy="false">{</mo><mo stretchy="false">}</mo><mtext>  </mtext><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mtext>  </mtext><msub><mtext>Op</mtext><mrow><mi>p</mi><mo>∈</mo><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msub><mtext>  </mtext><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>j</mi></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>j</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><mo stretchy="false">(</mo><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∖</mo><mi>s</mi><mi>e</mi><mi>t</mi><mi>I</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>∪</mo><mi>s</mi><mi>e</mi><mi>t</mi><mi>J</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mtext>, depends on the property</mtext></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><msub><mtext>Op</mtext><mrow><mi>s</mi><mo>∈</mo><mi>s</mi><mi>u</mi><mi>c</mi><mi>c</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msub><mtext>  </mtext><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>j</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
-pos_i(n) = &amp; \; \{ \} \; || \; \text{Op}_{p\in pred(n)} \; pos_j(p) \\
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><mo stretchy="false">{</mo><mo stretchy="false">}</mo><mtext>  </mtext><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mtext>  </mtext><msub><mtext>Op</mtext><mrow><mi>p</mi><mo>∈</mo><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msub><mtext>  </mtext><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>j</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><mo stretchy="false">(</mo><mi>p</mi><mi>o</mi><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>∖</mo><mi>s</mi><mi>e</mi><mi>t</mi><mi>I</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>∪</mo><mi>s</mi><mi>e</mi><mi>t</mi><mi>J</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mtext>, depends on the property</mtext></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>  </mtext><msub><mtext>Op</mtext><mrow><mi>s</mi><mo>∈</mo><mi>s</mi><mi>u</mi><mi>c</mi><mi>c</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msub><mtext>  </mtext><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+in(n) = &amp; \; \{ \} \; || \; \text{Op}_{p\in pred(n)} \; out(p) \\
 % &amp; \Updownarrow \\
 pos_j(n) = &amp; \; (pos_i(n) \setminus  setI(n)) \cup setJ(n) \text{, depends on the property} \\
 % &amp; \Updownarrow \\
-pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
+out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 
 \end{aligned}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.6183em;vertical-align:-2.0591em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">∣∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">re</span><span class="mord mathnormal mtight">d</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mord text"><span class="mord">, depends on the property</span></span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">cc</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.6183em;vertical-align:-2.0591em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">∣∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">re</span><span class="mord mathnormal mtight">d</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mord text"><span class="mord">, depends on the property</span></span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">cc</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (a, c-d)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q12.pdf">y2021p9q12 (b)</a>
 <ul>
-<li>semantic Reaching Definition analysis</li>
+<li>loop invariant expression</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (a, c-d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (d)</a>
+<ul>
+<li>semantic Reaching Definition (RD)</li>
 <li>constant propagation</li>
 </ul>
 </li>
@@ -182,7 +210,44 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 <li>Dominators analysis</li>
 </ul>
 </li>
-<li>More: Very Busy Expression analysis, Use-Definition chain</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q10.pdf">y2009p9q10 (a)</a>
+<ul>
+<li>Must-use / Very Busy Expression (VBE)</li>
+</ul>
+</li>
+<li>More: Use-Definition chain</li>
+<li>Summary
+<ul>
+<li>available expression: all paths to here include computation of it.</li>
+<li>live variable: some path from here leads to a use.</li>
+<li>very busy expressions: all paths from here lead to a use.</li>
+<li>reaching definition: some path to here includes a definition.</li>
+</ul>
+</li>
+</ul>
+<p>General</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q10.pdf">y2012p7q10 (c-f)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q12.pdf">y2010p7q12</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q10.pdf">y2009p9q10 (b)</a>
+<ul>
+<li>must-use-one-of</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q8.pdf">y2008p8q8 (b)</a>
+<ul>
+<li>security</li>
+</ul>
+</li>
+</ul>
+<p>Problem in data-flow analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (b)</a>
+<ul>
+<li>some variables hold the address.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q10.pdf">y2012p7q10 (e)</a></li>
 </ul>
 <h3 id="live-variable-analysis-lva">Live variable analysis (LVA)</h3>
 <p>Liveness, data-flow property: will the value be used <strong>later</strong>?</p>
@@ -199,8 +264,16 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.366em;vertical-align:-1.933em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.433em;"><span style="top:-4.643em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"></span></span><span style="top:-2.933em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.933em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.433em;"><span style="top:-4.643em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">re</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span><span style="top:-2.933em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.809em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">cc</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">⋃</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.516em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.933em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (a-b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q9.pdf">y2024p8q9 (a, d, f)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q11.pdf">y2013p7q11</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q13.pdf">y2011p7q13 (a, c)</a>
+<ul>
+<li>semantic vs. syntactic liveness</li>
 </ul>
-<p>Data-flow anomalies</p>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q12.pdf">y2009p7q12 (a)</a></li>
+</ul>
+<p><strong>Data-flow anomalies</strong></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (c)</a>
 <ul>
@@ -208,7 +281,56 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 </ul>
 </li>
 </ul>
+<p>Dead code elimination</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q9.pdf">y2023p9q9 (a)</a>
+<ul>
+<li>compare AST, three-address code, and stack-based IR.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q9.pdf">y2023p8q9 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q9.pdf">y2024p8q9 (e)</a></li>
+</ul>
+<p>Definition, Reference, Un-definition</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q10.pdf">y2012p7q10 (a-b)</a></li>
+</ul>
 <p>Clash / interference graph</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (e)</a></li>
+</ul>
+<p><strong>Register allocation</strong></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (d-e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q12.pdf">y2009p7q12 (b-e)</a></li>
+</ul>
+<p>Live range splitting</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (e)</a>
+<ul>
+<li>minimum number of registers required</li>
+</ul>
+</li>
+</ul>
+<p><em>Static single assignment (SSA)</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12</a>
+<ul>
+<li>static single assignment, dominance</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (c)</a>
+<ul>
+<li>SSA form, register allocation and instruction scheduling</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q9.pdf">y2024p8q9 (b,c,f)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q12.pdf">y2009p7q12 (f)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (b-c)</a></li>
+</ul>
 <h3 id="available-expression-analysis-avail">Available expression analysis (AVAIL)</h3>
 <p>Availability, data-flow property: will the value be assigned <strong>before</strong>?</p>
 <pre><code> Nodes p
@@ -228,43 +350,76 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 <li>semantic and syntactic expression availability, safe</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q11.pdf">y2014p7q11 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q8.pdf">y2008p8q8 (a)</a></li>
 </ul>
-<p><em>Redundancy elimination</em></p>
-<p>Common sub-expression elimination</p>
+<p><strong>Redundancy elimination</strong></p>
+<p>Common sub-expression elimination (CSE)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q9.pdf">y2023p8q9 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q11.pdf">y2014p7q11 (b-d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q8.pdf">y2007p8q8 (a, b)</a>
+<ul>
+<li>Code motion transformation: where to move the code?</li>
+</ul>
+</li>
+</ul>
 <p>Copy propagation</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (d.e.)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q9.pdf">y2023p8q9 (c)</a></li>
 </ul>
-<p>Code motion optimisation</p>
-<h2 id="register-allocation">Register allocation</h2>
+<p>Code hoisting (VBE analysis)</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (d-e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q9.pdf">y2023p8q9 (b)</a></li>
 </ul>
-<h3 id="static-single-assignment-ssa-and-strength-reduction">Static single assignment (SSA) and Strength reduction</h3>
+<p>Loop-invariant code motion (LICM)</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12</a>
-<ul>
-<li>static single assignment, dominance</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q12.pdf">y2021p9q12</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q11.pdf">y2014p7q11 (d)</a></li>
 </ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (c)</a>
+<p>Partial redundancy elimination (CSE+LICM)</p>
 <ul>
-<li>SSA form, register allocation and instruction scheduling</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q8.pdf">y2008p8q8 (a.ii)</a></li>
 </ul>
 <h2 id="higher-level-opt">Higher-level opt</h2>
+<p>Strength reduction</p>
 <h3 id="abstract-interpretation">Abstract interpretation</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q11.pdf">y2018p9q11</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q9.pdf">y2012p9q9 (b,c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (a.i)</a></li>
 </ul>
 <p>Strictness analysis</p>
 <ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q9.pdf">y2024p9q9</a>
+<ul>
+<li>vs. neededness</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q12.pdf">y2021p8q12</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q9.pdf">y2016p9q9</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q9.pdf">y2012p9q9 (a,c)</a></li>
 </ul>
-<h3 id="constraint-based-analysis-0cfa">Constraint-based analysis (0CFA)</h3>
+<p>Turn data-flow equations into strictness</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q10.pdf">y2009p9q10 (c-d)</a></li>
+</ul>
+<p>Conversion among abstract interpretation, set-constraint, rule-based analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (b, c)</a>
+<ul>
+<li>recursive calls</li>
+</ul>
+</li>
+</ul>
+<h3 id="constraint-based-analysis">Constraint-based analysis</h3>
+<p>Set-constraint analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (a.ii)</a></li>
+</ul>
+<p>OCFA</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q9.pdf">y2022p8q9</a>
 <ul>
@@ -272,7 +427,23 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 </ul>
 </li>
 </ul>
+<p>Turn data-flow equations into constraints</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q9.pdf">y2015p9q9</a></li>
+</ul>
+<p>Conversion among abstract interpretation, set-constraint, rule-based analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (b, c)</a>
+<ul>
+<li>recursive calls</li>
+</ul>
+</li>
+</ul>
 <h3 id="inference-based-analysis">Inference-based analysis</h3>
+<p>Rule-based analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (a.iii)</a></li>
+</ul>
 <p>Effect system</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q12.pdf">y2020p8q12</a>
@@ -280,11 +451,48 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 <li>Safety</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q9.pdf">y2014p9q9</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p9q16.pdf">y2008p9q16</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p9q8.pdf">y2006p9q8</a>
+<ul>
+<li>infer type and effect</li>
 </ul>
-<h3 id="alias-and-points-to-analysis">Alias and points-to analysis</h3>
+</li>
+</ul>
+<p>Conversion among abstract interpretation, set-constraint, rule-based analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (b, c)</a>
+<ul>
+<li>recursive calls</li>
+</ul>
+</li>
+</ul>
+<h3 id="alias-analysis">Alias analysis</h3>
+<p>Points-to analysis (forward)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (c)</a>
+<ul>
+<li>vs. Anderson's analysis</li>
+</ul>
+</li>
+</ul>
+<p>Anderson's analysis</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q11.pdf">y2019p8q11</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p9q8.pdf">y2011p9q8 (c-d)</a></li>
+</ul>
+<p>Turn data-flow equations into constraints</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q9.pdf">y2015p9q9 (d,e)</a></li>
+</ul>
+<p>Conversion among abstract interpretation, set-constraint, rule-based analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (b, c)</a>
+<ul>
+<li>recursive calls</li>
+</ul>
+</li>
 </ul>
 <h2 id="instruction-scheduling">Instruction scheduling</h2>
 <p>target code level for different architectures</p>
@@ -294,6 +502,12 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 <li>Gibbons and Muchnick algorithm</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p9q8.pdf">y2011p9q8 (a-c)</a>
+<ul>
+<li>VLIW</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q8.pdf">y2007p8q8 (b)</a></li>
 </ul>
 <h3 id="register-allocation-vs-instruction-scheduling">Register allocation vs instruction scheduling</h3>
 <ul>
@@ -306,15 +520,21 @@ pos_i(n) = &amp; \; \text{Op}_{s\in succ(n)} \; pos_j(s) \\
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q12.pdf">y2017p7q12 (d,e)</a></li>
 </ul>
 <h2 id="decompilation">Decompilation</h2>
+<p>Dominance</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12</a>
 <ul>
 <li>static single assignment, dominance</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q9.pdf">y2023p9q9 (b)</a></li>
+</ul>
+<p>Optimisation</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p9q10.pdf">y2010p9q10</a></li>
 </ul>
 <h2 id="general-opt">General opt</h2>
-<p>Phase ordering</p>
+<p>Phase <strong>order</strong>ing</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (a)</a></li>
 </ul>
