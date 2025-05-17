@@ -142,80 +142,170 @@
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-Bioinformatics.html">Bioinformatics</a> Past Paper</p>
 <h2 id="lecture-1-genetics">Lecture 1: Genetics</h2>
 <p>Reference online resource: <a href="http://rna.informatik.uni-freiburg.de/Teaching/">Teaching</a></p>
-<h2 id="lecture-2-sequence-alignment">Lecture 2: Sequence alignment</h2>
+<p>Youtube <a href="https://www.youtube.com/@bioinfalgorithms">@bioinfalgorithms</a> accompanying the textbook &quot;Bioinformatics Algorithms: An Active Learning Approach&quot;.</p>
+<p>Gene network [extensions]</p>
 <ul>
-<li>global alignment (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch">Needleman-Wunsch</a>)</li>
-<li>local alignments (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman">Smith-Waterman</a>)</li>
-<li>similar sequences (banded dynamic programming)</li>
-<li>linear space (divide and conquer, <a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Hirschberg">Hirshberg</a>)</li>
-<li>speedup (four Russians)</li>
-</ul>
-<p>e.g.,</p>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (d)</a>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q2.pdf">y2023p8q2 (a)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q2.pdf">y2024p8q2 (b)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (a-c)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (a)</a>
-<ul>
-<li>a. global vs local alignment, gap</li>
-<li>Four Russians speedup, complexity</li>
+<li>Wagner algorithm</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q1.pdf">y2013p9q1 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p9q13.pdf">y2006p9q13 (b, c)</a></li>
+</ul>
+<h2 id="lecture-2-sequence-alignment">Lecture 2: Sequence alignment</h2>
+<p>Hamming distance vs edit distance</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q13.pdf">y2007p8q13 (a)</a></li>
+</ul>
+<p>Dynamic programming (dp)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q1.pdf">y2012p9q1 (a.i)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q13.pdf">y2007p8q13 (c)</a>
+<ul>
+<li>Banded dp</li>
+</ul>
+</li>
+</ul>
+<p>Longest Common Subsequence (LCS)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q1.pdf">y2015p9q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q13.pdf">y2007p8q13 (b)</a>
+<ul>
+<li>vs. global alignment</li>
+</ul>
+</li>
+</ul>
+<p><em>Scoring matrices</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (c)</a>
+<ul>
+<li>Point Accepted Mutation (PAM) matrix</li>
+</ul>
+</li>
+</ul>
+<p><em>Gaps</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q1.pdf">y2012p9q1 (a.ii)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (b)</a>
+<ul>
+<li>non-linear, affine</li>
+</ul>
+</li>
+</ul>
+<p><strong>Global</strong> alignment (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch">Needleman-Wunsch</a>)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q2.pdf">y2024p8q2 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q2.pdf">y2023p8q2 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q3.pdf">y2013p7q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q3.pdf">y2009p9q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q1.pdf">y2008p8q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q3.pdf">y2013p7q3 (b)</a>
+<ul>
+<li>Gap penalty</li>
+</ul>
+</li>
+</ul>
+<p><strong>Local</strong> alignment (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman">Smith-Waterman</a>)</p>
+<ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (a.b)</a>
 <ul>
 <li>mismatch and gap extension penalty
 <ul>
-<li>If decrease gap penalty, more gaps (fewer sequence homologous regions).</li>
+<li>If decrease gap penalty, more gaps (fewer sequence homologous regions), vice versa.</li>
 <li>If decrease mismatch penalty / gap extension penalty, less gaps (more regions of similarity).</li>
-<li>Vice versa.</li>
 </ul>
 </li>
-<li>internal sequence duplications identification via self-alignment.</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (a.b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (f)</a>
+</ul>
+<p>Identify internal sequence duplications</p>
 <ul>
-<li>banded or Hirshberg linear space</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q4.pdf">y2017p7q4 (a)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (b)</a>
 <ul>
-<li>complexity</li>
+<li>via self-alignment.</li>
 </ul>
 </li>
 </ul>
-<p>Scoring matrices, Point Accepted Mutation (PAM) matrix</p>
+<p>Global vs. local alignment</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (a)</a>
+<ul>
+<li>Gap penalty.</li>
 </ul>
-<p>RNA secondary structure prediction (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov">Nussinov-Jacobson folding</a>)</p>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q1.pdf">y2012p9q1 (b.i)</a></li>
+</ul>
+<p><em>speedup (Four Russians)</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q13.pdf">y2007p8q13 (d)</a></li>
+</ul>
+<p><em>linear space (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Hirschberg">Hirshberg</a>, divide and conquer)</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (f)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q2.pdf">y2016p9q2 (a)</a></li>
+</ul>
+<p>General: complexity summary</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q4.pdf">y2017p7q4 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q5.pdf">y2010p7q5 (a)</a></li>
+</ul>
+<p>General: long DNA sequences</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q1.pdf">y2014p9q1 (c)</a></li>
+</ul>
+<p><strong>RNA secondary structure</strong> prediction (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov">Nussinov-Jacobson folding</a>)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q2.pdf">y2023p8q2 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (c)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q2.pdf">y2019p8q2 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q5.pdf">y2009p7q5 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q1.pdf">y2015p9q1 (b)</a>
+<ul>
+<li>limitations: identify pseudo-knot and branched loops is difficult because the same interact with different segments.</li>
+</ul>
+</li>
 </ul>
 <h2 id="lecture-3-phylogeny">Lecture 3: Phylogeny</h2>
 <p>Phylogenetic trees infer evolutionary relationships among biological species/entities based on their physical or genetic (DNA or amino acid sequences) characteristics similarities and differences.</p>
 <p>Reference online resource: <a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Agglomerative%20Clustering">Hierarchical/Agglomerative clustering</a></p>
+<p>Motivation</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (a.i)</a></li>
+</ul>
 <p>Distance matrix</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (c)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p9q3.pdf">y2010p9q3 (c)</a>
 <ul>
 <li>additivity, four points conditions.</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q4.pdf">y2016p7q4 (d-e)</a>
+<ul>
+<li>additive, example of additive and non-additive distance matrices.</li>
 </ul>
-<p>Unweighted Pair Group Method with Arithmetic Mean (UPGMA)</p>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q3.pdf">y2013p7q3 (c,d)</a></li>
+</ul>
+<p><strong>UPGMA</strong> (Unweighted Pair Group Method with Arithmetic Mean)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (a)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (c)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (c-e)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (c)</a>,  <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p9q1.pdf">y2008p9q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (d)</a></li>
+</ul>
+<p><em>ultra-metric <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">⊆</span></span></span></span> additive</em></p>
 <ul>
-<li>ultra-metric <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">⊆</span></span></span></span> additive.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (c-e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (e)</a>
+<ul>
+<li>ultram-etric tree assumes a molecular clock.</li>
 </ul>
 </li>
 </ul>
-<p>Neighbor joining</p>
+<p><strong>Neighbor joining</strong></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (a.b)</a>
@@ -225,25 +315,40 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q2.pdf">y2019p8q2 (b)</a></li>
 </ul>
-<p>General</p>
+<p><strong>Parsimony</strong></p>
+<p>vs. distance methods</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (d)</a>
-<ul>
-<li>extension: add a node</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (a)</a></li>
 </ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (c,d)</a>
+<p>Sankoff parsimony</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (c)</a>
 <ul>
 <li>mutation effect on phylogenetic analysis</li>
-<li>difference between distance and parsimony methods</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p9q3.pdf">y2010p9q3 (b)</a>,  <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q3.pdf">y2009p9q3 (b)</a>
+<ul>
+<li>complexity</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q2.pdf">y2022p9q2 (d)</a>
+<ul>
+<li>extension: add/remove a node</li>
 </ul>
 </li>
 </ul>
-<p>Bootstrap validation</p>
+<p><em>Bootstrap validation</em></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q1.pdf">y2013p9q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q1.pdf">y2014p9q1 (b)</a></li>
 </ul>
-<p>Multiple alignments (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Iterative%20Refinement">iterative refinement</a>)</p>
+<p>General methods</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (a.ii)</a></li>
+</ul>
+<p><strong>Multiple alignments</strong> (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Iterative%20Refinement">iterative refinement</a>)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q2.pdf">y2019p9q2 (a)</a>
 <ul>
@@ -252,29 +357,71 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q2.pdf">y2023p8q2 (c)</a></li>
 </ul>
-<p><em>progressive alignment heuristic</em></p>
+<p><em>Progressive alignment heuristic</em></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (b)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (b)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q2.pdf">y2016p9q2 (b,c)</a>
 <ul>
-<li>guide tree</li>
+<li>guide tree in <code>CLUSTAL</code></li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p9q1.pdf">y2012p9q1 (b.ii)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (a)</a>
+<ul>
+<li><code>CLUSTAL</code> heuristic vs. dp.</li>
 </ul>
 </li>
 </ul>
-<p>statistic evaluation</p>
+<p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q2.pdf">y2016p9q2 (c)</a></p>
+<p><em>Statistic evaluation</em></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (b)</a>
 <ul>
 <li>symbol entropy for col.</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q1.pdf">y2014p9q1 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q5.pdf">y2010p7q5 (b)</a>
+<ul>
+<li>score a multiple sequence alignment.</li>
+</ul>
+</li>
 </ul>
 <p>Approximate search</p>
 <h2 id="lecture-4-clustering">Lecture 4: Clustering</h2>
-<p>K-center, K-means, Hierarchical, <a href="http://micans.org/mcl/">Markov</a></p>
+<p>Clustering in gene expression microarray data</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (d)</a>
+<ul>
+<li>compare expression levels in different conditions</li>
+<li>explore temporal expression levels evolution</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q2.pdf">y2018p9q2 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q1.pdf">y2015p9q1 (c)</a>
+<ul>
+<li>which algo for gene expression data?</li>
+<li>see below.</li>
+</ul>
+</li>
+</ul>
+<p>K-center, K-means, Hierarchical, <a href="http://micans.org/mcl/">Markov</a> clustering</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (d)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q2.pdf">y2018p9q2 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q3.pdf">y2009p9q3 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q13.pdf">y2007p9q13 (b)</a></li>
+</ul>
+<p><em>Evaluation</em></p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q1.pdf">y2013p9q1 (c)</a></li>
+</ul>
+<p>Markov clustering (MCL) algorithm</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q1.pdf">y2015p9q1 (d)</a>
+<ul>
+<li>complexity</li>
+</ul>
+</li>
 </ul>
 <p>Soft K-means vs Hard</p>
 <ul>
@@ -315,20 +462,54 @@
 </ul>
 </li>
 </ul>
-<p>Bubbles explosion and solutions</p>
+<p>Eulerian vs. Hamiltonian</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q2.pdf">y2020p9q2 (d)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q2.pdf">y2019p9q2 (b, c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q4.pdf">y2016p7q4 (a)</a></li>
+</ul>
+<p>De Bruijn graph construction</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q4.pdf">y2017p7q4 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q2.pdf">y2019p9q2 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q4.pdf">y2016p7q4 (b)</a></li>
+</ul>
+<p>Paired</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q2.pdf">y2019p9q2 (c)</a></li>
+</ul>
+<p>K-mers</p>
+<ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q2.pdf">y2018p9q2 (d)</a>
 <ul>
 <li>long vs short k-mers.</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q4.pdf">y2017p7q4 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q4.pdf">y2016p7q4 (c)</a></li>
+</ul>
+<p>Bubbles explosion and solutions</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q2.pdf">y2020p9q2 (d)</a></li>
 </ul>
 <h2 id="lecture-6-genome-assembly">Lecture 6: Genome assembly</h2>
 <p>Use an additional <em>reference</em> genome to augment sequencing or match (read) patterns.</p>
-<p>Read / Exact pattern matching</p>
+<p>Suffix trees</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (d)</a></li>
+</ul>
+<p>Compression</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q2.pdf">y2016p9q2 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p9q1.pdf">y2014p9q1 (c)</a></li>
+</ul>
+<p>Burrows-Wheeler Transform (BWT)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (c)</a>
+<ul>
+<li>Try run.</li>
+</ul>
+</li>
+</ul>
+<p>Read / Exact <strong>pattern matching</strong></p>
 <ul>
 <li>Sequencing De Bruijn graph construction takes a lot of memory and time.</li>
 <li>Fitting via alignment: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mtext>Patterns</mtext><mi mathvariant="normal">∣</mi><mo>×</mo><mi mathvariant="normal">∣</mi><mtext>Genome</mtext><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|\text{Patterns}| \times |\text{Genome}|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord text"><span class="mord">Patterns</span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord text"><span class="mord">Genome</span></span><span class="mord">∣</span><span class="mclose">)</span></span></span></span>.</li>
@@ -343,25 +524,17 @@
 </li>
 </ul>
 </li>
-</ul>
-<p>Inexact pattern matching with at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span> mismatches</p>
-<ul>
-<li>potential candidates: at least one of the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> <strong>seeds</strong> is error-free. Check the entire pattern against the Genome.</li>
-<li>invert BWT with extended mismatch + suffix array.</li>
-</ul>
-<p>Suffix trees</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (d)</a></li>
-</ul>
-<p>Burrows-Wheeler Transform (BWT)</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (c)</a>
-<ul>
-<li>Try run.</li>
-</ul>
-</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q2.pdf">y2018p9q2 (c)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (d)</a></li>
+</ul>
+<p><strong>Inexact</strong> pattern matching, with at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span> mismatches.</p>
+<ul>
+<li>potential candidates: at least one of the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> <strong>seeds</strong> is error-free. Check the entire pattern against the Genome.
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q5.pdf">y2009p7q5 (b)</a></li>
+</ul>
+</li>
+<li>invert BWT with extended mismatch + suffix array.</li>
 </ul>
 <p>General</p>
 <ul>
@@ -369,20 +542,50 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q2.pdf">y2024p8q2 (a)</a></li>
 </ul>
 <h2 id="lecture-7-hidden-markov-models">Lecture 7: Hidden Markov models</h2>
-<p>Parts identification</p>
+<p>Application</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q13.pdf">y2007p9q13 (a)</a></li>
+</ul>
+<p>Identify parts</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q2.pdf">y2021p8q2 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (c)</a>
+<ul>
+<li><code>Genescan</code></li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (b.i)</a>
+<ul>
+<li>membrane segments in amino-acid sequences.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q5.pdf">y2009p7q5 (c.i)</a></li>
 </ul>
 <p>Exons, Introns prediction</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (e)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q2.pdf">y2019p8q2 (c)</a></li>
 </ul>
-<p>GC islands</p>
+<p>Protein secondary structure prediction</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p9q1.pdf">y2008p9q1 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p9q13.pdf">y2006p9q13 (a.ii)</a>
+<ul>
+<li>transmembrane segment</li>
+</ul>
+</li>
+</ul>
+<p>CG islands</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q2.pdf">y2018p9q2 (b)</a></li>
 </ul>
-<p>Denote <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>M</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">HMM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.10903em;">MM</span></span></span></span>: transition matrix <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>, emission matrix <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> states and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> training sequences, with total number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> each.</p>
+<p><em>Evaluation</em>: TP, FP, TN, FN, sensitivity, specificity, precision, F1 score</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q1.pdf">y2013p9q1 (b)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (b.ii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q5.pdf">y2009p7q5 (c.ii)</a></li>
+</ul>
+<p>Denote <code>HMM</code>: transition matrix <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>, emission matrix <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> states and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> training sequences, with total number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> each.</p>
 <p>State sequence <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>=</mo><mo stretchy="false">{</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>q</mi><mi>k</mi></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\pi =\{q_1, ..., q_k\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span>, observation sequence <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy="false">{</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>N</mi></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">X =\{x_1, x_2, \dots, x_N\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span>,</p>
 <table>
 <thead>
@@ -435,10 +638,12 @@
 <p>Viterbi algorithm</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p9q13.pdf">y2006p9q13 (a.i)</a></li>
 </ul>
 <p>Baum-Welsh algo</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p9q13.pdf">y2006p9q13 (a.i)</a></li>
 </ul>
 <h2 id="lecture-8-storage-and-computing">Lecture 8: Storage and computing</h2>
 <ul>
@@ -456,16 +661,36 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q2.pdf">y2024p8q2 (d)</a></li>
 </ul>
 <h2 id="lecture-9-simulation">Lecture 9: Simulation</h2>
+<p>Gillespie Algorithm</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q2.pdf">y2024p8q2 (c)</a>
 <ul>
 <li>dimerisation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>P</mi><mo>→</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">2P \rightarrow D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> and dissociation <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>→</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex">D \rightarrow 2P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>.</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p9q1.pdf">y2015p9q1 (e)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p9q3.pdf">y2010p9q3 (d)</a>
+<ul>
+<li>assumption, complexity</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (e)</a>
+<ul>
+<li>vs. deterministic approach</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (e)</a>
 <ul>
-<li>well-stirred chemical solution for the Gillespie Algorithm.</li>
+<li>well-stirred chemical solution</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q3.pdf">y2009p9q3 (ds)</a>
+<ul>
+<li>utility</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q13.pdf">y2007p9q13 (c)</a>
+<ul>
+<li>w.r.t genetic or biochemical networks</li>
 </ul>
 </li>
 </ul>
