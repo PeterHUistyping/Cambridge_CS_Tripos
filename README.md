@@ -44,7 +44,8 @@
 | 3-2 | [Clocks Broadcast Replication](./Note/Clocks%20Broadcast%20Replication.pdf) | causality, summary                            | IB Distributed, Network ✎✓                             |
 | 3-3 | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)                     | five-layer OSI                                | IB Computer Networking                                    |
 | 3-4 | [Communication](./Note/Principles_of_Communication.pdf)                     | Principles of Communication (PoC)             | IB Computer Networking, II PoC                   |
-| 3-5 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎             |
+| 3-5 | [Bioinformatics](./Note/Bioinformatics.pdf)                     | Collections of algorithms            | II Bioinformatics                |
+| 3-6 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎             |
 
 > *Reference:*
 

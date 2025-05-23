@@ -140,9 +140,147 @@
         </head>
         <body class="vscode-body vscode-light">
             <p><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/t-Bioinformatics.html">Bioinformatics</a> Past Paper</p>
+<ul>
+<li>Algorithm, Software, Examples
+<ul>
+<li>[Which] Name</li>
+<li>[Input] assumptions/conditions/constraints
+<ul>
+<li>foundation of reasoning / fill incomplete info/gap</li>
+<li>exclude potential limitations</li>
+</ul>
+</li>
+<li>[Output] requirements</li>
+<li>[How] methods, description, main steps</li>
+<li>[Why] Motivation / Intention / Purposes</li>
+<li>[Extension] comparison (pros and cons), speedup, application, complexity.</li>
+</ul>
+</li>
+</ul>
 <h2 id="lecture-1-genetics">Lecture 1: Genetics</h2>
 <p>Reference online resource: <a href="http://rna.informatik.uni-freiburg.de/Teaching/">Teaching</a></p>
 <p>Youtube <a href="https://www.youtube.com/@bioinfalgorithms">@bioinfalgorithms</a> accompanying the textbook &quot;Bioinformatics Algorithms: An Active Learning Approach&quot;.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">features</th>
+<th>DNA</th>
+<th>RNA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">strand structure</td>
+<td>double helix</td>
+<td>single-stranded</td>
+</tr>
+<tr>
+<td style="text-align:center">nitrogenous base</td>
+<td>A, T, C, G</td>
+<td>A, U, C, G</td>
+</tr>
+<tr>
+<td style="text-align:center">base pairs</td>
+<td>A-T, C-G</td>
+<td>A-U, C-G</td>
+</tr>
+<tr>
+<td style="text-align:center">sugar</td>
+<td>Deoxyribose</td>
+<td>Ribose</td>
+</tr>
+<tr>
+<td style="text-align:center">function</td>
+<td>long-term storage of genetic info</td>
+<td>protein synthesis and gene regulation</td>
+</tr>
+<tr>
+<td style="text-align:center">stability</td>
+<td>more stable (-H)</td>
+<td>stable due to hydroxyl group (-OH)</td>
+</tr>
+</tbody>
+</table>
+<p>nitrogenous bases:	Adenine (A), Thymine (T), Cytosine (C), Guanine (G), Uracil (U).</p>
+<ul>
+<li>The total number of codons is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>4</mn><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">4^3=64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">64</span></span></span></span>.</li>
+<li>The total number of amino acids is 20.</li>
+<li>Codon degeneracy: multiple codons can are mapped toP the same amino acid, for redundancy if codon are mutated.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>concept</th>
+<th>gene</th>
+<th>genome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>definition</td>
+<td>specific DNA segment for proteins or RNA encoding</td>
+<td>complete set of genetic material</td>
+</tr>
+<tr>
+<td>functionality</td>
+<td>heredity, gene code for proteins</td>
+<td>all genes and non-coding sequences</td>
+</tr>
+<tr>
+<td>size</td>
+<td>various sizes</td>
+<td>entire DNA content of the organism</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>region and feature</th>
+<th><strong>DNA genes</strong></th>
+<th><strong>programming functions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start marker</td>
+<td>promoter region</td>
+<td>function declaration (e.g.,<code>def func()</code>)</td>
+</tr>
+<tr>
+<td>coding region</td>
+<td>exons (encode protein information)</td>
+<td>function body</td>
+</tr>
+<tr>
+<td>non-coding region</td>
+<td>introns (sequences)</td>
+<td>comments or placeholder code</td>
+</tr>
+<tr>
+<td>end marker</td>
+<td>termination signal (of transcription)</td>
+<td>closing brace or return statement</td>
+</tr>
+<tr>
+<td>purpose</td>
+<td>defines the structure and expression of a gene</td>
+<td>defines the structure and behavior of funcs</td>
+</tr>
+<tr>
+<td>execution</td>
+<td>transcription and translation to produce proteins</td>
+<td>execution of the function when called</td>
+</tr>
+</tbody>
+</table>
+<p>DNA -- <em>transcription</em> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> messenger RNA (mRNA) -- <em>translation</em> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> protein, codon, amino acid.</p>
+<p>Firstly, transcription happens, where a specific segment of DNA is copied into messenger RNA (mRNA). Secondly, translation occurs, where the mRNA is used to synthesize a protein, by attaching to a ribosome.</p>
+<ul>
+<li>The ribosome (composed of ribosomal RNA (rRNA) and proteins) reads the <strong>codons</strong> (three nucleotides of mRNA specifying a particular amino acid) until the ending signal appears.</li>
+<li><em>Transfer RNA (tRNA)</em> molecules bring amino acids to the ribosome. Each tRNA has an anticodon that is complementary to the mRNA codon.</li>
+<li>The ribosome facilitates the formation of peptide bonds between amino acids, linking them together to form a <em>growing polypeptide chain</em>.</li>
+</ul>
 <p>Gene network [extensions]</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (d)</a>
@@ -276,7 +414,99 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (a.i)</a></li>
 </ul>
-<p>Distance matrix</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>distance-based</th>
+<th>parsimony-based</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td>pairwise additive distance matrix</td>
+<td>character tables</td>
+</tr>
+<tr>
+<td>assumption</td>
+<td>distances are additive</td>
+<td>principle of minimal changes</td>
+</tr>
+<tr>
+<td>good for</td>
+<td>additive changes, faster</td>
+<td>detailed and character-based</td>
+</tr>
+<tr>
+<td>weakness</td>
+<td>no information at internal node</td>
+<td>homoplasy vs. shared traits</td>
+</tr>
+<tr>
+<td></td>
+<td>over-simplification</td>
+<td>slower for large scale</td>
+</tr>
+<tr>
+<td>examples</td>
+<td>UPGMA, neighbor-joining</td>
+<td>small (or large) parsimony</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distance-based-methods">Distance-based methods</h3>
+<p><strong>Distance matrix</strong></p>
+<p>The <em>additive</em> tree condition meant that for any two leaves, the distance between them is the sum of edge weights of the path between them.</p>
+<p>The ultra-metric tree condition: distance from root to any leaf is the same (i.e., age of root).</p>
+<ul>
+<li>Branch lengths represent evolutionary change, allowing for direct comparison of divergence among taxa.</li>
+<li>Molecular Clock Hypothesis: genetic change accumulates at a constant rate across lineages over time.
+<ul>
+<li>Thus, the rate of mutation or evolutionary change is uniform, allowing for the use of branch lengths as measures of time.</li>
+</ul>
+</li>
+<li>Relationship: ultra-metric <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">⊆</span></span></span></span> additive.</li>
+</ul>
+<p><em>Four-point</em> condition between four taxa: for any four elements, define <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>k</mi><mi>l</mi></mrow></msub><mo>=</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">d_{ij} +d_{kl} =T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span>,</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>d</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>k</mi><mi>l</mi></mrow></msub><mo>&lt;</mo><msub><mi>d</mi><mrow><mi>i</mi><mi>l</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><mo>=</mo><msub><mi>d</mi><mrow><mi>i</mi><mi>k</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>j</mi><mi>l</mi></mrow></msub><mo>=</mo><mi>T</mi><mo>+</mo><mn>2</mn><mi>a</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">d_{ij} + d_{kl} &lt; d_{il} + d_{jk}=d_{ik}+d_{jl} = T+2a.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">jk</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">ik</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal">a</span><span class="mord">.</span></span></span></span></span></p>
+<pre><code>i \       / k
+    --a--
+j /       \ l
+</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>UPGMA</th>
+<th>Neighbor-Joining (NJ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td>additive distance matrix</td>
+<td>additive distance matrix</td>
+</tr>
+<tr>
+<td>output</td>
+<td>rooted ultra-metric tree</td>
+<td>un-rooted additive tree</td>
+</tr>
+<tr>
+<td>evolution rate</td>
+<td>constant</td>
+<td>varying</td>
+</tr>
+<tr>
+<td>complexity</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>Past papers</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q2.pdf">y2017p9q2 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p9q3.pdf">y2010p9q3 (c)</a>
 <ul>
@@ -290,21 +520,21 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q3.pdf">y2013p7q3 (c,d)</a></li>
 </ul>
+<p>ultra-metric</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (e)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (e)</a>
+<ul>
+<li>molecular clock assumption</li>
+</ul>
+</li>
+</ul>
 <p><strong>UPGMA</strong> (Unweighted Pair Group Method with Arithmetic Mean)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p9q2.pdf">y2023p9q2 (a)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q2.pdf">y2021p9q2 (c)</a>,  <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q3.pdf">y2015p7q3 (d)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p9q1.pdf">y2008p9q1 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (d)</a></li>
-</ul>
-<p><em>ultra-metric <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">⊆</span></span></span></span> additive</em></p>
-<ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (c-e)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q13.pdf">y2006p8q13 (e)</a>
-<ul>
-<li>ultram-etric tree assumes a molecular clock.</li>
-</ul>
-</li>
 </ul>
 <p><strong>Neighbor joining</strong></p>
 <ul>
@@ -316,7 +546,7 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q2.pdf">y2019p8q2 (b)</a></li>
 </ul>
-<p><strong>Parsimony</strong></p>
+<h3 id="parsimony-based-methods">Parsimony-based methods</h3>
 <p>vs. distance methods</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q2.pdf">y2020p8q2 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q3.pdf">y2014p7q3 (a)</a></li>
@@ -349,7 +579,75 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q3.pdf">y2012p7q3 (a.ii)</a></li>
 </ul>
-<p><strong>Multiple alignments</strong> (<a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Iterative%20Refinement">iterative refinement</a>)</p>
+<h3 id="multiple-alignments">Multiple alignments</h3>
+<p>For a k-way sequence alignment of length <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>,</p>
+<ul>
+<li>there are <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">n^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> nodes in the alignment graph,</li>
+<li>each node has <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9324em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> incoming edges,</li>
+<li>the Hirshberg algorithm can get rid of one <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> in space complexity.</li>
+</ul>
+<p><a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Iterative%20Refinement">iterative refinement</a> <code>CLUSTAL</code> algorithm</p>
+<ul>
+<li>given <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> sequences, align each sequence against each other.</li>
+<li>use the score of the pairwise alignments to compute a distance matrix.</li>
+<li>build a guide tree (tree shows the best order of progressive alignment).</li>
+<li>Progressive Alignment guided by the tree, by merging sub-alignments.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>dp</th>
+<th>greedy</th>
+<th>progressive (CLUSTAL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mi>k</mi></msup><mo>⋅</mo><msup><mn>2</mn><mi>k</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^k \cdot 2^k )</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>k</mi><mo>⋅</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(k \cdot n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>k</mi><mo>⋅</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(k \cdot n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>space</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mi>k</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo><mo>−</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(k)-O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>−</mo><mi>O</mi><mo stretchy="false">(</mo><mi>k</mi><mo>⋅</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)-O(k \cdot n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>pros</td>
+<td>global optimal</td>
+<td>faster and less memory</td>
+<td>balances both</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>scales better with large k</td>
+<td>good for moderate k</td>
+</tr>
+<tr>
+<td>cons</td>
+<td>high costs</td>
+<td>suboptimal solution</td>
+<td>guide tree accuracy</td>
+</tr>
+<tr>
+<td></td>
+<td>for larger k</td>
+<td>greedy alignment order</td>
+<td>suboptimal solution</td>
+</tr>
+</tbody>
+</table>
+<p>Evaluation</p>
+<ul>
+<li>entropy of a multi-alignment is calculated as a column score as the sum of the negative logarithm
+of this probability of each symbol.</li>
+<li>a completely conserved column would score 0, since <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mn>3</mn><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-[\log(1) + 3 \log(0)] = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mopen">[</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>.</li>
+</ul>
+<p>Past papers</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q2.pdf">y2019p9q2 (a)</a>
 <ul>
@@ -358,7 +656,7 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q2.pdf">y2023p8q2 (c)</a></li>
 </ul>
-<p><em>Progressive alignment heuristic</em></p>
+<p><em>Progressive alignment heuristic</em> <a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Iterative%20Refinement">iterative refinement</a></p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q2.pdf">y2022p8q2 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q3.pdf">y2018p27q3 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p9q2.pdf">y2016p9q2 (b,c)</a>
