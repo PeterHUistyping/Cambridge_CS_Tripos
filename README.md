@@ -30,11 +30,11 @@
 
 ### Low-level (OS, Arch)
 
-| id  | name                                                               | coverage                  | Tripos                                                                                                                                                 |
-| --- | ------------------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI            | IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC) ✎<br />IB Compiler Construction ✓<br />IB Concurrent System                              |
-| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | IA OS ✎<br />IB&II Computer Architecture<br />MSI+Cacheline ✓ Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf) <br />i |
-| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff           | IB Arch & II Ad Arch ■<br />IB Compiler Construction                                                                                                 |
+| id  | name                                                               | coverage                  | Tripos                                                                                                                                        |
+| --- | ------------------------------------------------------------------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2-1 | [Data Segment and Linking](./Note/Data%20Segment%20and%20Linking.pdf) | Memory and ABI            | IA Java - IB C/C++ (ProgLang)<br />IA OS - IB Arch (RISC) ✎<br />IB Compiler Construction ✓<br />IB Concurrent System                     |
+| 2-2 | [Memory Address Calculation](./Note/Memory%20Calculation.pdf)         | Page table, TLB and cache | IA OS ✎<br />IB&II Computer Architecture<br />MSI+Cacheline ✓ Q [y21p5q3](https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p5q3.pdf) |
+| 2-3 | [Comparative Architectures](./Note/Comparative%20Architectures.pdf)   | design tradeoff           | IB Arch & II Ad Arch ■<br />IB Compiler Construction                                                                                        |
 
 ### Theories
 
@@ -43,8 +43,8 @@
 | 3-1 | [Concurrency Control](./Note/Concurrency%20Control.pdf)                     | for single object<br /> and transactions       | IB Architecture (Mem ACID)<br />IB Concurrent System  ✎ |
 | 3-2 | [Clocks Broadcast Replication](./Note/Clocks%20Broadcast%20Replication.pdf) | causality, summary                            | IB Distributed, Network ✎✓                             |
 | 3-3 | [Network by Analogy](./Note/Network%20by%20Analogy.pdf)                     | five-layer OSI                                | IB Computer Networking                                    |
-| 3-4 | [Communication](./Note/Principles_of_Communication.pdf)                     | Principles of Communication (PoC)             | IB Computer Networking, II PoC                   |
-| 3-5 | [Bioinformatics](./Note/Bioinformatics.pdf)                     | Collections of algorithms            | II Bioinformatics                |
+| 3-4 | [Communication](./Note/Principles_of_Communication.pdf)                     | Principles of Communication (PoC)              | IB Computer Networking, II PoC                            |
+| 3-5 | [Bioinformatics](./Note/Bioinformatics.pdf)                                 | Collections of algorithms                      | II Bioinformatics                                         |
 | 3-6 | [HCI Principles](./Note/HCI.pdf)                                            | Heuristic Evaluation,<br />  Gestalt Cognitive | IA Interaction Design<br />IB Further HCI ✎             |
 
 > *Reference:*
