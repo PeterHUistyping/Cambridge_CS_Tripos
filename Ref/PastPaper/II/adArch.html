@@ -149,11 +149,105 @@
 <li>cost, size, time-to-market goals, power consumption, performance and</li>
 <li>the types of programs (parallelism forms, dataset and program characteristics, e.g. cache).</li>
 <li>predictable execution times, fault tolerance, security, compatibility requirements.</li>
-<li>more: fabrication and packaging technology (mask costs), i.e. transistors size and speed, power consumption limits, interconnect speed , number of metal layers, I/Os speed and number (e.g. limits of off-chip/DRAM bandwidth) ; PCB design considerations, the size and cost of the overall product etc.</li>
+<li>more: fabrication and packaging technology (mask costs), i.e. transistors size and speed, power consumption limits, interconnect speed , number of metal layers, I/Os speed and number (e.g. limits of off-chip/DRAM bandwidth); PCB design considerations, the size and cost of the overall product etc.</li>
 </ul>
 </li>
 </ul>
 <p>Early computers exploit <em>Bit</em>-Level Parallelism.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>superscalar</th>
+<th>compiler VLIW</th>
+<th>SIMD</th>
+<th>multi-core</th>
+<th>DSA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parallelism</td>
+<td>static or dynamic ILP</td>
+<td>static ILP</td>
+<td>DLP</td>
+<td>TLP</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>features</td>
+<td>instruction fetch,<br />dynamic prefetch,<br />memory addr. alias,<br />physical regs. rename</td>
+<td>scheduling;<br />sw. speculate;<br />var. /fixed bundle</td>
+<td>N ops., independent,<br />same FU,<br />disjoint regs.,<br />known mem access,</td>
+<td>fine/coarse-grained vs.<br />SMT</td>
+<td>specialized</td>
+</tr>
+<tr>
+<td>instr. count (IF/DE)</td>
+<td>↑ out-of-order</td>
+<td>one VLI</td>
+<td>↓</td>
+<td>var.</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>branch handling</td>
+<td>dynamic branch pred.</td>
+<td>limited</td>
+<td>poor (predicted)</td>
+<td>per-core</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>limitations</td>
+<td>fabrication, and below</td>
+<td>tailor to a pipeline</td>
+<td>data-level tasks</td>
+<td>Amdahl’s Law</td>
+<td>inflexible</td>
+</tr>
+<tr>
+<td>hardware cost/area</td>
+<td>↑</td>
+<td>↓</td>
+<td>vector regs. / FUs</td>
+<td>pipeline regs.</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>interconnect</td>
+<td>↑ (in single core)</td>
+<td>↓</td>
+<td>wide data bus, lane</td>
+<td>mesh/cache coherence</td>
+<td>scratchpad</td>
+</tr>
+<tr>
+<td>energy cost</td>
+<td>↑</td>
+<td>↓</td>
+<td>↓</td>
+<td>var.</td>
+<td>↓ ✰</td>
+</tr>
+<tr>
+<td>binary compatibility</td>
+<td>✓</td>
+<td>✗</td>
+<td>□ (✓ VLA)</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>use cases</td>
+<td>CPU, general-purpose</td>
+<td>embedded, GPU</td>
+<td>ML, graphics</td>
+<td>CPU, server, SoC</td>
+<td>TPU, DSP</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (a)</a>
 <ul>
@@ -323,8 +417,10 @@
 </ul>
 <h2 id="superscalar-pipeline">Superscalar pipeline</h2>
 <p>Exploits <em>Instruction</em>-Level Parallelism.</p>
-<p>Instruction Fetch, DEcode, [Rename], [Dispatch: static/dynamic scheduling], [Issue], EXecute, Memory, Write Back. <br/>
-In-order dispatch: stall for data hazards; In-order issue: stall for structural hazards.</p>
+<ul>
+<li>Instruction Fetch, DEcode, [Rename], [Dispatch: static/dynamic scheduling], [Issue], EXecute, Memory, Write Back.</li>
+<li>In-order dispatch: stall for data hazards; In-order issue: stall for structural hazards.</li>
+</ul>
 <p>In-order vs out-of-order dispatch &amp; execution</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c)</a></li>
@@ -417,6 +513,23 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 </ul>
 </li>
 </ul>
+<p>Limitations</p>
+<ul>
+<li>complexity of instruction fetch, memory speculation, and register renaming, cache access.</li>
+<li>exploiting only ILP, without TLP or DLP.</li>
+<li>interconnect, limiting on state reachable per cycle and centralised memory-like structures scale.</li>
+<li>large area, high power consumption, heat dissipation, and fabrication complexity.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (d)</a>
+<ul>
+<li>bottleneck: fabrication of wires, interconnect, power consumption, and heat dissipation.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (a)</a>
+<ul>
+<li>why modern architecture prefers multi-core than only single thread with superscalar techniques.</li>
+</ul>
+</li>
+</ul>
 <p>General</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p8q3.pdf">y2016p8q3 (b)</a>
@@ -427,12 +540,6 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p7q5.pdf">y2013p7q5 (b)</a>
 <ul>
 <li>switching between two configurations.</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (d)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (d)</a>
-<ul>
-<li>bottleneck: fabrication of wires, interconnect.</li>
 </ul>
 </li>
 </ul>
@@ -481,6 +588,37 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (d)</a></li>
 </ul>
 <p>Variable-length bundles of independent instructions</p>
+<table>
+<thead>
+<tr>
+<th>VLIW</th>
+<th>fixed-width bundle</th>
+<th>var-len bundle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code density,<br />i-cache size,<br />instr fetch</td>
+<td>↑<br />no-ops</td>
+<td>↓<br />only st., end</td>
+</tr>
+<tr>
+<td>i-cache hit rate</td>
+<td>↓</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>fixed SLOT-to-FU</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>hardware</td>
+<td>simpler</td>
+<td>+ decoding;<br />check before issue;<br />+ interconnect, <br />muxes for op,<br />operands to FU.</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p8q3.pdf">y2021p8q3 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (c)</a></li>
@@ -533,6 +671,7 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p8q3.pdf">y2007p8q3 (c)</a></li>
 </ul>
 <h2 id="memory-hierarchy">Memory hierarchy</h2>
+<p>Reference: <a href="https://peterhuistyping.github.io/Cambridge_CS_Tripos/Note/Memory%20Calculation.pdf">Memory address calculation</a>.</p>
 <p>Direct-mapped vs. set/fully associative cache</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (a)</a>
@@ -652,7 +791,7 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 </ul>
 </li>
 </ul>
-<p>Vector chaining and tailgating</p>
+<p>Vector chaining (RaW) and tailgating (WaR)</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (b)</a></li>
 </ul>
@@ -673,9 +812,6 @@ In-order dispatch: stall for data hazards; In-order issue: stall for structural 
 <li>less power but equal performance</li>
 </ul>
 </li>
-</ul>
-<p>vs. multi-threaded processors</p>
-<ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (a)</a>
 <ul>
 <li>modern architecture: multi-core &gt; single multi-threaded</li>
