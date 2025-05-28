@@ -143,10 +143,24 @@
 <h2 id="basic-concepts">Basic concepts</h2>
 <p>basic block</p>
 <ul>
+<li>a maximal sequence of instructions,
+<ul>
+<li>each of which has exactly one predecessor (except possibly for the first) and</li>
+<li>exactly one successor (except possibly for the last);</li>
+</ul>
+</li>
+<li>a largest-possible piece of straight-line code which contains no interesting control flow, with each instruction being executed in turn.</li>
+<li>useful because they reduce the space and time requirements for analysis algorithms.
+<ul>
+<li>by allowing data flow info to be calculated and stored once per block rather than per instruction.</li>
+<li>and recomputed inside a block when necessary.</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (a)</a></li>
 </ul>
 <p>flow graph (node is 3-address code)</p>
 <ul>
+<li>the control flow graph of basic blocks has the same topology as of instructions (modulo straight bits).</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (b)</a></li>
 </ul>
 <h2 id="control-flow">Control-flow</h2>
@@ -193,38 +207,66 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 
 \end{aligned}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.6183em;vertical-align:-2.0591em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5591em;"><span style="top:-4.7191em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">{</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">∣∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">re</span><span class="mord mathnormal mtight">d</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">se</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mord text"><span class="mord">, depends on the property</span></span></span></span><span style="top:-1.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord text"><span class="mord">Op</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">cc</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0591em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∩</mo></mrow><annotation encoding="application/x-tex">\cap</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∩</span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∪</mo></mrow><annotation encoding="application/x-tex">\cup</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∪</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pred</td>
+<td>AVAIL</td>
+<td>RD</td>
+</tr>
+<tr>
+<td>succ</td>
+<td>VBE</td>
+<td>LVA</td>
+</tr>
+</tbody>
+</table>
+<p>AVAILable expression analysis</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q12.pdf">y2021p9q12 (b)</a>
-<ul>
-<li>loop invariant expression</li>
+<li>all paths to here include computation of it.</li>
 </ul>
-</li>
+<p>Reaching Definition (RD),</p>
+<ul>
+<li>some path to here includes a definition.</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q11.pdf">y2015p7q11 (a, c-d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2006p8q8.pdf">y2006p8q8 (d)</a>
 <ul>
-<li>semantic Reaching Definition (RD)</li>
-<li>constant propagation</li>
+<li>semantic, constant propagation</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12 (c)</a>
+</ul>
+<p>Write-write anomaly</p>
 <ul>
-<li>Dominators analysis</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q10.pdf">y2009p9q10 (a)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2005p8q7.pdf">y2005p8q7 (a)</a>
 <ul>
-<li>Must-use / Very Busy Expression (VBE)</li>
+<li>global variables or with address-taken variables</li>
 </ul>
 </li>
-<li>More: Use-Definition chain</li>
-<li>Summary
+</ul>
+<p>Live Variable Analysis (LVA)</p>
 <ul>
-<li>available expression: all paths to here include computation of it.</li>
-<li>live variable: some path from here leads to a use.</li>
-<li>very busy expressions: all paths from here lead to a use.</li>
-<li>reaching definition: some path to here includes a definition.</li>
+<li>some path from here leads to a use.</li>
 </ul>
-</li>
+<p>Very Busy Expression (VBE), Must-use</p>
+<ul>
+<li>all paths from here lead to a use.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p9q10.pdf">y2009p9q10 (a)</a></li>
 </ul>
+<p>Loop invariant expression</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q12.pdf">y2021p9q12 (b)</a></li>
+</ul>
+<p>Dominators analysis</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q12.pdf">y2018p27q12 (c)</a></li>
+</ul>
+<p>More: Use-Definition chain</p>
 <p>General</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q10.pdf">y2012p7q10 (c-f)</a></li>
@@ -262,6 +304,22 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 &amp; out-live(n) = \bigcup_{s\in succ(n)} in-live(s)
 \end{aligned}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.366em;vertical-align:-1.933em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.433em;"><span style="top:-4.643em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"></span></span><span style="top:-2.933em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.933em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.433em;"><span style="top:-4.643em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">re</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span><span style="top:-2.933em;"><span class="pstrut" style="height:3.05em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.809em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">cc</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">⋃</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.516em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.933em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>For a variable <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> at program point <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span>,</p>
+<ul>
+<li>semantic liveness
+<ul>
+<li>some change to the value of x at p will cause the program to have different I/O execution results.</li>
+<li>not generally computable.</li>
+</ul>
+</li>
+<li>syntactic liveness
+<ul>
+<li>there is a path in the flowgraph (not necessarily followed in any execution) from p to a statement that reads the value of x.</li>
+<li>a computable over-approximation.</li>
+</ul>
+</li>
+</ul>
+<p>Past papers,</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (a-b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q9.pdf">y2024p8q9 (a, d, f)</a></li>
@@ -295,15 +353,46 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p7q10.pdf">y2012p7q10 (a-b)</a></li>
 </ul>
-<p>Clash / interference graph</p>
+<p>Clash or interference graph</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p9q10.pdf">y2017p9q10 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2002p7q4.pdf">y2002p7q4 (a, b)</a>
+<ul>
+<li>require iterated LVA since branching is inter-BB analysis.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2005p8q7.pdf">y2005p8q7 (b)</a>
+<ul>
+<li>provide a program for given clash graph.</li>
+</ul>
+</li>
 </ul>
 <p><strong>Register allocation</strong></p>
+<ul>
+<li>map virtual registers to limited physical registers,</li>
+<li>allocate them optimally, i.e. keep data transfers between registers and memory to a minimum.</li>
+<li>via a graph colouring problem, where
+<ul>
+<li>variables are the nodes, the registers are colours and</li>
+<li>edges between variables indicate that both variables are live at one time during execution.</li>
+</ul>
+</li>
+<li>limitation for JIT compiler: layered opt. for cold / hot code.
+<ul>
+<li>NP-hard problem and thus slow with high complexity.</li>
+</ul>
+</li>
+</ul>
+<p>Past papers</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q12.pdf">y2016p7q12 (d-e)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p9q9.pdf">y2013p9q9 (a)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q12.pdf">y2009p7q12 (b-e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2002p7q4.pdf">y2002p7q4</a>
+<ul>
+<li>SSA form gives more or less register count: fewer edges vs. more vertices.</li>
+</ul>
+</li>
 </ul>
 <p>Live range splitting</p>
 <ul>
@@ -377,6 +466,7 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q12.pdf">y2021p9q12</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q11.pdf">y2014p7q11 (d)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2004p8q7.pdf">y2004p8q7 (b)</a></li>
 </ul>
 <p>Partial redundancy elimination (CSE+LICM)</p>
 <ul>
@@ -384,6 +474,19 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 </ul>
 <h2 id="higher-level-opt">Higher-level opt</h2>
 <p>Strength reduction</p>
+<ul>
+<li>replaces expensive operations with less expensive operations.
+<ul>
+<li>Examples: replace <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>⋅</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x \cdot x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> or <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{x}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> by right shift <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≫</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x \gg 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≫</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>.</li>
+<li>array access <code>a[i]</code> involves a (hidden) multiplication as <code>*(a + 4*i)</code>, assuming that integers have a size of 4.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2004p8q7.pdf">y2004p8q7 (a)</a>
+<ul>
+<li>loop</li>
+</ul>
+</li>
+</ul>
 <h3 id="abstract-interpretation">Abstract interpretation</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p9q11.pdf">y2018p9q11</a></li>
@@ -391,6 +494,21 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (a.i)</a></li>
 </ul>
 <p>Strictness analysis</p>
+<ul>
+<li>it is safe to pass an argument by value (CBV) when
+<ul>
+<li>the function fails to terminate whenever the argument fails to terminate.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mi mathvariant="normal">.</mi><msup><mi>f</mi><mi mathvariant="normal">#</mi></msup><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mi mathvariant="normal">⊥</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">⊥</mi></mrow><annotation encoding="application/x-tex">\forall x. f^{\#}(x=\bot) = \bot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">#</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">⊥</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊥</span></span></span></span>.</li>
+<li>the abstract domain <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>D</mi><mi mathvariant="normal">#</mi></msup><mo>=</mo><mo stretchy="false">{</mo><mi mathvariant="normal">⊥</mi><mo separator="true">,</mo><mi mathvariant="normal">⊤</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">D^\# = \{ \bot, \top \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">#</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">⊥</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">⊤</span><span class="mclose">}</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊥</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\bot = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> is guaranteed non-termination and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">⊤</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\top = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">⊤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> is possible termination.</li>
+</ul>
+</li>
+<li>vs. neededness: the function will always evaluate its argument.
+<ul>
+<li>neededness <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">⊆</span></span></span></span> strictness, since even if the parameter is not evaluated (needed), the termination behaviour of the function remains the same.</li>
+</ul>
+</li>
+</ul>
+<p>Past papers</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q9.pdf">y2024p9q9</a>
 <ul>
@@ -419,13 +537,20 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p9q16.pdf">y2007p9q16 (a.ii)</a></li>
 </ul>
-<p>OCFA</p>
+<p>0CFA</p>
+<ul>
+<li>application: reordering or parallelisation.</li>
+<li>generate a tree and identify program points by labelling them,</li>
+<li>each program point with label <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> gets a flow variable <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+</ul>
+<p>Past papers</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q9.pdf">y2022p8q9</a>
 <ul>
 <li>safe over-approximation, imprecise</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2004p9q3.pdf">y2004p9q3</a></li>
 </ul>
 <p>Turn data-flow equations into constraints</p>
 <ul>
@@ -518,6 +643,7 @@ out(n) = &amp; \; \text{Op}_{s\in succ(n)} \; in(s) \\
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q11.pdf">y2019p9q11 (b,c)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q12.pdf">y2017p7q12 (d,e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2002p9q7.pdf">y2002p9q7</a></li>
 </ul>
 <h2 id="decompilation">Decompilation</h2>
 <p>Dominance</p>
