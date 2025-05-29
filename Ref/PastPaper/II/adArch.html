@@ -168,8 +168,8 @@
 <tbody>
 <tr>
 <td>parallelism</td>
-<td>static or dynamic ILP</td>
-<td>static ILP</td>
+<td>static or dynamic ILP, MLP</td>
+<td>static ILP, MLP</td>
 <td>DLP</td>
 <td>TLP</td>
 <td>custom</td>
@@ -329,36 +329,66 @@
 <h2 id="scalar-pipeline">Scalar pipeline</h2>
 <p>Multiple / Diversified pipelines</p>
 <ul>
+<li>allow different instructions without data dependencies to execute in parallel, to hide the latency of the long-cycle instructions (e.g. load/store).</li>
+<li>exploits ILP and improves IPC.</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (b)</a></li>
 </ul>
-<p>Deep pipeline depth</p>
+<p>Deep pipeline and optimal pipeline depth</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (a.i)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (b)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (a)</a>
+<li>pros: allow processors to be clocked at higher frequencies, increasing the number of instructions that could be executed in any period of time.</li>
+<li>cons: extra logic (area) required to support deeper pipelines and extract ILP consume large amounts of power.
 <ul>
-<li>clock frequency</li>
+<li>minimise the critical path by balancing workload among the pipeline stages.</li>
+<li>CPI increases because stall penalties or pipeline interruptions, i.e. operations can't be done in a single cycle.
+<ul>
+<li>branch predictors to keep the pipeline full (control hazards).</li>
+<li>memory access (e.g. L1 cache), which negates the benefits achieved.</li>
+</ul>
+</li>
+<li>pipeline registers overhead, clock skew.</li>
+<li>limited ILP, atomic operations.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (a.i)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (b)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (a)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (b)</a>
+<ul>
+<li>branch predictor limitations for deep pipelines.</li>
 </ul>
 </li>
 </ul>
-<p>Branch prediction</p>
+<p><strong>Branch prediction</strong></p>
+<p>benefits</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (a)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (a)</a></li>
+</ul>
+<p>how to avoid pipeline bubble for complex predictors?</p>
 <ul>
-<li>benefits</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.ii)</a>
+<ul>
+<li>have a valid fetch address generated every cycle.
+<ul>
+<li>complex + less accurate predictors together,  refetch if differs.</li>
+<li>add next line and way info to each four-instruction fetch block within the instruction cache.</li>
 </ul>
 </li>
 </ul>
-<p>Static branch prediction</p>
-<p>Dynamic branch prediction</p>
+</li>
+</ul>
+<p><em>Static</em></p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (b)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (g)</a>
 <ul>
-<li>saturating counter</li>
+<li>compiler support for branch prediction, i.e. static heuristic and profile info.</li>
+<li>e.g. forward-not-taken and backwards-taken.</li>
 </ul>
 </li>
 </ul>
-<p>Two-level branch predictor: local/global history</p>
+<p><em>Dynamic</em></p>
+<p>One-level predictor: saturating counter</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (b)</a></li>
+</ul>
+<p>Two-level predictor: local/global history</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (a)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (c-d)</a></li>
@@ -370,8 +400,7 @@
 </ul>
 <p>Tournament predictor</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.i)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (e)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.i)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (e)</a></li>
 </ul>
 <p>Branch Target Buffer (BTB)</p>
 <ul>
@@ -384,54 +413,99 @@
 </ul>
 </li>
 </ul>
-<p>Compiler support for branch prediction</p>
+<p>Precise exceptions</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2007p7q1.pdf">y2007p7q1 (g)</a></li>
+<li>all instructions before E (the instruction that caused the exception) must be completed, and</li>
+<li>all instructions after E must not have completed, including not modifying the architectural state.</li>
+<li>whether E should complete or not depends on the exception type.</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.iii)</a>
+<ul>
+<li>buffer pre-executed results allowing the effects of the second partially executed instruction to be undone,
+<ul>
+<li>or to buffer results until we know all earlier operations have completed;</li>
 </ul>
-<p>Predictor for deeply pipelined processors</p>
+</li>
+<li>another option, record which parts of the second instruction have executed and selective replay,
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p8q2.pdf">y2009p8q2 (b)</a>
-<ul>
-<li>limitations and size</li>
+<li>now upon restarting execution after the exception handler runs,</li>
+<li>the processor knows which operations (“beats” in Arm terminology) not to re-execute in the case of the second instruction.</li>
+<li>supported by Arm’s MVE/Helium ISA extension.</li>
 </ul>
 </li>
 </ul>
-<p>Complex prediction without pipeline bubbles</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (b.ii)</a></li>
+</li>
 </ul>
-<p>Improvements</p>
+<p>Improvements for scalar pipeline</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (a)</a>
 <ul>
-<li>micro-architectural techniques or elements
+<li>micro-architectural techniques or elements:
 <ul>
-<li>I/D-caches</li>
-<li>branch prediction</li>
-<li>multiple / diversified pipelines</li>
-<li>skid buffer for stalling and replaying</li>
+<li>I/D-caches,</li>
+<li>branch prediction,</li>
+<li>multiple / diversified pipelines,</li>
+<li>skid buffer for stalling and replaying.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="superscalar-pipeline">Superscalar pipeline</h2>
-<p>Exploits <em>Instruction</em>-Level Parallelism.</p>
+<p>Exploits <em>Instruction</em>- and <em>Memory</em>-Level Parallelism.</p>
 <ul>
-<li>Instruction Fetch, DEcode, [Rename], [Dispatch: static/dynamic scheduling], [Issue], EXecute, Memory, Write Back.</li>
-<li>In-order dispatch: stall for data hazards; In-order issue: stall for structural hazards.</li>
+<li>Instruction Fetch, DEcode, [Rename], [Dispatch], [Issue: static/dynamic scheduling], EXecute, Memory, Write Back.</li>
+<li>vs. In-order
+<ul>
+<li>dispatch: stall for data hazards (false dependencies);</li>
+<li>issue: stall for structural hazards.</li>
 </ul>
-<p>In-order vs out-of-order dispatch &amp; execution</p>
+</li>
+</ul>
+<p>OOO processors benefit from,</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (c)</a>
+<li>after instructions fetched, decoded and renamed, dispatch into the issue queue, which can be scheduled out-of-order.</li>
+<li>issue: create a window into the dynamic instruction stream, from different basic blocks of the original program.</li>
+<li>pros: schedule instructions dynamically aided by speculation,
 <ul>
-<li>static vs. dynamic scheduling</li>
+<li>constrained by little more than true data dependencies and functional unit availability.</li>
+<li>different instruction schedules depending on run-time info. and the actual state of the processor,
+<ul>
+<li>branch prediction, react to data cache misses,</li>
+<li>exploit knowledge of load/store addresses, i.e. disambiguate memory addresses.</li>
+</ul>
+</li>
+<li>avoids the need to stall when the result of a cache miss is needed.
+<ul>
+<li>improved memory-level parallelism, tolerate longer cache access latencies.</li>
+</ul>
+</li>
+<li>simplify the compiler (register allocator), without increasing static code size.</li>
+<li>allows code compiled for another pipeline to run efficiency.</li>
+</ul>
+</li>
+<li>cons: more hardware cost,
+<ul>
+<li>complexity of instruction fetch, memory speculation, and register renaming, cache access.</li>
+<li>large area, high power consumption, heat dissipation, and fabrication complexity.</li>
+</ul>
+</li>
+<li>limitation: task with low performance targets (ILP, Amdahl's law), competing for FUs.
+<ul>
+<li>exploiting only ILP, without TLP or DLP.</li>
+<li>interconnect, limiting on state reachable per cycle and centralised memory-like structures scale.</li>
+</ul>
+</li>
+</ul>
+<p>In-order vs out-of-order (dynamic)</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2023p8q1.pdf">y2023p8q1 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (c)</a>
+<ul>
+<li>scheduling &amp; execution</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p8q3.pdf">y2014p8q3 (a.ii)</a>
 <ul>
-<li>micro-architectural components</li>
+<li>micro-architectural components: ReOrder Buffer, issue queue, load / store queue.</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p8q3.pdf">y2020p8q3 (a)</a>
@@ -441,7 +515,7 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (b)</a>
 <ul>
-<li>power consumption</li>
+<li>power efficiency</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p8q3.pdf">y2016p8q3 (b.ii)</a>
@@ -459,66 +533,123 @@
 </ul>
 </li>
 </ul>
-<p>Rename: arch (or logical) register <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>physical</strong> of the last destination targeted.</p>
+<p>Register rename</p>
 <ul>
+<li>arch (or logical) register <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>physical</strong> of the last destination targeted.
+<ul>
+<li>Register Map Table (RMT), Free <strong>Physical</strong> Register List (FPRL);</li>
+</ul>
+</li>
 <li>to remove false (or name) dependencies (anti-:WaR, output:WaW).
 <ul>
-<li>Register Map Table (RMT), Free <strong>Physical Register</strong> List (FPRL);</li>
 <li>VLIW: Rotating Register File (RRF).</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (a)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (b)</a></li>
+<li>increase the maximum number of instructions that could be in-flight simultaneously.</li>
+<li>vs. compile time,
+<ul>
+<li>latter is difficult due to the presence of short loops, control dependencies, or</li>
+<li>when the ISA only defines a very limited number of architectural registers.</li>
+</ul>
+</li>
+<li>support speculative execution and precise exceptions.
+<ul>
+<li>speculative execution benefits from the presence of a large number of physical registers to hold live variables from speculative execution paths.</li>
+<li>quickly return the processor to a particular state, either to implement precise interrupts or to recover from a mis-predicted branch.</li>
+</ul>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (a)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p8q3.pdf">y2019p8q3 (b)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q7.pdf">y2009p7q7 (a-d)</a></li>
 </ul>
-<p>Clustered architecture</p>
+<p>Clustered data forwarding network</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p7q6.pdf">y2017p7q6 (c)</a>
 <ul>
-<li>data forwarding network, partitioned issue windows;</li>
+<li>partitioned issue windows;</li>
 <li>issue: inter-cluster communication.</li>
 <li>for VLIW, the same applies.</li>
 </ul>
 </li>
 </ul>
-<p>Hardware-based speculation</p>
-<p>Memory-carried dependencies and in-reversible store</p>
+<p>Hardware-based dynamic memory speculation</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q7.pdf">y2009p7q7 (e)</a></li>
-</ul>
-<p>Load bypassing</p>
+<li>memory-carried dependencies (aliases)
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (c)</a>
-<ul>
-<li>Load/Store Queue (LQ/SQ).</li>
+<li>not to issue a load instruction before a pending store that is writing to the same memory location has executed.</li>
+<li>or store-to-load forwarding; otherwise, the load can bypass the store, via load queue.</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (a,b)</a>
+<li>irreversible store
 <ul>
-<li>Load Wait Table: PC -&gt; one bit, avoiding repeated false speculated loads.</li>
-<li>whether load will hit or miss in L1 D-cache.</li>
+<li>store instructions are executed in program order, via store queue,</li>
+<li>never speculatively before earlier branches have been resolved.
+<ul>
+<li>ensures any exceptions caused by earlier instructions are handled.</li>
 </ul>
 </li>
 </ul>
-<p>Store Queue, store-to-load forwarding</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (b)</a></li>
+</li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p7q7.pdf">y2009p7q7 (e)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (b)</a></li>
 </ul>
-<p>ReOrder Buffer (ROB) [precise exceptions]</p>
+<p>Load bypassing: Load/Store Queue (LQ/SQ).</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (c)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (d)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p27q5.pdf">y2018p27q5 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (a)</a>
 <ul>
-<li>ROB vs Unified <strong>Physical</strong> RF (with architectural RMT).</li>
+<li>improve performance by avoiding repeated false speculated loads,
+<ul>
+<li>Load Wait Table: PC -&gt; one bit.</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<p>Skip speculative loads, if predicts L1 D-cache miss.</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2021p9q4.pdf">y2021p9q4 (b)</a></li>
+</ul>
+<p>ReOrder Buffer (ROB)</p>
+<ul>
+<li>holds both the instructions and data for in-flight instructions,</li>
+<li>for [precise exceptions], ensuring results are committed in order to prevent data hazards.</li>
+</ul>
+<p>To search for operands between register file and the reorder buffer,</p>
+<ul>
+<li>If the operand is located in the reorder buffer, it is represents the most recent value.
+<ul>
+<li>The reorder buffer is searched and accessed in parallel with the register file.</li>
+</ul>
+</li>
+<li>A second approach is to maintain a register mapping table,
+<ul>
+<li>this records whether each register should be read from the reorder buffer or the register file.</li>
+<li>It also records the entry in the reorder buffer where the register can be found.</li>
+</ul>
+</li>
+</ul>
+<p>Unified <strong>Physical</strong> RF</p>
+<ul>
+<li>with two register mapping tables, and a simplified ROB (in-order instruction queue),
+<ul>
+<li>the front-end future map represents the current potentially speculative state,</li>
+<li>the architectural register map maintains the user visible state (checkpoint).</li>
+<li>enhancement: one arch RM per branch prediction (MIPS 10K).</li>
+</ul>
+</li>
+<li>upon detecting a mis-predicted branch,
+<ul>
+<li>the architectural register map is copied to the future register map and</li>
+<li>any instructions along the mis-predicted path are discarded.</li>
+<li>execution can then continue along the correct path with the correct register state.</li>
+</ul>
+</li>
+</ul>
+<p>ROB vs Unified <strong>Physical</strong> RF</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p8q1.pdf">y2024p8q1 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p8q3.pdf">y2011p8q3 (d)</a></li>
 </ul>
 <p>Limitations</p>
 <ul>
-<li>complexity of instruction fetch, memory speculation, and register renaming, cache access.</li>
-<li>exploiting only ILP, without TLP or DLP.</li>
-<li>interconnect, limiting on state reachable per cycle and centralised memory-like structures scale.</li>
-<li>large area, high power consumption, heat dissipation, and fabrication complexity.</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2013p8q3.pdf">y2013p8q3 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p8q5.pdf">y2010p8q5 (d)</a>
 <ul>
 <li>bottleneck: fabrication of wires, interconnect, power consumption, and heat dissipation.</li>
@@ -544,7 +675,7 @@
 </li>
 </ul>
 <h2 id="software-ilp-vliw">Software ILP (VLIW)</h2>
-<p>Exploits <em>Instruction</em>-Level Parallelism via <em>static scheduling</em>.</p>
+<p>Exploits <em>Instruction</em>- and <em>Memory</em>-Level Parallelism via <em>static scheduling</em>.</p>
 <p>vs. superscalar</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p8q5.pdf">y2008p8q5 (b)</a>
@@ -795,10 +926,7 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p7q5.pdf">y2015p7q5 (b)</a></li>
 </ul>
-<p>Precise exceptions</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.iii)</a></li>
-</ul>
+<p>Precise exceptions: please refer to the scalar pipeline section.</p>
 <p>ISA: vector length</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p9q1.pdf">y2022p9q1 (a.iv)</a></li>
@@ -826,24 +954,19 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (d)</a></li>
 </ul>
-<p>Cache coherence: invalidate vs. update</p>
+<h3 id="cache-coherence">Cache coherence</h3>
+<p>invalidate vs. update</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (b)</a></li>
 </ul>
-<p>Cache coherence: snoopy protocol</p>
+<p>snoopy protocol</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2017p8q3.pdf">y2017p8q3 (a,b)</a>
 <ul>
 <li>bus's feature here, GPU</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (d)</a></li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (c)</a>
-<ul>
-<li>MESI</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
 <ul>
 <li>MESI, test-and-set without locking down the bus for multiple cycles</li>
 </ul>
@@ -855,43 +978,31 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (a)</a>
 <ul>
-<li>Ring interconnect</li>
+<li>ring interconnect</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (e)</a>
 <ul>
-<li>multiple processors with more buses.</li>
+<li>via multiple buses for a greater number of processors.</li>
 </ul>
 </li>
 </ul>
-<p>Cache coherence: directory protocol</p>
+<p>directory protocol</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (d)</a>
-<ul>
-<li>information stored in the directory for each cache line
-<ul>
-<li>a list of sharers</li>
-<li>exclusive individual processor</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (c)</a>
-<ul>
+<li>for each cache line, store a list of sharers and the exclusive individual processor in the directory.</li>
 <li>inclusive directory for non-inclusive caches</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (d)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2022p8q1.pdf">y2022p8q1 (d)</a>
 <ul>
-<li>hierarchy of on-chip caches, clustered cache</li>
+<li>hierarchy of on-chip (clustered) caches, reducing storage overhead.</li>
 </ul>
 </li>
 </ul>
-<p>Cache coherence: general</p>
+<p>general</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2015p8q1.pdf">y2015p8q1</a></li>
 </ul>
-<p>Memory consistency: Sequential Consistency vs. Total Store Order</p>
+<h3 id="memory-consistency">Memory consistency</h3>
+<p>Sequential Consistency vs. Total Store Order</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (c)</a>
 <ul>
@@ -905,7 +1016,7 @@
 </ul>
 </li>
 </ul>
-<p>Memory consistency: Store atomicity</p>
+<p>Store atomicity</p>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (d)</a>
 <ul>
@@ -917,7 +1028,7 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2012p8q3.pdf">y2012p8q3 (a)</a></li>
 </ul>
-<p>On-chip interconnection network</p>
+<h3 id="on-chip-interconnection-network">On-chip interconnection network</h3>
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2019p9q4.pdf">y2019p9q4 (a)</a>
 <ul>
