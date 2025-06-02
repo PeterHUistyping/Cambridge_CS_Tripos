@@ -94,3 +94,4 @@ Languages and Automata, Compiler, Algorithm and Complexity
 - [Supervision materials](https://dimitrioslos.com/supervisions/), credit: [@Dimitrios Los](https://dimitrioslos.com/academic.html)
 - [Course work reference (2015)](https://github.com/danielchatfield/), credit: [@Daniel Chatfield](https://github.com/danielchatfield/)
 - [ALevel-CST_Tripos Notes](https://github.com/ashwinahuja/Cambridge-Computer-Science-Tripos-Notes), credit: @ashwinahuja
+- [University-Notes](https://github.com/johnyob/University-Notes), credit: @johnyob
