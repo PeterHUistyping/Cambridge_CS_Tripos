@@ -784,7 +784,7 @@
 </ul>
 <p>SMT</p>
 <ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (c)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (c.i)</a></li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2020p9q4.pdf">y2020p9q4 (b,c)</a>
 <ul>
 <li>threads characteristics</li>
@@ -794,6 +794,15 @@
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (d)</a>
 <ul>
 <li>(store) multi-copy atomic</li>
+</ul>
+</li>
+</ul>
+<p>partition/tag vs. share vs. duplicated resources</p>
+<ul>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2024p9q1.pdf">y2024p9q1 (c.ii)</a></li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (d)</a>
+<ul>
+<li>cache partition</li>
 </ul>
 </li>
 </ul>
@@ -812,7 +821,12 @@
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (a)</a>
 <ul>
-<li>reduce conflict misses for direct-mapped cache</li>
+<li>reduce conflict misses,
+<ul>
+<li>victim cache (exclusive cache),</li>
+<li>spatial memory layout: array merging, array padding.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -843,25 +857,22 @@
 <li>list all the techniques</li>
 </ul>
 </li>
-<li>trade-off between memory vs. computation.</li>
-<li>memory layout and access order for better locality
-<ul>
-<li>loop interchange, loop fusion, array merging, array padding, cache blocking and alignment of data structures.</li>
-</ul>
-</li>
+<li>trade-off between memory vs. computation</li>
+<li>spatial access order: loop interchange, cache blocking</li>
+<li>temporal locality: loop fusion and fission</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (a)</a>
 <ul>
 <li>multi-banked cache</li>
 </ul>
 </li>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (c)</a>
+<ul>
+<li>load/store buffer: load-store forwarding, store merging or coalescing</li>
+</ul>
+</li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (c)</a>
 <ul>
 <li>merging or coalescing write-buffer violates TSO?</li>
-</ul>
-</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (c)</a>
-<ul>
-<li>load/store buffer</li>
 </ul>
 </li>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
@@ -950,10 +961,6 @@
 <ul>
 <li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (a, b)</a></li>
 </ul>
-<p>Cache partitioning</p>
-<ul>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2016p7q6.pdf">y2016p7q6 (d)</a></li>
-</ul>
 <h3 id="cache-coherence">Cache coherence</h3>
 <p>invalidate vs. update</p>
 <ul>
@@ -966,7 +973,7 @@
 <li>bus's feature here, GPU</li>
 </ul>
 </li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
+<li><a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2018p8q2.pdf">y2018p8q2 (e)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2014p7q5.pdf">y2014p7q5 (d)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2010p7q7.pdf">y2010p7q7 (c)</a>, <a href="https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2011p7q4.pdf">y2011p7q4 (c)</a>
 <ul>
 <li>MESI, test-and-set without locking down the bus for multiple cycles</li>
 </ul>
